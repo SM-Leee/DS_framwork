@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Button</h1>
+					<h1>스태틱 버튼</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Static Button</p>
 					</div>
@@ -40,35 +40,35 @@
     						</div>
     						<div class="tutorial-component-description">
         						<p><span class="ds-tag-value">&nbsp;ds-ui-staticBtn</span>&#9;클래스 명칭</p>
-        						<p><span class="ds-tag-value">&nbsp;data-float</span>&#9;Static Button 고정, 비고정 유무 지정 (기본값 : 고정)</p>
+        						<p><span class="ds-tag-value">&nbsp;data-float</span>&#9;버튼 고정 유무 지정 (기본값 : 고정)</p>
     						</div>
-    						<h3>&nbsp;offset Static Button</h3>
+    						<h3>&nbsp;스태틱 버튼 위치</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <!-- #2 -->
 <div id='ds-ui-staticBtn' data-float='true' data-right='20' data-bottom='50'></div></textarea>
 							</div>
         					<div class="tutorial-component-description">
-           						<p><span class="ds-tag-value">&nbsp;data-right</span>&#9;Static Button offset right 지정 (기본값 : 15px)</p>
-            					<p><span class="ds-tag-value">&nbsp;data-bottom</span>&#9;Static Button offset bottom 지정 (기본값 : 70px)</p>
+           						<p><span class="ds-tag-value">&nbsp;data-right</span>&#9;최초 위치 Right 값 지정 (기본값 : 15px)</p>
+            					<p><span class="ds-tag-value">&nbsp;data-bottom</span>&#9;최초 위치 Bottom 지정 (기본값 : 70px)</p>
        						</div>
-    						<h3>&nbsp; Static Button disabled </h3>
+    						<h3>&nbsp;스태틱 버튼 비활성화</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror2">
 <!-- #3 -->
 <div id='ds-ui-staticBtn' data-disabled='true'></div></textarea>
     						</div>
         					<div class="tutorial-component-description">
-         						<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;Static Button disabled 선택 </p>
+         						<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;스태틱 버튼 활성화 유무 선택</p>
     						</div>
-    						<h3>&nbsp;Static Button location.href 기능</h3>
+    						<h3>&nbsp;스태틱 버튼 링크</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror3">
 <!-- #4 -->
 <div id='ds-ui-staticBtn' data-location='http://m.douzone.com/'></div></textarea>
     						</div>
         					<div class="tutorial-component-description">
-         						<p><span class="ds-tag-value">&nbsp;data-location</span>&#9;Static Button location.href 기능 추가 </p>
+         						<p><span class="ds-tag-value">&nbsp;data-location</span>&#9;스태틱 버튼 링크 기능 추가 </p>
     						</div>
 						</div>
 

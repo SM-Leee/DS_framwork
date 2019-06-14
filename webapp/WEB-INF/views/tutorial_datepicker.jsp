@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Picker</h1>
+					<h1>날짜피커</h1>
 					<div class="tutorial-content-path">
 						<p>Component > DatePicker</p>
 					</div>
@@ -37,55 +37,53 @@
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
 <!-- default datePicker -->
-<input type="text" id="date1" class="date"></textarea>
+<input type="text" id="date1" class="ds-ui-datepicker"></textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;date</span>&#9;클래스 이름 명칭
+									<span class="ds-tag-value">&nbsp;ds-ui-datepicker</span>&#9;클래스 명칭
 								</p>
 							</div>
 
-							<h3>&nbsp;label 추가</h3>
+							<h3>&nbsp;레이블 추가</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<input type="text" id="date2" class="date" data-ds-label="일  자"></textarea>
+<input type="text" id="date2" class="ds-ui-datepicker" data-ds-label="일  자"></textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;label이
-									필요할 시 사용하는 옵션
+									<span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;날짜 피커 레이블 유무 선택
 								</p>
 							</div>
 
-							<h3>&nbsp;Today Setting</h3>
+							<h3>&nbsp;오늘 날짜 설정</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror2">
-<input type="text" id="date3" class="date" data-ds-label="Date"
+<input type="text" id="date3" class="ds-ui-datepicker" data-ds-label="Date"
 	data-ds-language="en" data-ds-init-date="true"></textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;data-ds-init-date</span>&#9;오늘
-									날짜로 바로 지정할 필요가 있을 때 사용하는 옵션
+									<span class="ds-tag-value">&nbsp;data-ds-init-date</span>&#9;오늘 날짜 선택
 								</p>
 							</div>
 
 							<h3>&nbsp;다국어 지원</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror3">
-<input type="text" id="date4" class="date" data-ds-label="일  자" data-ds-language="en"></textarea>
+<input type="text" id="date4" class="ds-ui-datepicker" data-ds-label="일  자" data-ds-language="en"></textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;data-ds-language</span>&#9;다국어가
-									필요할 시 사용하는 옵션 (기본값 : 한국어)
+									<span class="ds-tag-value">&nbsp;data-ds-language</span>&#9;다국어 지원(기본값 : 한국어)
 								</p>
+								<p>&#9;설정값 en</p>
 							</div>
 							<h3>&nbsp;데이터 바인딩</h3>
 							<div class="tutorial-component-source">
     							<textarea class="tutorial-sourcecode xml" id="codemirror4">
 <input type="text" id="date5" 
-	class="date" data-ds-label="일  자"
+	class="ds-ui-datepicker" data-ds-label="일  자"
 	data-ds-binding="exampleData" data-ds-form="date"></textarea>
 							</div>
 							<div class="tutorial-component-source">
@@ -108,8 +106,8 @@ const exampleData =
     
 
 							<div class="tutorial-component-description">
-							    <p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑</p>
-							    <p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;맵핑된 데이터 column 맵핑</p>
+							    <p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명</p>
+							    <p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;Column 선택</p>
 							</div>
 						</div>
 

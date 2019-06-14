@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>View</h1>
+					<h1>상세 뷰</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Status View</p>
 					</div>
@@ -36,7 +36,6 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
 <div class="ds-ui-statusView" data-icon='status'></div></textarea>
 
 							</div>
@@ -47,18 +46,15 @@
 									명칭
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;Status
-									View 아이콘
+									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;상세 뷰
+									아이콘
 								</p>
 							</div>
-							<!-- ----------------------------------------------- -->
 							<h3>&nbsp;데이터 매핑</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<!-- #2 -->
 <div class="ds-ui-statusView" data-icon='status'
 	data-mapping='exampleData' data-no='1'></div></textarea>
-
 							</div>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode javascript" id="javascript0">
@@ -107,22 +103,18 @@ const exampleData = [{
         col: 1
       }
       ]
-
 								</textarea>
 							</div>
-
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;data-mapping</span>&#9;매핑 될
-									json 객체명 선택
+									<span class="ds-tag-value">&nbsp;data-mapping</span>&#9;데이터 매핑 될 JSON 객체명
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-no</span>&#9;json 객체의 고유
-									No 선택
+									<span class="ds-tag-value">&nbsp;data-no</span>&#9;JSON 객체 고유
+									넘버 선택
 								</p>
 							</div>
 						</div>
-
 						<!-- 컴포넌트 뷰어 -->
 						<div class="phone2">
 							<div>

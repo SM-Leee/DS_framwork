@@ -9,90 +9,90 @@
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">layout</div>
+				<div class="tutorial-navi-title">레이아웃</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="layout">basic layout</a></li>
-				<li class="sub-navi"><a href="header">header</a></li>
-				<li class="sub-navi"><a href="navigator">navigator</a></li>
-				<li class="sub-navi"><a href="footer">footer</a></li>
+				<li class="sub-navi"><a href="layout">레이아웃</a></li>
+				<li class="sub-navi"><a href="header">Header</a></li>
+				<li class="sub-navi"><a href="navigator">Navigator</a></li>
+				<li class="sub-navi"><a href="footer">Footer</a></li>
 			</ul>
 		</li>
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">input</div>
+				<div class="tutorial-navi-title">텍스트박스</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="input">basic input</a></li>
-				<li class="sub-navi"><a href="numberinput">number input</a></li>
-				<li class="sub-navi"><a href="textareainput">textArea input</a></li>
-			</ul>
-		</li>
-		
-		<li class="">
-			<div class="tutorial-navi-index">
-				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">picker</div>
-				<div class="tutorial-navi-arrow">
-					<i class="icon fas fa-chevron-right"></i>
-				</div>
-			</div>
-			<ul class="sub-navis">
-				<li class="sub-navi"><a href="picker">dropdown picker</a></li>
-				<li class="sub-navi"><a href="periodpicker">period picker</a></li>
-				<li class="sub-navi"><a href="datepicker">date picker</a></li>
+				<li class="sub-navi"><a href="input">기본텍스트박스</a></li>
+				<li class="sub-navi"><a href="numberinput">숫자텍스트박스</a></li>
+				<li class="sub-navi"><a href="textareainput">멀티라인</a></li>
 			</ul>
 		</li>
 		
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">button</div>
+				<div class="tutorial-navi-title">피커</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="button">Basic Button</a></li>
-				<li class="sub-navi"><a href="radiobutton">Radio Button</a></li>
-				<li class="sub-navi"><a href="togglebutton">Toggle Button</a></li>
-				<li class="sub-navi"><a href="staticbutton">Static Button</a></li>
+				<li class="sub-navi"><a href="picker">드롭다운피커</a></li>
+				<li class="sub-navi"><a href="datepicker">날짜피커</a></li>
+				<li class="sub-navi"><a href="periodpicker">기간피커</a></li>
 			</ul>
 		</li>
 		
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">cardlist</div>
+				<div class="tutorial-navi-title">버튼</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="cardlist">Cardlist</a></li>
+				<li class="sub-navi"><a href="button">기본 버튼</a></li>
+				<li class="sub-navi"><a href="radiobutton">라디오 버튼</a></li>
+				<li class="sub-navi"><a href="togglebutton">스위치 버튼</a></li>
+				<li class="sub-navi"><a href="staticbutton">스태틱 버튼</a></li>
 			</ul>
 		</li>
 		
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">chart</div>
+				<div class="tutorial-navi-title">리스트</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="chart">Pie Chart</a></li>
-				<li class="sub-navi"><a href="radarchart">Radar Chart</a></li>
-				<li class="sub-navi"><a href="linechart">Line Chart</a></li>
-				<li class="sub-navi"><a href="barchart">Bar Chart</a></li>
+				<li class="sub-navi"><a href="cardlist">카드리스트</a></li>
+			</ul>
+		</li>
+		
+		<li class="">
+			<div class="tutorial-navi-index">
+				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
+				<div class="tutorial-navi-title">차트</div>
+				<div class="tutorial-navi-arrow">
+					<i class="icon fas fa-chevron-right"></i>
+				</div>
+			</div>
+			<ul class="sub-navis">
+				<li class="sub-navi"><a href="chart">원형 차트</a></li>
+				<li class="sub-navi"><a href="radarchart">방사형 차트</a></li>
+				<li class="sub-navi"><a href="linechart">영역형 차트</a></li>
+				<li class="sub-navi"><a href="barchart">막대 차트</a></li>
 			</ul>
 		</li>
 		
@@ -101,86 +101,75 @@
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">checkbox</div>
+				<div class="tutorial-navi-title">박스</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="checkbox">basic checkbox</a></li>
+				<li class="sub-navi"><a href="checkbox">체크 박스</a></li>
+				<li class="sub-navi"><a href="messagebox">메세지 박스</a></li>
 			</ul>
 		</li>
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">messagebox</div>
+				<div class="tutorial-navi-title">슬라이더</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="messagebox">messagebox</a></li>
+				<li class="sub-navi"><a href="rangeslider">슬라이더</a></li>
 			</ul>
 		</li>
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">rangeslider</div>
+				<div class="tutorial-navi-title">아코디언</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="rangeslider">rangeslider</a></li>
+				<li class="sub-navi"><a href="accordion">아코디언</a></li>
 			</ul>
 		</li>
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">accordion</div>
+				<div class="tutorial-navi-title">데이터 테이블</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="accordion">accordion</a></li>
+				<li class="sub-navi"><a href="datatable">데이터 테이블</a></li>
 			</ul>
 		</li>
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">datatable</div>
+				<div class="tutorial-navi-title">뷰</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="datatable">datatable</a></li>
+				<li class="sub-navi"><a href="imageview">이미지 뷰</a></li>
+				<li class="sub-navi"><a href="statusview">스태틱 뷰</a></li>
 			</ul>
 		</li>
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">view</div>
+				<div class="tutorial-navi-title">아이콘로더</div>
 				<div class="tutorial-navi-arrow">
 					<i class="icon fas fa-chevron-right"></i>
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="imageview">imageview</a></li>
-				<li class="sub-navi"><a href="statusview">statusview</a></li>
-			</ul>
-		</li>
-		<li class="">
-			<div class="tutorial-navi-index">
-				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">iconloader</div>
-				<div class="tutorial-navi-arrow">
-					<i class="icon fas fa-chevron-right"></i>
-				</div>
-			</div>
-			<ul class="sub-navis">
-				<li class="sub-navi"><a href="iconloader">iconloader</a></li>
+				<li class="sub-navi"><a href="iconloader">아이콘로더</a></li>
 			</ul>
 		</li>
 		
@@ -202,7 +191,7 @@
 			<a href="tutorial_exam">
 				<div class="tutorial-navi-index">
 					<div class="tutorial-navi-icon"><i class="icon far fa-edit"></i></div>
-					<div class="tutorial-navi-title">simple editor</div>
+					<div class="tutorial-navi-title">에디터</div>
 					<div class="tutorial-navi-arrow"></div>
 				</div>
 			</a>

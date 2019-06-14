@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Chart</h1>
+					<h1>막대 차트</h1>
 					<div class="tutorial-content-path">
 						<p>Component > BarChart</p>
 					</div>
@@ -84,16 +84,17 @@ const exampleData = [
 		{no : 40, company : 'D', good : 'pc', count : 9, price : 1500000, date : '2018-11-01', category : 'etc',desc : ''} ];</textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-class">&nbsp;id</span>&#9; circle로 시작되는데 뒷부분은 다르게 해야됨 </p>
+								<p><span class="ds-tag-class">&nbsp;id</span>&#9; bar 숫자 형식 고유 id 지정</p>
 								<br/>
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑</p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-standard</span>&#9; 맵핑된 데이터의 분류할 기준 </p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-calc-detail</span>&#9;분류된 데이터를 비교할 기준</p>
-								<p>&#9;하나의 데이터 말고 두개의 데이터를 곱하거나 더하여 기준을 정할 수도 있다 (예 : mul price count)</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-standard</span>&#9;Column별 분류 기준 선택</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-calc-detail</span>&#9;상세 비교 기준 선택</p>
+								<p>&#9;횟수(Count), 곱(Mul : 'mul column1 column2'), 합(Add) 형식의 비교 조건 설정 </p>
+
 								<br/>
-								<p>&nbsp;예시)<span class="ds-tag-class">&nbsp;ds-standard&nbsp;</span>을 분류하여 <span class="ds-tag-class">&nbsp;ds-calc-detail&nbsp;</span>로 비교하여라</p>
+								<p>&#8251;<span class="ds-tag-class">&nbsp;ds-standard&nbsp;</span> 분류 후<span class="ds-tag-class">&nbsp; ds-calc-detail&nbsp;</span> 값으로 비교합니다.</p>
 							</div>
-						<h3>&nbsp;x 축 기준 변경</h3>
+						<h3>&nbsp;x축 기준 변경</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <div class="ds-ui-chart bar" id="bar2"
@@ -101,9 +102,9 @@ const exampleData = [
 	data-ds-standard='category' data-ds-calc-detail='mul price count'></div></textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-x</span>&#9;새로운 x 축 기준을 지정하여줌. </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-x</span>&#9;x축 기준 설정</p>
 							</div>
-							<h3>&nbsp;단어 변경</h3>
+							<h3>&nbsp;Column(Value) 값 변경</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id='codemirror2'>
 <div class="ds-ui-chart bar" id="bar3" data-ds-binding='exampleData'
@@ -128,9 +129,9 @@ const option = [
 			   ]</textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-transfer-naming</span>&#9;특정 단어들을 원하는데로 변경하고 싶을때 쓰인다.</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-transfer-naming</span>&#9;Column(Value) 값 변경 할 JSON 객체 선택</p>
 							</div>
-							<h3>&nbsp;범례 위치</h3>
+							<h3>&nbsp;범례</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id='codemirror3'>
 <div class="ds-ui-chart bar" id="bar4" data-ds-binding='exampleData'
@@ -138,8 +139,8 @@ const option = [
 	data-ds-calc-detail='mul price count' data-ds-index-position="top"></div></textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-index-position</span>&#9;범례의 위치를 사용자가 변경할 수 있다(기본값 : bottom)</p>
-								<p>&nbsp; 값 : none / bottom / top / right / left </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-index-position</span>&#9;사용자 범례 위치 선택 (기본값 : bottom)</p>
+								<p>&nbsp; 설정값  none / bottom / top / right / left </p>
 							</div>
 						</div>
 

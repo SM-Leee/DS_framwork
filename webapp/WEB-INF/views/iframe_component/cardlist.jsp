@@ -12,13 +12,12 @@
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 	<div class="App">
-		<div class='ds-ui-cardlistAll' data-mapping='exampleData'
-			data-category='category' data-setting='true'
+		<div class='ds-ui-cardlistAllBox' data-ds-mapping='exampleData'
+			data-ds-category='category' data-setting='true'
 			data-icon='status modify remove'>
-			<div data-detail='date'></div>
-			<div data-detail='company'></div>
-			<!-- icon : krw  dollor -->
-			<div data-detail='price' data-icon='dollor'></div>
+			<div data-ds-detail='date'></div>
+			<div data-ds-detail='company'></div>
+			<div data-ds-detail='price'></div>
 		</div>
 
 	</div>

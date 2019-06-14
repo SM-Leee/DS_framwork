@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Button</h1>
+					<h1>라디오 버튼</h1>
 					<div class="tutorial-content-path">
 						<p>Component > RadioButton</p>
 					</div>
@@ -57,14 +57,14 @@
 								</p>
 								<p>
 									<span class="ds-tag-value">&nbsp;data-location</span>&#9;라디오 버튼
-									lable 위치 (기본값 : left)
+									레이블 위치 선택 (기본값 : left)
 								</p>
 								<p>
 									<span class="ds-tag-value">&nbsp;data-disabled</span>&#9;라디오 버튼
-									disabled 선택
+									활성화 유무 선택
 								</p>
 							</div>
-							<h3>&nbsp;Label 없는 radio버튼</h3>
+							<h3>&nbsp;레이블 없는 라디오 버튼</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <!-- #2 -->
@@ -78,7 +78,7 @@
 </div></textarea>
     						</div>
     						<div class="tutorial-component-description">
-         						<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;라디오 버튼 label 유무 선택</p>
+         						<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;레이블 유무 선택</p>
     						</div>
 						</div>
 

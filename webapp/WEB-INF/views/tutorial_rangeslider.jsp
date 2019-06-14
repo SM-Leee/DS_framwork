@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Rangeslider</h1>
+					<h1>슬라이더</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Rangeslider</p>
 					</div>
@@ -47,12 +47,12 @@
     					</div>
  						<div class="tutorial-component-description">
         					<p><span class="ds-tag-value">&nbsp;ds-ui-rangeslider</span>&#9;클래스 명칭</p>
-        					<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;Range Slider label 입력 </p>
-        					<p><span class="ds-tag-value">&nbsp;data-value</span>&#9;Range Slider 최소값, 현재값, 최대값 지정</p>
-        					<p><span class="ds-tag-value">&nbsp;data-step</span>&#9;Range Slider 증감값 지정 (기본값 : 1) </p>
-        					<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;Range Slider disabled 선택</p>
+        					<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;슬라이더 레이블 지정</p>
+        					<p><span class="ds-tag-value">&nbsp;data-value</span>&#9;최소값, 현재값, 최대값 지정</p>
+        					<p><span class="ds-tag-value">&nbsp;data-step</span>&#9;증감값 지정 (기본값 : 1) </p>
+        					<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;슬라이더 활성화 유무 선택</p>
     					</div>
-    					<h3>&nbsp;Label 없는 Range Slider</h3>
+    					<h3>&nbsp;레이블 없는 슬라이더</h3>
     					<div class="tutorial-component-source">
         					<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <!-- #2 -->
@@ -63,7 +63,7 @@
 	data-disabled='true'></div></textarea>
 						</div>
         				<div class="tutorial-component-description">
-         					<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;Range Slider label 미입력 </p>
+         					<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;슬라이더 레이블 유무 선택 </p>
     					</div>
 					</div>
 

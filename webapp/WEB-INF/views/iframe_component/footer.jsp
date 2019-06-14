@@ -18,36 +18,36 @@
 		<div class="contents"></div>
 
 
-		<div class="footer" data-mapping='exampleData'>
+		<div class="footer" data-ds-binding='exampleData'>
 			<div class="ds-ui-footerBox">
 				<div data-color='#00AAF0' data-direction='horizen'>
 					<p>A 회사 pc 총 수입 개수</p>
-					<p data-standard='A tv plus' data-calc-detail='count'></p>
+					<p data-ds-standard='A tv plus' data-ds-calc-detail='count'></p>
 				</div>
 				<div data-color='#E74D3A'>
 					<p>총 수출 개수</p>
-					<p data-standard='etc' data-calc-detail='count'></p>
+					<p data-ds-standard='etc' data-ds-calc-detail='count'></p>
 				</div>
 			</div>
 
 			<div class="ds-ui-footerBox">
 				<div data-color='#6498B5' data-direction='horizen'>
 					<p>A 회사 총 수입 개수</p>
-					<p data-standard='A plus' data-calc-detail='count'></p>
+					<p data-ds-standard='A plus' data-ds-calc-detail='count'></p>
 				</div>
 			</div>
 			<div class="ds-ui-footerBox">
 				<div data-color='#6498B5' data-direction='vertical'>
 					<p>C 회사 수출 금액</p>
-					<p data-standard='D plus' data-calc-detail='add count'></p>
+					<p data-ds-standard='D plus' data-ds-calc-detail='add count'></p>
 				</div>
 				<div data-color='#E74D3A'>
 					<p>총 수출 금액</p>
-					<p data-standard='minus' data-calc-detail='mul price count'></p>
+					<p data-ds-standard='minus' data-ds-calc-detail='mul price count'></p>
 				</div>
 				<div data-color='#ABACB2'>
 					<p>총 수입 금액</p>
-					<p data-standard='plus' data-calc-detail='mul price count'></p>
+					<p data-ds-standard='plus' data-ds-calc-detail='mul price count'></p>
 				</div>
 			</div>
 		</div>

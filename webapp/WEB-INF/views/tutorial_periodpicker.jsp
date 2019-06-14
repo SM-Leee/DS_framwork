@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Picker</h1>
+					<h1>기간피커</h1>
 					<div class="tutorial-content-path">
 						<p>Component >Period Picker</p>
 					</div>
@@ -36,22 +36,21 @@
 							<h3>&nbsp;기본 사용법</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- default datePicker -->
 <div class='period-wrap'>
-	<div class="periodpicker" data-ds-language="en"></div>
+	<div class="ds-ui-periodpicker" data-ds-language="en"></div>
 </div></textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;date</span>&#9;클래스 이름 명칭
+									<span class="ds-tag-value">&nbsp;ds-ui-periodpicker</span>&#9;클래스 명칭
 								</p>
 							</div>
 							<h3>&nbsp;다국어 지원</h3>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;data-ds-language</span>&#9;다국어가
-									필요할 시 사용하는 옵션(default : 한국어)
+									<span class="ds-tag-value">&nbsp;data-ds-language</span>&#9;다국어 지원(기본값 : 한국어)
 								</p>
+								<p>&#9;설정값 en</p>
 							</div>
 						</div>
 

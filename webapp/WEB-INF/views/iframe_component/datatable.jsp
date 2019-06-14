@@ -14,12 +14,13 @@
 	<div class="App">
 
          <div 
+         	id="ds-ui-data-table"
+            class="ds-ui-data-table"
             data-ds-binding="exampleData" 
             data-ds-column-header="company"
             data-ds-customizing="customize_Naming"
-            data-ui-height="70%"
-            id="data-table" 
-            class="data-table">
+            data-ui-height="60%"
+            data-search="true">
          </div>
 	</div>
 

@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>iconloader</h1>
+					<h1>아이콘 로더</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Icon Loader</p>
 					</div>
@@ -47,12 +47,10 @@
 								</p>
 								<p>
 									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;아이콘 선택
-									(미지정시 Default 아이콘)
 								</p>
+								<p>&#8251; 미지정시 기본 아이콘 </p>
 							</div>
-							<!-- ----------------------------------------------- -->
-
-							<h3>&nbsp;로딩 이미지</h3>
+							<h3>&nbsp;새로고침 아이콘</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <!-- #2 -->
@@ -61,12 +59,12 @@
 							<div class="tutorial-component-description">
 								<p>
 									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;새로고침 아이콘
-									(기본 시간 : 0.5s)
+									(기본 시간 : 0.5초)
 								</p>
 							</div>
 							<!-- ----------------------------------------------- -->
 
-							<h3>&nbsp;창 전환 이미지</h3>
+							<h3>&nbsp;링크 아이콘</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror2">
 <!-- #3 -->
@@ -75,15 +73,15 @@
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;창 전환 아이콘
+									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;링크 아이콘
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-location</span>&#9;전환 링크
+									<span class="ds-tag-value">&nbsp;data-location</span>&#9;링크 주소
 									지정 (미지정시 새로고침)
 								</p>
 							</div>
 							<!-- ----------------------------------------------- -->
-							<h3>&nbsp;삭제 이미지</h3>
+							<h3>&nbsp;삭제 아이콘</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror3">
 <!-- #4 -->
@@ -95,7 +93,6 @@
 								</p>
 							</div>
 						</div>
-
 						<!-- 컴포넌트 뷰어 -->
 						<div class="phone2">
 							<div>

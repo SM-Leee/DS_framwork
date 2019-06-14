@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Input</h1>
+					<h1>숫자텍스트박스</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Number Input</p>
 					</div>
@@ -38,16 +38,16 @@
 <div class="ds-ui-input onlynumber"></div></textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;ds-ui-input onlynumber</span>&#9;숫자만 입력 가능 클래스 이름 명칭</p>
+								<p><span class="ds-tag-value">&nbsp;ds-ui-input onlynumber</span>&#9;클래스 명칭</p>
 							</div>
 						
-						<h3>&nbsp;label 추가</h3>
+						<h3>&nbsp;레이블 추가</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <div class="ds-ui-input onlynumber" data-ds-label="수량"></div></textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;label이 필요할 시 사용하는 옵션</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;숫자텍스트 박스 레이블 유무 선택</p>
 							</div>
 						<h3>&nbsp;달러표시</h3>
 							<div class="tutorial-component-source">
@@ -82,8 +82,8 @@ const exampleData = [
 					]</textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑 </p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;맵핑된 데이터 column 맵핑 </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명 </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;Column 선택 </p>
 							</div>
 						
 						</div>

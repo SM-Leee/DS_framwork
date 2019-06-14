@@ -12,11 +12,15 @@
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 		<div class="App">
-			
+			<!-- <h2 style="text-align:left">기본</h2> -->
 			<div class="ds-ui-input"></div>
+			<!-- <h2 style="text-align:left">가로 크기별</h2> -->
 			<div class="ds-ui-input" data-ds-rows="2"></div>
+			<!-- <h2 style="text-align:left">레이블 추가</h2> -->
 			<div class="ds-ui-input" data-ds-label="거래처"></div>
+			<!-- <h2 style="text-align:left">가로 크기별 레이블 추가</h2> -->
 			<div class="ds-ui-input" data-ds-rows="2" data-ds-label="거래처"></div>
+			<!-- <h2 style="text-align:left">데이터 바인딩</h2> -->
 			<div class="ds-ui-input" data-ds-rows="2" data-ds-label="거래처"
 				data-ds-binding='exampleData' data-ds-form="company"></div>
 			<!--

@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Chart</h1>
+					<h1>영역형 차트</h1>
 					<div class="tutorial-content-path">
 						<p>Component > LineChart</p>
 					</div>
@@ -85,20 +85,19 @@ const exampleData = [
 							</div>
 							
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;line chart의 경우에는 제목을 클릭 했을때 데이터를 변경할 수 있다.</span></p>
+								<!-- <p><span class="ds-tag-value">&nbsp;line chart의 경우에는 제목을 클릭 했을때 데이터를 변경할 수 있다.</span></p>
+								<br/> -->
+								<p><span class="ds-tag-class">&nbsp;id</span>&#9; line 숫자 형식 고유 id 지정</p>
 								<br/>
-								<p><span class="ds-tag-class">&nbsp;id</span>&#9; line로 시작되는데 뒷부분은 다르게 해야됨 </p>
-								<br/>
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑</p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-standard</span>&#9; 맵핑된 데이터의 분류할 기준 </p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-substandard</span>&#9; 분류된 기준을 한번더 분류 해준다.</p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-x</span>&#9;x 축에 들어가야될 데이터</p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-calc-detail</span>&#9;분류된 데이터를 비교할 기준</p>
-								<p>&#9;하나의 데이터 말고 두개의 데이터를 곱하거나 더하여 기준을 정할 수도 있다 (예 : mul price count)</p>
-								<br/>
-								<p>&nbsp;예시)<span class="ds-tag-class">&nbsp;ds-standard&nbsp;</span>을 분류하여 <span class="ds-tag-class">&nbsp;ds-substandard&nbsp;</span>로 한번더 분류 해서<span class="ds-tag-class">&nbsp;ds-calc-detail&nbsp;</span>로 비교하여라</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-standard</span>&#9;Column별 분류 기준 1차 선택</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-substandard</span>&#9;Column별 분류 기준 2차 선택</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-x</span>&#9;x축 기준 설정</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-calc-detail</span>&#9;상세 비교 기준 선택</p>
+								<p>&#9;횟수(Count), 곱(Mul : 'mul column1 column2'), 합(Add) 형식의 비교 조건 설정 </p>
+								<p>&#8251;<span class="ds-tag-class">&nbsp;ds-standard&nbsp;</span> 1차 분류 후 <span class="ds-tag-class">&nbsp;ds-substandard&nbsp;</span> 2차 재분류 <span class="ds-tag-class">&nbsp; ds-calc-detail&nbsp;</span> 값을 비교합니다.</p>
 							</div>
-							<h3>&nbsp;단어 변경</h3>
+							<h3>&nbsp;Column(Value) 값 변경</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id='codemirror1'>
 <div class='ds-ui-chart line' id='line2' data-ds-binding='exampleData'
@@ -124,7 +123,7 @@ const option = [
 			   ]</textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-transfer-naming</span>&#9;특정 단어들을 원하는데로 변경하고 싶을때 쓰인다.</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-transfer-naming</span>&#9;Column(Value) 값 변경 할 JSON 객체 선택</p>
 							</div>
 						</div>
 						<!-- 컴포넌트 뷰어 -->	 

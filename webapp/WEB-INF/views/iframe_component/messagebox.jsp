@@ -13,17 +13,17 @@
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 		<div class="App">
 			<h2>alert</h2>
-         <button id="btn-basic" class="ds-ui-button ds-ui-msgbox">alert 메세지박스</button><br><br>
-         <button id="btn-basic2" class="ds-ui-button ds-ui-msgbox">alert 메세지박스2</button><br><br>
-         <button id="btn-basic3" class="ds-ui-button ds-ui-msgbox">alert 메세지박스(주의사항)</button><br><br>
+         <button id="btn-basic" class="ds-ui-button">alert 메세지박스</button><br><br>
+         <button id="btn-basic2" class="ds-ui-button">alert 메세지박스2</button><br><br>
+         <button id="btn-basic3" class="ds-ui-button">alert 메세지박스(주의사항)</button><br><br>
          <br><hr>
          <h2>confirm</h2>
-         <button id="btn-basic4" class="ds-ui-button ds-ui-msgbox">confirm 메세지박스</button><br><br>
-         <button id="btn-basic5" class="ds-ui-button ds-ui-msgbox">confirm 메세지박스(주의사항)</button><br><br>
+         <button id="btn-basic4" class="ds-ui-button">confirm 메세지박스</button><br><br>
+         <button id="btn-basic5" class="ds-ui-button">confirm 메세지박스(주의사항)</button><br><br>
          <br><hr>
          <h2>error</h2>
-         <button id="btn-basic6" class="ds-ui-button ds-ui-msgbox">error 메세지박스</button><br><br>
-         <button id="btn-basic7" class="ds-ui-button ds-ui-msgbox">error 메세지박스(자세히)</button><br><br>
+         <button id="btn-basic6" class="ds-ui-button">error 메세지박스</button><br><br>
+         <button id="btn-basic7" class="ds-ui-button">error 메세지박스(자세히)</button><br><br>
          <br><hr>
 		</div>
 

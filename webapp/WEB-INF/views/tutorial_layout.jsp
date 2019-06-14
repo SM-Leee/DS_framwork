@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Layout</h1>
+					<h1>레이아웃</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Layout</p>
 					</div>

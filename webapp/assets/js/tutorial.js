@@ -14,49 +14,74 @@ $(document).ready(function(){
 				'transform':'rotate(90deg)'
 			});
 			$(this).next().slideDown();
-        } else {
+		} else {
 			$(this).next().slideUp();
 			$(this).children(".tutorial-navi-arrow").css({
 				'transform':'rotate(0deg)'
 			});
-        }
+		}
 	})
-	
+
 	/* sourcecode number line 세팅 및 자동 스크롤 기능 */
 	/* 여기는 tutorial 페이지 */
-    $('.tutorial-source-line').val(line)
-    $('.tutorial-sourcecode').scroll(function(e){
-        let temp = $(this).scrollTop();
-        $(this).siblings('.tutorial-source-line').scrollTop(temp);
+	$('.tutorial-source-line').val(line)
+	$('.tutorial-sourcecode').scroll(function(e){
+		let temp = $(this).scrollTop();
+		$(this).siblings('.tutorial-source-line').scrollTop(temp);
 	})
 	/* 여기는 edirot 페이지 */
 	$('.editor-source-line').val(line)
-    $('.editor-sourcecode').scroll(function(e){
-        let temp = $(this).scrollTop();
-        $(this).siblings('.editor-source-line').scrollTop(temp);
+	$('.editor-sourcecode').scroll(function(e){
+		let temp = $(this).scrollTop();
+		$(this).siblings('.editor-source-line').scrollTop(temp);
 	})
-	
+
 	/* editor textarea 변경 기능 */
 	$('.editor-code').click(function(){
-//		console.log($(this).text())
 		let select = '.editor-sourcecode[name='+$(this).text()+']';
-		console.log(select)
 		$('.CodeMirror').css({'display':'none'})
 		$('.editor-sourcecode[name='+$(this).text()+'] + div').css({'display':'inline-block'})
-		$(".editor-code").css({"backgroud-color":"#DBE0E3"})
-		$(this).css({"background-color":"gray"})
+		$('.editor-html').css({"background":"url(./assets/images/gray-html.svg) no-repeat",
+			"background-size":"contain"})
+			$('.editor-css').css({"background":"url(./assets/images/gray-css.svg) no-repeat",
+				"background-size":"contain"})
+				$('.editor-js').css({"background":"url(./assets/images/gray-js.svg) no-repeat",
+					"background-size":"contain"})
+					if($(this).hasClass('editor-html')){
+						$('.editor-html').css({"background":"url(./assets/images/html.svg) no-repeat",
+							"background-size":"contain"})
+					}
+		if($(this).hasClass('editor-css')){
+			$('.editor-css').css({"background":"url(./assets/images/css.svg) no-repeat",
+				"background-size":"contain"})
+		}
+		if($(this).hasClass('editor-js')){
+			$('.editor-js').css({"background":"url(./assets/images/js.svg) no-repeat",
+				"background-size":"contain"})
+		}
 	})
-	
+
+	/* result 버튼 툴렀을때 팝업 창 띄우기 */
+	runClick();
+	/* popup 창 닫기 기능 */
+	$('#frame-popup .popup-close').click(function(){
+		$("#frame-popup").css({'display':'none'})
+		$('.editor-result').css({"background" : "url(./assets/images/play.svg) no-repeat 92% 50%",
+			"background-size":"20px"});
+		$('.editor-result').css({"background-color":"white"})
+		$("#popupframe").remove();
+		/* result 버튼 툴렀을때 팝업 창 띄우기 */
+		runClick();
+	})
+})
+
+const runClick = function(){
 	/* result 버튼 툴렀을때 팝업 창 띄우기 */
 	$("#tutorial-contents.editor .button-box .editor-result").click(function(){
 		let editor_html = htmleditor.getValue();
 		let editor_css = csseditor.getValue();
 		let editor_js = jseditor.getValue();
-		console.log(htmleditor.getValue(),'---',csseditor.getValue(),'---',jseditor.getValue())
-		/*let editor_html = $('.editor-source-html').val()
-		let editor_css = $('.editor-source-css').val()
-		let editor_js = $('.editor-source-js').val()*/
-		
+
 		$.ajax({
 			type: "POST",
 			url:"ajax_test",
@@ -68,8 +93,7 @@ $(document).ready(function(){
 			dataType: "text",
 			success: function(data){
 				console.log("success");
-				console.log(data);
-				
+
 			},
 			error: function(){
 				console.log("failure");
@@ -79,11 +103,10 @@ $(document).ready(function(){
 		$("#frame-popup").append("<iframe id='popupframe' src='component/popup' frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=yes vspace=0>ballboy test</iframe>")
 
 		$("#frame-popup").css({'display':'inline-block'})
+
+		$(this).css({"background":"url(./assets/images/pause.svg) no-repeat 92% 50%",
+			"background-size":"20px"})
+			$(this).css({"background-color":"pink"})
+			$(this).off('click');
 	})
-	
-	/* popup 창 닫기 기능 */
-	$('#frame-popup .popup-titlebar .popup-close').click(function(){
-		$("#frame-popup").css({'display':'none'})
-		$("#popupframe").remove();
-	})
-})
+};

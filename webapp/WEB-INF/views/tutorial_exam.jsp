@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <html>
 <head>
 <title></title>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/tutorial.css">
 <!-- <link rel="stylesheet" type="text/css" href="./assets/css/default.css"> -->
@@ -24,11 +26,15 @@
 
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents" class="editor">
+				<h2>&nbsp;에디터</h2>
+				<div class="editor-button-title-box">
 				<div class="button-box">
 					<div class="editor-button editor-code editor-html">HTML</div>
 					<div class="editor-button editor-code editor-css">CSS</div>
 					<div class="editor-button editor-code editor-js">JS</div>
-					<div class="editor-button editor-result">result</div>
+						<div class="editor-result">Run</div>
+				</div>
+				
 				</div>
 				<div class="editor-component-source">
 					<textarea name="HTML"
@@ -42,11 +48,14 @@
 						id="javascript0"></textarea>
 				</div>
 			</div>
-
+		
 			<div id="frame-popup">
-				<div class="popup-titlebar">
-					<p>title</p>
-					<div class="popup-close">X</div>
+				<div class="popup-close"></div>
+				<div class="editor-phone">
+				
+				</div>
+				<div>
+				
 				</div>
 			</div>
 

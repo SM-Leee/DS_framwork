@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Accordion</h1>
+					<h1>아코디언 메뉴</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Accordion</p>
 					</div>
@@ -36,8 +36,7 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
-<button class="ds-ui-accordion">Accordion#1</button>
+<button class="ds-ui-accordion">아코디언 메뉴 #1</button>
 <div class="accordion-text">
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum enim, laudantium dolore
@@ -53,11 +52,10 @@
 									명칭
 								</p>
 							</div>
-							<h3>&nbsp;disabled Accordion</h3>
+							<h3>&nbsp;비활성화 아코디언</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<!-- #2 -->
-<button class="ds-ui-accordion" data-disabled='true'>Accordion#1 - 비활성화</button>
+<button class="ds-ui-accordion" data-disabled='true'>아코디언 메뉴 #1 - 비활성화</button>
 <div class="accordion-text">
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ex incidunt. At debitis
@@ -67,13 +65,12 @@
 </div></textarea>
     						</div>
         					<div class="tutorial-component-description">
-         						<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;Accordion disabled 선택 </p>
+         						<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;아코디언 활성화 유무 선택</p>
     						</div>
-    						<h3>&nbsp;selected Accordion</h3>
+    						<h3>&nbsp;선택 상태 아코디언</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror2">
-<!-- #3 -->
-<button class="ds-ui-accordion" data-line='3' data-select='true'>Accordion#2</button>
+<button class="ds-ui-accordion" data-line='3' data-select='true'>아코디언#2</button>
 <div class="accordion-text">
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
@@ -83,8 +80,8 @@
 </div></textarea>
     						</div>
         					<div class="tutorial-component-description">
-        						<p><span class="ds-tag-value">&nbsp;data-line</span>&#9;Accordion 말줄임표 라인 수 지정 (기본값 : 0) </p>
-         						<p><span class="ds-tag-value">&nbsp;data-select</span>&#9;Accordion 선택 유무 지정</p>
+        						<p><span class="ds-tag-value">&nbsp;data-line</span>&#9;아코디언 말줄임표 라인 수 지정 (기본값 : 0)</p>
+         						<p><span class="ds-tag-value">&nbsp;data-select</span>&#9;아코디언 선택 상태 선택</p>
     						</div>
 						</div>
 

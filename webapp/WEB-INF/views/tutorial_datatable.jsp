@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>DataTable</h1>
+					<h1>데이터 테이블</h1>
 					<div class="tutorial-content-path">
 						<p>Component > DataTable</p>
 					</div>
@@ -35,10 +35,10 @@
 						<h3>&nbsp;기본</h3>
 						<div class="tutorial-component-source">
     						<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- default datePicker -->
-<div id="data-table" class="data-table" data-ui-height="70%"
+<div id="ds-ui-data-table" class="ds-ui-data-table" data-ui-height="60%"
 	data-ds-binding="exampleData" data-ds-column-header="company"
-	data-ds-customizing="customize_Naming"></div></textarea>
+	data-ds-customizing="customize_Naming"
+	data-search="true"></div></textarea>
 						</div>
 						<div class="tutorial-component-source">
     						<textarea class="tutorial-sourcecode javascript" id="javascript0">
@@ -93,11 +93,12 @@ const exampleData =
     					</div>
 
 							<div class="tutorial-component-description">
- 								<p><span class="ds-tag-value">&nbsp;data-table</span>&#9;아이디 및 클래스 이름 명칭</p>
- 								<p><span class="ds-tag-value">&nbsp;data-ui-height</span>&#9;테이블 크기를 지정하고 싶을 때 default: 70%</p>
-    							<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑</p>
-							    <p><span class="ds-tag-value">&nbsp;data-ds-column-header</span>&#9;데이터 바인딩 된 json 에서 고정위치로 사용될 column 맵핑</p>
-							    <p><span class="ds-tag-value">&nbsp;data-ds-customizing</span>&#9;데이터 바인딩 된 json 에서 컬럼들의 이름을 변경하고 싶을 때 사용하는 옵션</p>
+ 								<p><span class="ds-tag-value">&nbsp;ds-ui-data-table</span>&#9;아이디, 클래스 명칭</p>
+ 								<p><span class="ds-tag-value">&nbsp;data-ui-height</span>&#9;데이블 높이 지정 (기본값 : 70%)</p>
+    							<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명</p>
+							    <p><span class="ds-tag-value">&nbsp;data-ds-column-header</span>&#9;기준 Row Column 선택</p>
+							    <p><span class="ds-tag-value">&nbsp;data-ds-customizing</span>&#9;Column 별칭 부여</p>
+							    <p><span class="ds-tag-value">&nbsp;data-search</span>&#9;검색 기능 유무 선택</p>
 							</div>
 						</div>
 

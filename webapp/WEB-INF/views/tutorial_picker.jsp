@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Picker</h1>
+					<h1>드롭다운피커</h1>
 					<div class="tutorial-content-path">
 						<p>Component > DropdownPicker</p>
 					</div>
@@ -44,9 +44,9 @@
 							</div>
 
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;ds-ui-drpodown-picker</span>&#9;클래스 이름 명칭</p>
+								<p><span class="ds-tag-value">&nbsp;ds-ui-drpodown-picker</span>&#9;클래스 명칭</p>
 							</div>
-							<h3>&nbsp;label 추가</h3>
+							<h3>&nbsp;레이블 추가</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <select class="ds-ui-dropdown-picker" data-ds-label="목 차">
@@ -58,7 +58,7 @@
 							</div>
 
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;label이 필요할 시 사용하는 옵션</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;드롭다운피커 레이블 유무 선택</p>
 							</div>
 							<h3>&nbsp;가로 크기별</h3>
 							<div class="tutorial-component-source">

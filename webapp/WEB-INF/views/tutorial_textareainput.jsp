@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Input</h1>
+					<h1>멀티라인</h1>
 					<div class="tutorial-content-path">
 						<p>Component > TextArea Input</p>
 					</div>
@@ -40,10 +40,10 @@
 							</div>
 
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-rows</span>&#9;textArea 만들기 위한 기본 가로크기</p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-column</span>&#9;textArea 만들기 위한 기본 세로크기</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-rows</span>&#9;멀티라인 가로크기</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-column</span>&#9;멀티라인 세로크기</p>
 							</div>
-							<h3>&nbsp;label 추가</h3>
+							<h3>&nbsp;레이블 추가</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <div class="ds-ui-input" data-ds-label="상세보기"
@@ -51,7 +51,7 @@
 							</div>
 
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;label이 필요할 시 사용하는 옵션</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;멀티라인 레이블 유무 선택 </p>
 							</div>
 							<h3>&nbsp;데이터 바인딩</h3>
 							<div class="tutorial-component-source">
@@ -78,8 +78,8 @@ const exampleData = [
 							
 							
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑 </p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;맵핑된 데이터 column 맵핑 </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명</p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;Column 선택</p>
 							</div>
 						</div>
 

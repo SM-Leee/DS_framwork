@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>CardList</h1>
+					<h1>카드리스트</h1>
 					<div class="tutorial-content-path">
 						<p>Component > CardList</p>
 					</div>
@@ -37,43 +37,43 @@
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
 <!-- #1 -->
-<div class='ds-ui-cardlistAll' data-mapping='exampleData'
-	data-category='company'>
-	<div data-detail='date'></div>
-	<div data-detail='company'></div>
-	<div data-detail='price'></div>
+<div class='ds-ui-cardlistAllBox' data-ds-mapping='exampleData'
+	data-ds-category='company'>
+	<div data-ds-detail='date'></div>
+	<div data-ds-detail='company'></div>
+	<div data-ds-detail='price'></div>
 </div></textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;ds-ui-cardlistAll</span>&#9;클래스
+									<span class="ds-tag-value">&nbsp;ds-ui-cardlistAllBox</span>&#9;클래스
 									명칭
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-mapping</span>&#9;매핑 될
-									json 객체명 선택
+									<span class="ds-tag-value">&nbsp;data-ds-mapping</span>&#9;데이터 매핑 될
+									JSON 객체명
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-category</span>&#9;색 지정
-									분류 column명 지정
+									<span class="ds-tag-value">&nbsp;data-ds-category</span>&#9;색 지정
+									비교 Column 선택
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-detail</span>&#9;매핑 될
-									column명 지정 (detail의 개수는 1~3개 지정 가능)
+									<span class="ds-tag-value">&nbsp;data-ds-detail</span>&#9;매핑 될 Column 명 지정
 								</p>
+								<p>&#8251; 설정 개수는 1~3개 가능합니다.</p>
 							</div>
 
 							<!-- ----------------------------------------------- -->
-							<h3>&nbsp;Cardlist Setting 기능</h3>
+							<h3>&nbsp;카드리스트 설정 기능</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
         <!-- #2 -->
-<div class='ds-ui-cardlistAll' data-mapping='exampleData'
-	data-category='company' data-setting='true'
+<div class='ds-ui-cardlistAllBox' data-ds-mapping='exampleData'
+	data-ds-category='company' data-setting='true'
 	data-icon='status modify remove'>
-        <div data-detail='date'></div>
-        <div data-detail='company'></div>
-        <div data-detail='price'></div>
+        <div data-ds-detail='date'></div>
+        <div data-ds-detail='company'></div>
+        <div data-ds-detail='price'></div>
 </div></textarea>
 							</div>
 							<div class="tutorial-component-source">
@@ -142,7 +142,7 @@ const exampleData = [{
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;data-setting</span>&#9;Cardlist
+									<span class="ds-tag-value">&nbsp;data-setting</span>&#9;카드리스트
 									상세보기, 수정, 삭제 기능 추가
 								</p>
 							</div>

@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Button</h1>
+					<h1>스위치 버튼</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Toggle Button</p>
 					</div>
@@ -47,7 +47,7 @@
 							</div>
 							<div class="tutorial-component-description">
 								<p>
-									<span class="ds-tag-value">&nbsp;toggle</span>&#9;클래스 이름 명칭
+									<span class="ds-tag-value">&nbsp;toggle</span>&#9;클래스 명칭
 								</p>
 								<p>
 									<span class="ds-tag-value">&nbsp;toggle--active</span>&#9;Toggle
@@ -55,7 +55,7 @@
 								</p>
 								<p>
 									<span class="ds-tag-value">&nbsp;data-ds-[on/off]</span>&#9;Toggle의
-									내용을 변경하는 옵션. (제한 : 글자 수 1~3자, default: ON/OFF)
+									내용을 변경하는 옵션. (제약조건 : 글자 수 1~3자, default: ON/OFF)
 								</p>
 							</div>
 						</div>

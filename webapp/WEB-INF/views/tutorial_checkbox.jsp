@@ -26,7 +26,7 @@
 
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>CheckBox</h1>
+					<h1>체크박스</h1>
 					<div class="tutorial-content-path">
 						<p>component > CheckBox</p>
 					</div>
@@ -51,10 +51,10 @@
        							<p><span class="ds-tag-value">&nbsp;ds-ui-checkbox</span>&#9;클래스 명칭</p>
         						<p><span class="ds-tag-value">&nbsp;data-checked</span>&#9;체크 박스 선택</p>
         						<p><span class="ds-tag-value">&nbsp;data-shape</span>&#9;체크 박스 모양 (기본값 : rectangle)</p>
-        						<p><span class="ds-tag-value">&nbsp;data-location</span>&#9;체크 박스 lable 위치 (기본값 : left)</p>
-        						<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;체크 박스 disabled 선택</p>
+        						<p><span class="ds-tag-value">&nbsp;data-location</span>&#9;체크 박스 레이블 위치 (기본값 : left)</p>
+        						<p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;체크 박스 활성화 선택</p>
     						</div>
-							<h3>&nbsp;Label 없는 체크 박스</h3>
+							<h3>&nbsp;레이블 없는 체크 박스</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <!-- #2 -->
@@ -66,7 +66,7 @@
 </div></textarea>
     						</div>
     						<div class="tutorial-component-description">
-         						<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;체크 박스 label 유무 선택</p>
+         						<p><span class="ds-tag-value">&nbsp;data-label</span>&#9;체크 박스 레이블 유무 선택</p>
     						</div>
 						</div>
 						<!-- 컴포넌트 뷰어 -->

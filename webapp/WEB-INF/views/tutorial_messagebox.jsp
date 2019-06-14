@@ -25,7 +25,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>MessageBox</h1>
+					<h1>메세지박스</h1>
 					<div class="tutorial-content-path">
 						<p>Component > MessageBox</p>
 					</div>
@@ -33,10 +33,9 @@
 				<div class="tutorial-content-desc">
 					<div class="tutorial-component">
 						<div class="tutorial-component-description-box">
-							<h3>&nbsp;alert 메세지 박스</h3>
+							<h3>&nbsp;alert 메세지박스</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- default datePicker -->
 <button id="btn-basic" class="ds-ui-button ds-ui-msgbox">alert 메세지박스</button>
 <button id="btn-basic2" class="ds-ui-button ds-ui-msgbox">alert 메세지박스2</button>
 <button id="btn-basic3" class="ds-ui-button ds-ui-msgbox">alert 메세지박스(주의사항)</button></textarea>
@@ -60,10 +59,7 @@ $('#btn-basic3').on('click', (e)=>{
 		alert('done');
 	});
 });</textarea></div>
-        
-    
-
-							<h3>&nbsp;confirm 메세지 박스</h3>
+							<h3>&nbsp;confirm 메세지박스</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <button id="btn-basic4" class="ds-ui-button ds-ui-msgbox">confirm 메세지박스</button>
@@ -88,10 +84,7 @@ $('#btn-basic5').on('click', (e)=>{
 				alert('no');
 			});
 });</textarea>
-        
-    
 							</div>
-
 							<h3>&nbsp;error 메세지 박스</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror2">
@@ -116,13 +109,8 @@ $('#btn-basic7').on('click', (e)=>{
 				alert('done');
 			});
 });</textarea>
-        
-    
 							</div>
-
-
 						</div>
-
 						<!-- 컴포넌트 뷰어 -->
 						<div class="phone2">
 							<div>

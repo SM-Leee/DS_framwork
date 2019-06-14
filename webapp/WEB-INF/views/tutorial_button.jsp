@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Button</h1>
+					<h1>버튼</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Button</p>
 					</div>
@@ -39,7 +39,7 @@
 							</div>
 
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;ds-ui-basicButton</span>&#9;클래스 이름 명칭</p>
+								<p><span class="ds-tag-value">&nbsp;ds-ui-basicButton</span>&#9;클래스 명칭</p>
 							</div>
 							<h3>&nbsp;카메라/앨범 버튼</h3>
 							<div class="tutorial-component-source">
@@ -48,8 +48,7 @@
 							</div>
 
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;ds-ui-basicButton fileupload</span>&#9;클래스 이름 명칭</p>
-								<p>&nbsp; 사진 업로드 시 TextBox에 File이 담김</p>
+								<p><span class="ds-tag-value">&nbsp;ds-ui-basicButton fileupload</span>&#9;클래스 명칭</p>
 							</div>
 							<h3>&nbsp;Refresh 버튼</h3>
 							<div class="tutorial-component-source">

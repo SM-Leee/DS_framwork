@@ -13,7 +13,7 @@
 		<!-- ########## 컴포넌트 넣는 곳 ########## -->
 		<div class="App">
 			<div class='period-wrap'>
-            	<div class='periodpicker' data-ds-language='en'></div>
+            	<div class='ds-ui-periodpicker' data-ds-language='en'></div>
          	</div>		
 		</div>
 	

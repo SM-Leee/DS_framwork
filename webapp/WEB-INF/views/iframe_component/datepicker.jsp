@@ -13,13 +13,13 @@
 		<!-- ########## 컴포넌트 넣는 곳 ########## -->
 		<div class="App">
 			<!-- default datePicker -->
-<input type="text" id="date1" class="date">
-<input type="text" id="date2" class="date" data-ds-label="일  자">			
-<input type="text" id="date3" class="date" data-ds-label="Date"
+<input type="text" id="date1" class="ds-ui-datepicker">
+<input type="text" id="date2" class="ds-ui-datepicker" data-ds-label="일  자">			
+<input type="text" id="date3" class="ds-ui-datepicker" data-ds-label="일  자"
 	data-ds-language="en" data-ds-init-date="true">	
-<input type="text" id="date4" class="date" data-ds-label="일  자" data-ds-language="en">		
+<input type="text" id="date4" class="ds-ui-datepicker" data-ds-label="Date" data-ds-language="en">		
 <input type="text" id="date5" 
-	class="date" data-ds-label="일  자"
+	class="ds-ui-datepicker" data-ds-label="일  자"
 	data-ds-binding="exampleData" data-ds-form="date">
 		</div>
 		

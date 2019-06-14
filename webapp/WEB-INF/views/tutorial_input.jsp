@@ -24,7 +24,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Input</h1>
+					<h1>텍스트박스</h1>
 					<div class="tutorial-content-path">
 						<p>Component > Input</p>
 					</div>
@@ -35,11 +35,10 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- default Input -->
 <div class="ds-ui-input"></div></textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;ds-ui-input</span>&#9;클래스 이름 명칭</p>
+								<p><span class="ds-tag-value">&nbsp;ds-ui-input</span>&#9;클래스 명칭</p>
 							</div>
 							<h3>&nbsp;가로 크기별</h3>
 							<div class="tutorial-component-source">
@@ -49,7 +48,7 @@
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;data-ds-rows</span>&#9;가로 길이 설정 (기본값 : 1)</p>
 							</div>
-							<h3>&nbsp;label 추가</h3>
+							<h3>&nbsp;레이블 추가</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror2">
 <div class="ds-ui-input" data-ds-label="거래처"></div>
@@ -58,7 +57,7 @@
 							</div>
 							
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;label이 필요할 시 사용하는 옵션 </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;텍스트 박스 레이블 유무 선택</p>
 							</div>
 							<h3>&nbsp;데이터 바인딩</h3>
 							<div class="tutorial-component-source">
@@ -82,8 +81,8 @@ const exampleData = [
 					]</textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑 </p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;맵핑된 데이터 column 맵핑 </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명 </p>
+								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;column 선택 </p>
 							</div>
 
 							

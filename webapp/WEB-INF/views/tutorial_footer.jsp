@@ -73,7 +73,7 @@
         <p><span class="ds-tag-value">&nbsp;ds-ui-footerBox</span>&#9;클래스 명칭</p>
         <p><span class="ds-tag-value">&nbsp;data-color</span>&#9;Footer 색상 지정 (미지정시 Default 색상) </p>
         <p><span class="ds-tag-value">&nbsp;data-direction</span>&#9;Footer 수직, 수평 정렬 방향 지정(미지정시 수직 정렬)</p>
-        <p><span class="ds-tag-value">&nbsp;카드 개수</span>&#9;Footer 내부 요소의 개수는 1~3개를 권장한다.</p>
+        <p><span class="ds-tag-value">&nbsp;Footer 내부 요소 개수</span>&#9;Footer 내부 요소의 개수는 1~3개를 권장한다.</p>
     </div>
 
     <!-- ----------------------------------------------- -->
@@ -99,38 +99,38 @@
         <div class="tutorial-component-source">
             <textarea class="tutorial-sourcecode xml" id="codemirror2">
         <!-- #2 -->
-        <div class="footer" data-mapping='exampleData'>
+        <div class="footer" data-ds-binding='exampleData'>
                 <div class="ds-ui-footerBox">
                     <div data-color='#00AAF0' data-direction='horizen'>
                         <p>A 회사 총 수입 금액</p>
-                        <p data-standard='A plus' data-calc-detail='mul price count'></p>
+                        <p data-ds-standard='A plus' data-ds-calc-detail='mul price count'></p>
                     </div>
                 </div>
     
                 <div class="ds-ui-footerBox">
                     <div data-color='#E74D3A'>
                         <p>총 미지급 횟수</p>
-                        <p data-standard='etc' data-calc-detail='count'></p>
+                        <p data-ds-standard='etc' data-ds-calc-detail='count'></p>
                     </div>
                     <div data-color='#00AAF0'>
                         <p>A 회사 pc 수입 횟수</p>
-                        <p data-standard='A pc plus' data-calc-detail='count'></p>
+                        <p data-ds-standard='A pc plus' data-ds-calc-detail='count'></p>
                     </div>
                 </div>
                 <div class="ds-ui-footerBox">
                     <div>
                         <p>B 회사 pc 수입 개수</p>
-                        <p data-standard='B pc plus' data-calc-detail='add'></p>
+                        <p data-ds-standard='B pc plus' data-ds-calc-detail='add'></p>
                     </div>
                 </div>
             </div>
         </div></textarea>
     </div>
             <div class="tutorial-component-description">
-                <p><span class="ds-tag-value">&nbsp;data-mapping</span>&#9;매핑 될 json 객체명 선택</p>
-                <p><span class="ds-tag-value">&nbsp;data-standard</span>&#9;Column별 value 선택 가능 (제약조건 : 동일한 column
+                <p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 매핑</p>
+                <p><span class="ds-tag-value">&nbsp;data-ds-standard</span>&#9;Column별 value 선택 가능 (제약조건 : 동일한 column
                     Value를 지정 불가능)</p>
-                <p><span class="ds-tag-value">&nbsp;data-calc-detail</span>&#9;data-standard Column 선택 후 횟수(Count),
+                <p><span class="ds-tag-value">&nbsp;data-ds-calc-detail</span>&#9;data-ds-standard Column 선택 후 횟수(Count),
                     곱(Mul : 'mul column column'), 합(Add) 형식의 데이터 바인딩</p>
             </div>
 						</div>

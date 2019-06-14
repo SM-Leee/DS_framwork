@@ -12,7 +12,7 @@
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 	<div class="App">
-		    <button class="ds-ui-accordion">Accordion#1</button>
+		    <button class="ds-ui-accordion">아코디언 #1</button>
             <div class="accordion-text">
                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque illum enim, laudantium dolore
@@ -21,7 +21,7 @@
                </p>
             </div>
 
-            <button class="ds-ui-accordion" data-disabled='true'>Accordion#1 - 비활성화</button>
+            <button class="ds-ui-accordion" data-disabled='true'>아코디언 #1 - 비활성화</button>
             <div class="accordion-text">
                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, ex incidunt. At debitis
@@ -29,7 +29,7 @@
                   obcaecati nihil fugiat, asperiores voluptate.
                </p>
             </div>
-            <button class="ds-ui-accordion" data-line='3' data-select='true'>Accordion#2</button>
+            <button class="ds-ui-accordion" data-line='3' data-select='true'>아코디언 #2</button>
             <div class="accordion-text">
                <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
