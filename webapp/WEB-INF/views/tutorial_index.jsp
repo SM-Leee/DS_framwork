@@ -18,36 +18,15 @@
 		<jsp:include page="/WEB-INF/views/includes/tutorial_header.jsp"/>
 
 		<div id="tutorial-content-box">
-			<%-- 
-			<div id="tutorial-contents">
-				<div class="tutorial-content-title">
-					<h1>title</h1>
-					<div class="tutorial-content-path">
-						<p>component > chart</p>
-					</div>
-				</div>
-				<div class="tutorial-content-desc">
-					<div class="sub-title">
-						<h1>sub_title</h1>
-					</div>
-					<div class="tutorial-component">
-						<div class="tutorial-component-source">
-							<textarea class='tutorial-source-line' readonly></textarea>
-							<textarea class="tutorial-sourcecode" readonly></textarea>
-						</div>
-
-
-						<!-- 컴포넌트 뷰어 -->
-						<div class="tutorial-component-view">
-							<!-- <iframe class="iframe" src="component/button"></iframe> -->
-							${pageContext.request.contextPath}
-						</div>
-						<div class="tutorial-component-description">description</div>
-					</div>
-				</div>
-				
+			<div class="tutorial-contents-main">
+				<p>튜토리얼 설명</p>
 			</div>
-			 --%>
+			<div class="tutorial-contents-main tutorial-main-code">
+			<p>script code</p>
+			</div>
+			<div class="tutorial-contents-main tutorial-main-pres">
+			<p>고민중</p>
+			</div>
 			<jsp:include page="/WEB-INF/views/includes/tutorial_navigator.jsp"/>
 			
 		</div>

@@ -111,7 +111,6 @@
 			textarea = document.getElementById('codemirror' + i);
 			var editor = CodeMirror.fromTextArea(textarea, {
 				lineNumbers : true,
-				lineWrapping : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "xml",
 				readOnly : "false"
@@ -121,7 +120,6 @@
 			textarea = document.getElementById('javascript' + i);
 			var editor = CodeMirror.fromTextArea(textarea, {
 				lineNumbers : true,
-				lineWrapping : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "javascript",
 				readOnly : "false"

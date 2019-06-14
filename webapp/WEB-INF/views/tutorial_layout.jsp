@@ -26,7 +26,8 @@
 				<div class="tutorial-content-title">
 					<h1>레이아웃</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Layout</p>
+						<p>asdfasfsfaadf</p>
+						
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -127,7 +128,6 @@
 		textarea = document.getElementById('codemirror'+i);
 		var editor = CodeMirror.fromTextArea(textarea, {
 			lineNumbers : true,
-			lineWrapping : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "xml",
 			readOnly: "false"   
@@ -137,7 +137,6 @@
 		textarea = document.getElementById('javascript'+i);
 		var editor = CodeMirror.fromTextArea(textarea, {
 			lineNumbers : true,
-			lineWrapping : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "javascript",
 			readOnly: "false"   

@@ -14,9 +14,7 @@
 	<div class="App">
 		<div class="ds-ui-input"data-ds-rows="2" data-ds-column="2"></div>
 		<div class="ds-ui-input" data-ds-label="상세보기" data-ds-rows="2" data-ds-column="2"></div>
-		<div class="ds-ui-input" data-ds-label="상세보기"
-	data-ds-rows="2" data-ds-column="2"
-	data-ds-binding="exampleData" data-ds-form="desc"></div>
+		
 	</div>
 
 	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -25,17 +23,7 @@
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/app.js"></script>
 	<script>
-	const exampleData = [ {
-		no : 1,
-		company : '더존비즈온',
-		good : 'tv',
-		count : 5,
-		price : 300000,
-		date : '2017-12-12',
-		category : 'plus',
-		desc : '세금 영수증 끊어주세요.'
-	}
-	];
+	
 	const option2 = [ {
 		category : 'etc',
 		transname : '미지급'

@@ -34,7 +34,7 @@
 			<option value="opel">Opel</option>
 			<option value="audi">Audi</option>
 		</select> <select class="ds-ui-dropdown-picker" data-ds-label="목 차"
-		data-ds-binding="exampleData" data-ds-item-binding="option2"
+		data-ds-item-binding="option2"
 		data-ds-value-field="category" data-ds-text-field="transname"></select>
 	</div>
 
@@ -44,17 +44,7 @@
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/app.js"></script>
 	<script>
-	const exampleData = [ {
-		no : 1,
-		company : '더존비즈온',
-		good : 'tv',
-		count : 5,
-		price : 300000,
-		date : '2017-12-12',
-		category : 'plus',
-		desc : '안녕하세요? 최기석입니다 반갑습니다 하이하이'
-	}
-	];
+	
 	const option2 = [ {
 		category : 'etc',
 		transname : '미지급'

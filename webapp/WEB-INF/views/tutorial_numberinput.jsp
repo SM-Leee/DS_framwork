@@ -57,34 +57,6 @@
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;ds-ui-input kwdnumber</span>&#9;달러표시 적용 및 세자리마다 콤마(,) 옵션</p>
 							</div>
-							<h3>&nbsp;데이터 바인딩</h3>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode xml" id="codemirror3">
-<div class="ds-ui-input onlynumber" data-ds-label="수량"
-	data-ds-binding='exampleData' data-ds-form="count"></div>
-
-<div class="ds-ui-input kwdnumber" data-ds-label="단가"
-	data-ds-binding='exampleData' data-ds-form="price"></div></textarea>
-							</div>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode javascript" id="javascript0">
-const exampleData = [ 
-						{
-							no : 1,
-			 				company : "더존비즈온",
-							good : 'tv',
-		 					count : 5,
-			 				price : 300000,
-							date : '2019-06-11',
-			 				category : 'plus',
-			 				desc : '세금 영수증 끊어주세요.'
-						}
-					]</textarea>
-							</div>
-							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명 </p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;Column 선택 </p>
-							</div>
 						
 						</div>
 
@@ -118,8 +90,6 @@ const exampleData = [
 		textarea = document.getElementById('codemirror'+i);
 		var editor = CodeMirror.fromTextArea(textarea, {
 			lineNumbers : true,
-			lineWrapping : true,
-			//theme: "eclipse",
 			value : "function myScript(){return 100;}\n",
 			mode : "xml",
 			readOnly: "false"   
@@ -130,7 +100,6 @@ const exampleData = [
 		textarea = document.getElementById('javascript'+i);
 		var editor = CodeMirror.fromTextArea(textarea, {
 			lineNumbers : true,
-			lineWrapping : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "javascript",
 			readOnly: "false"   

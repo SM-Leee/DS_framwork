@@ -16,7 +16,7 @@
          <div 
          	id="ds-ui-data-table"
             class="ds-ui-data-table"
-            data-ds-binding="exampleData" 
+            
             data-ds-column-header="company"
             data-ds-customizing="customize_Naming"
             data-ui-height="60%"
@@ -77,6 +77,16 @@ const exampleData =
         {no : 39, company : 'D', good : 'pc', count : 13, price : 500000, date : '2018-11-01', category : 'minus', desc : '' }, 
         {no : 40, company : 'D', good : 'pc', count : 9, price : 1500000, date : '2018-11-01', category : 'etc', desc : '' }
     ];
+	ds.ui.datatable('#ds-ui-data-table', {
+		dataSource: exampleData,
+		select: true,
+		height: '50%'
+	});
+	ds.ui.datatable('#ds-ui-data-table', {
+		dataSource: exampleData,
+		select: false,
+		width: '50%'
+	});
 
 	</script>
 

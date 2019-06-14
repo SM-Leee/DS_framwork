@@ -1,3 +1,4 @@
+
 const dataTable = () => {
    if($('.ds-ui-data-table').length == 0) return ;
     let $dataTable = $('.ds-ui-data-table'),

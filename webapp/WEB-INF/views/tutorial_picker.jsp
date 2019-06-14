@@ -81,27 +81,15 @@
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;data-ds-rows</span>&#9;가로 길이 설정 (기본값 : 1)</p>
 							</div>
-							<h3>&nbsp;데이터 바인딩 및 Select Option 추가</h3>
+							<h3>&nbsp;Select Option 추가</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror3">
 <select class="ds-ui-dropdown-picker" data-ds-label="목 차"
-		data-ds-binding="exampleData" data-ds-item-binding="option"
-		data-ds-value-field="category" data-ds-text-field="transname"></select></textarea>
+		data-ds-item-binding="option" data-ds-value-field="category"
+		data-ds-text-field="transname"></select></textarea>
 							</div>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode javascript" id="javascript0">
-const exampleData = [ 
-						{
-							no : 1,
-			 				company : "더존비즈온",
-							good : 'tv',
-		 					count : 5,
-			 				price : 300000,
-							date : '2019-06-11',
-			 				category : 'plus',
-			 				desc : '세금 영수증 끊어주세요.'
-						}
-					];
 const option = [ 
 					{
 						category : 'etc',
@@ -118,7 +106,6 @@ const option = [
 				];</textarea>
 							</div>
 							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 맵핑 </p>
 								<p><span class="ds-tag-value">&nbsp;data-ds-value-field</span>&#9;맵핑된 데이터 column 맵핑 </p>
 								<p><span class="ds-tag-value">&nbsp;data-ds-item-binding</span>&#9;select option에 들어갈 Table</p>
 								<p><span class="ds-tag-value">&nbsp;data-ds-text-field</span>&#9;ds-item-binding에서 option에 들어갈 내용</p>
@@ -155,24 +142,19 @@ const option = [
 		textarea = document.getElementById('codemirror'+i);
 		var editor = CodeMirror.fromTextArea(textarea, {
 			lineNumbers : true,
-			lineWrapping : true,
-			//theme: "eclipse",
 			value : "function myScript(){return 100;}\n",
 			mode : "xml",
 			readOnly: "false"   
 		});
-		//$(textarea).remove();
 	}
 	for(let i=0;i<$(".javascript").length;i++){
 		textarea = document.getElementById('javascript'+i);
 		var editor = CodeMirror.fromTextArea(textarea, {
 			lineNumbers : true,
-			lineWrapping : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "javascript",
 			readOnly: "false"   
 		});
-		//$(textarea).remove();
 	}
 	</script>
 	<script type="text/javascript"

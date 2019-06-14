@@ -14,7 +14,7 @@
 	<div class="App">
 		<div class=contents>
 			<div class='ds-ui-chart circle' id='circle1'
-				data-ds-binding='exampleData' data-ds-standard='good'
+				data-ds-standard='good'
 				data-ds-calc-detail='price'></div>
 			<div class='ds-ui-chart circle' id='circle2'
 				data-ds-binding='exampleData' data-ds-standard='good'
@@ -430,6 +430,10 @@
 				}, {
 					desc : '설명'
 				} ];
+				ds.ui.chart('#circle1', {
+					dataSource: exampleData,
+					dsStandard : 'category'
+				});
 			</script>
 </body>
 </html>

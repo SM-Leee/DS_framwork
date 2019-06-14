@@ -89,24 +89,19 @@
 			textarea = document.getElementById('codemirror' + i);
 			var editor = CodeMirror.fromTextArea(textarea, {
 				lineNumbers : true,
-				lineWrapping : true,
-				//theme: "eclipse",
 				value : "function myScript(){return 100;}\n",
 				mode : "xml",
 				readOnly : "false"
 			});
-			//$(textarea).remove();
 		}
 		for (let i = 0; i < $(".javascript").length; i++) {
 			textarea = document.getElementById('javascript' + i);
 			var editor = CodeMirror.fromTextArea(textarea, {
 				lineNumbers : true,
-				lineWrapping : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "javascript",
 				readOnly : "false"
 			});
-			//$(textarea).remove();
 		}
 	</script>
 	<script type="text/javascript"

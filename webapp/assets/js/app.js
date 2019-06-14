@@ -885,8 +885,16 @@ const dataTable_Customizing = () => {
 
 }
 
+let ds = [];
+ds.ui =[];
+ds.ui.datatable = function(id, options) {
+	let $target = $(id);
+	console.log($target);
+	console.log(options);
+}
 const dataTable_Render = function(dataTableObject) {
 	if(dataTableObject == undefined) dataTableObject = [];
+	
 	dataTableBind(dataTableObject);
 	columnOptionHandler();
 	dataTable_Scroll();
@@ -1302,19 +1310,19 @@ const decorateModalDataTable = ($dataTable) => {
 
 //standardColumn change Action
 const stdColumnChange_Action = ($dataTable, $targetPB) => {
-   $std_changeBody = $targetPB.find('.popup-change-body');
-   $std_changeBody.find('a').on('click', (e) => {
-      let clicked_data = $(e.target)[0].previousSibling.data;
-      $dataTable.data('dsColumnHeader', clicked_data);
-      // data-table Re_Render
-      ds_msgbox.confirm("변경하시겠습니까 ? \n [ " + clicked_data + " ]")
-            .yes(function() {
-               $('.ds-ui-input.search').children().val('');
-               dataTable_Re_Render([]);
-            }).no(function() {
-               return;
-            });
-   });
+	$std_changeBody = $targetPB.find('.popup-change-body');
+	$std_changeBody.find('a').on('click', (e) => {
+		let clicked_data = $(e.target)[0].previousSibling.data;
+		$dataTable.data('dsColumnHeader', clicked_data);
+		// data-table Re_Render
+		ds_msgbox.confirm("변경하시겠습니까 ? \n [ " + clicked_data + " ]")
+		.yes(function() {
+			$('.ds-ui-input.search').children().val('');
+			dataTable_Re_Render([]);
+		}).no(function() {
+			return;
+		});
+	});
 }
 //standardColumn change Mode...
 const stdColumnChange_Mode = ($targetPB) => {
@@ -1552,6 +1560,16 @@ const barClick = (chartBar, chartBarValue) => {
 		 */
 	})
 }
+ds.ui.chart = function(id, options) {
+	let $target = $(id);
+	console.log($target);
+	console.log(options);
+	console.log(options.dataSource)
+	//$target[0].data.dsdsBinding = options.dataSource;
+	$target.data('ds-binding',options.dataSource);
+	
+	//$target.data("ds-standard", options.ds-standard);
+}
 let chartData; // data-set 가져오기
 let calc_detail; // data-calc-detail 가져오기
 let dataAfterWork = []; // 새로운 dataSet 만들기
@@ -1562,13 +1580,15 @@ let chartColor = ['Aqua','blue','blueviolet','RoyalBlue','burlywood','coral','co
 let chartColor2 = ['blue','blueviolet', 'Aqua', 'coral']
 //bar chart databinding
 const chartDataBinding = function(name, clickdata){
+/*//	let options = ds.ui.chart(idmo)
+*/	
 	dataAfterWork = [];
 	try{
 		dataStandard = $(select).data('ds-standard');		
 	}catch(error) {
 		console.error('data-ds-standard : standard option does not exist.')
 	}
-
+	
 	try{
 		chartData = $(select).data('ds-binding');		
 	}catch(error) {
@@ -1577,7 +1597,7 @@ const chartDataBinding = function(name, clickdata){
 	chartData = $(select).data('ds-binding');
 	dataCalc = $(select).data('ds-calc');
 	try{
-		dataItem = eval(chartData);		
+		dataItem = chartData;		
 	}catch(error){
 		console.error('Json Object dose not exist.');
 	}

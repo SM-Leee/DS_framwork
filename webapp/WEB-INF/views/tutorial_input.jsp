@@ -58,34 +58,7 @@
 							
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;텍스트 박스 레이블 유무 선택</p>
-							</div>
-							<h3>&nbsp;데이터 바인딩</h3>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode xml" id="codemirror3">
-<div class="ds-ui-input" data-ds-rows="2" data-ds-label="거래처"
-	data-ds-binding='exampleData' data-ds-form="company"></div></textarea>
-							</div>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode javascript" id="javascript0">
-const exampleData = [ 
-						{
-							no : 1,
-			 				company : "더존비즈온",
-							good : 'tv',
-		 					count : 5,
-			 				price : 300000,
-							date : '2019-06-11',
-			 				category : 'plus',
-			 				desc : '세금 영수증 끊어주세요.'
-						}
-					]</textarea>
-							</div>
-							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 JSON 객체명 </p>
-								<p><span class="ds-tag-value">&nbsp;data-ds-form</span>&#9;column 선택 </p>
-							</div>
-
-							
+							</div>						
 						</div>
 
 						<!-- 컴포넌트 뷰어 -->	 
@@ -118,7 +91,6 @@ const exampleData = [
 			textarea = document.getElementById('codemirror'+i);
 			var editor = CodeMirror.fromTextArea(textarea, {
 				lineNumbers : true,
-				lineWrapping : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "xml",
 				readOnly: "false"   
@@ -128,7 +100,6 @@ const exampleData = [
 			textarea = document.getElementById('javascript'+i);
 			var editor = CodeMirror.fromTextArea(textarea, {
 				lineNumbers : true,
-				lineWrapping : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "javascript",
 				readOnly: "false"   

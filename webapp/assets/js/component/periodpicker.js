@@ -19,4 +19,17 @@ function periodPicker(){
          initDate($datepicker);
       });
    }
+// for tutorial iframe
+   $('.search-button').on('click', function(e){
+      let period_msg = '';
+      if($('#fromDate').val() == '' || $('#toDate').val() == '') {
+         period_msg = '기간을 모두 체크해주세요!';
+         ds_msgbox.alert(period_msg, 'ico2').done(function() {
+         });
+      } else{
+         period_msg = $('#fromDate').val() + ' ~ ' + $('#toDate').val();
+         ds_msgbox.alert(period_msg).done(function() {
+         });
+      }
+   });
 }
