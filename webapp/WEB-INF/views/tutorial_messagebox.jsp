@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>메세지박스</h1>
 					<div class="tutorial-content-path">
-						<p>Component > MessageBox</p>
+						<p>&nbsp;메시지 박스로 실행중 발생하는 문제나 진행사항을 결정할 수 있도록 팝업 형태의 창을 띄어 정보를 보여줍니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

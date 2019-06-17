@@ -14,21 +14,11 @@
 	<div class="App">
 		<div class=contents>
 			<div class='ds-ui-chart circle' id='circle1'
-				data-ds-standard='good'
-				data-ds-calc-detail='price'></div>
-			<div class='ds-ui-chart circle' id='circle2'
-				data-ds-binding='exampleData' data-ds-standard='good'
-				data-ds-calc-detail='count' data-ds-calc="avg"></div>
-			<div class='ds-ui-chart circle' id='circle3'
-				data-ds-binding='exampleData' data-ds-standard='category'
-				data-ds-transfer-naming='chartOption2'
-				data-ds-calc-detail='mul price count'></div>
+				></div>
+			<div class='ds-ui-chart circle' id='circle2'></div>
+			<div class='ds-ui-chart circle' id='circle3'></div>
 
-			<div class='ds-ui-chart circle' id='circle4'
-				data-ds-binding='exampleData' data-ds-standard='category'
-				data-ds-transfer-naming='chartOption2'
-				data-ds-calc-detail='mul price count' data-ds-index-position='none'>
-			</div>
+			<div class='ds-ui-chart circle' id='circle4'></div>
 		</div>
 	</div>
 
@@ -432,8 +422,47 @@
 				} ];
 				ds.ui.chart('#circle1', {
 					dataSource: exampleData,
-					dsStandard : 'category'
+					option : {
+						dsStandard : 'good',
+						dsCalcDetail : 'price'				
+					},
+					subOption : {
+						
+					}
 				});
+				ds.ui.chart('#circle2', {
+					dataSource: exampleData,
+					option : {
+						dsStandard : 'good',
+						dsCalcDetail : 'count'				
+					},
+					subOption : {
+						dsCalc : 'avg'					
+					}
+				})
+				ds.ui.chart('#circle3', {
+					dataSource: exampleData,
+					option : {
+						dsStandard : 'category',
+						dsCalcDetail : 'mul price count'				
+					},
+					subOption : {
+						dsCalc : 'avg',
+						dsTransferNaming : chartOption2
+					}
+				})
+				ds.ui.chart('#circle4', {
+					dataSource: exampleData,
+					option : {
+						dsStandard : 'category',
+						dsCalcDetail : 'mul price count'				
+					},
+					subOption : {
+						dsCalc : 'avg',
+						dsTransferNaming : chartOption2,
+						dsLegendPosition : 'none'
+					}
+				})
 			</script>
 </body>
 </html>

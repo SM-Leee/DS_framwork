@@ -1,22 +1,23 @@
 const rangeSlider = () => {
-  let title = ''
   let value_data = ''
   let step = ''
-  let values = [];
+  let minValue, maxValue, thisValue;
   let disabled = ''
 
   const slider = $('.ds-ui-rangeslider')
 
   slider.each(function (i) {
     label = ($(slider[i]).data('label') == undefined) ? '' : $(slider[i]).data('label');
+    minValue = ($(slider[i]).data('min') == undefined) ? 0 : $(slider[i]).data('min');
+    maxValue = ($(slider[i]).data('max') == undefined) ? 500 : $(slider[i]).data('max');
+    thisValue = ($(slider[i]).data('value') == undefined) ? 0 : $(slider[i]).data('value');
     step = ($(slider[i]).data('step') == undefined) ? '' : $(slider[i]).data('step');
     disabled = ($(slider[i]).data('disabled')==true) ? ' disabled' : '';
     value_data = $(slider[i]).data('value');
-    values = value_data.split(' ')
 
     $(slider[i]).append(
       "<span class='range-slider-title'>" + label + "</span>" +
-      "<input" + disabled + " class='range-slider-range' type='range' min='" + values[0] + "' max='" + values[2] + "' value='" + values[1] + "' step='" + step + "'>" +
+      "<input" + disabled + " class='range-slider-range' type='range' min='" + minValue + "' max='" + maxValue + "' value='" + thisValue + "' step='" + step + "'>" +
       "<span class='range-slider-value'>0</span>"
     )
     if (disabled == ' disabled') {

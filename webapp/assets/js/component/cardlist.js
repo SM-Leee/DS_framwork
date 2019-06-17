@@ -3,17 +3,16 @@ const cardlistSetting = () => {
     const cardlistUi = $('.ds-ui-cardlistAllBox')
     let icons = []
     var icons_input = [];
-    let cardlistUi_children = $(cardlistUi).children('div');;
+    let cardlistUi_children = $(cardlistUi).children('div');
     for (var i = 0; i < cardlistUi_children.length; i++) {
         icons_input[i] = $(cardlistUi_children[i]).data('icon') == null ? '' : $(cardlistUi_children[i]).data('icon');
     }
     // icon end
     icons = iconLoad(icons_input)
     let cardlistAfterWork_result = cardlistDataBinding();
-    if (!cardlistAfterWork_result) return
-
+    if(cardlistAfterWork_result){
+    }
     let data_length = ($(cardlistAfterWork_result[0]).length - 2)
-
     var colors = []
     cardlistAfterWork_result.map(function (dataSet, i) {
         if (data_length === 1) {
@@ -113,6 +112,7 @@ const cardlistSetting = () => {
         $(cardlistUi).empty()
 
         cardlistSearch_result = cardlistSearch(cardlistAfterWork_result, period_date);
+
         var colors = []
         cardlistSearch_result.map(function (dataSet, i) {
             if (data_length === 1) {
@@ -224,7 +224,8 @@ const setting = function (target, icon_target, data) {
     let targetWidth = $(target).outerWidth();
     for (var i = 0; i < target.length; i++) {
         $(target[i]).append(
-            "<div class='ds-ui-setting'" + "data-ds-mapping='" + data + "' >" +
+            // "<div class='ds-ui-setting'" + "data-ds-mapping='" + data + "' >" +
+            "<div class='ds-ui-setting'>" +
             $(settingUi).html() +
             "</div>"
         );
@@ -259,7 +260,6 @@ const setting = function (target, icon_target, data) {
 
                         display: "flex"
                     }),
-                    // $(target[no]).css({
                     $(this).css({
                         transform: "translate3d(" + -settingWidth + "px, 0, 0)",
                         width: showSetting + "px"

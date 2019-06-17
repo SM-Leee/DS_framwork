@@ -28,7 +28,7 @@
 				<div class="tutorial-content-title">
 					<h1>체크박스</h1>
 					<div class="tutorial-content-path">
-						<p>component > CheckBox</p>
+						<p>&nbsp;체크 박스로 선택 사항을 여러 개 선택 할 수 있으며 버튼 모양, 버튼 선택 지정, 버튼 위치 지정, 활성화 유무, 레이블 유무를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

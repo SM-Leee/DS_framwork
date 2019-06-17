@@ -16,10 +16,10 @@
 		</div>
 		<div class="navigator">
 			<div id="ds-ui-subtopic">
-				<div>현재 자산</div>
-				<div>기간별</div>
-				<div>전표입력</div>
-				<div class="selected">예시</div>
+				<div>SubMenu1</div>
+				<div>SubMenu2</div>
+				<div>SubMenu3</div>
+				<div class="selected">SubMenu4</div>
 			</div>
 		</div>
 

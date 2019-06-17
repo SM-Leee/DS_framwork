@@ -13,15 +13,15 @@
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 	<div class="App">
 		<div class="contents">
-		<div class="ds-ui-rangeslider" data-label='슬라이더 #1' data-value='0 50 500'>
+		<div class="ds-ui-rangeslider" data-label='범위 슬라이더 #1' data-min=0 data-value=100 data-max=500>
+		</div>
+         <div class="ds-ui-rangeslider" data-label='범위 슬라이더 #2' data-min=0 data-value=100 data-max=500 data-step='50'>
          </div>
-         <div class="ds-ui-rangeslider" data-label='슬라이더 #2' data-value='0 100 500' data-step='50'>
+         <div class="ds-ui-rangeslider" data-label='범위 슬라이더 #1 - 비활성화' data-min=0 data-value=50 data-max=500 data-disabled="true">
          </div>
-         <div class="ds-ui-rangeslider" data-label='슬라이더 #1 - 비활성화' data-value='0 50 500' data-disabled="true">
-         </div>
-         <div class="ds-ui-rangeslider" data-value='0 150 500' data-step='50'>
+         <div class="ds-ui-rangeslider" data-min=0 data-value=150 data-max=500 data-step='50'>
             </div>
-         <div class="ds-ui-rangeslider" data-value='0 50 500' data-disabled='true'>
+         <div class="ds-ui-rangeslider" data-min=0 data-value=50 data-max=500 data-disabled='true'>
          </div>
          </div>
 	</div>

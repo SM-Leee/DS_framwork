@@ -26,8 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>레이아웃</h1>
 					<div class="tutorial-content-path">
-						<p>asdfasfsfaadf</p>
-						
+						<p>&nbsp;모바일 기본 레이아웃 입니다.</p>			
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -39,54 +38,49 @@
 <div class="header">
 	<div id="ds-ui-menu">
 		<div>Toggle Menu</div>
-		<div>회계관리</div>
-		<div>전표관리</div>
-		<div>금융</div>
+		<div>Menu1</div>
+		<div>Menu2</div>
+		<div>Menu3</div>
+		<div>Menu4</div>
 	</div>
-	<div id="ds-ui-title">회계관리</div>
+	<div id="ds-ui-title">Title</div>
 </div>
 <div class="navigator">
 	<div id="ds-ui-subtopic">
-		<div data-href='currentassets'>현재 자산</div>
-		<div data-href='byperiod'>기간별</div>
-		<div data-href='documententry'>전표입력</div>
-		<div data-href='index' class="selected">예시</div>
+		<div data-href=''>SubMenu1</div>
+		<div data-href=''>SubMenu2</div>
+		<div data-href=''>SubMenu3</div>
+		<div data-href='' class="selected">SubMenu4</div>
 	</div>
 </div>
 
 <div class="contents"></div>
 
-<div class="footer" data-mapping='exampleData'>
-			<div class="ds-ui-footerBox">
-				<div data-color='#00AAF0' data-direction='horizen'>
-					<p>A 회사 pc 총 수입 개수</p>
-					<p data-standard='A tv plus' data-calc-detail='count'></p>
-				</div>
-				<div data-color='#E74D3A'>
-					<p>총 수출 개수</p>
-					<p data-standard='etc' data-calc-detail='count'></p>
-				</div>
+<div class="footer">
+		<div class="ds-ui-footerBox">
+			<div data-color='#00AAF0' data-direction='horizen'>
+				<p>Footer</p>
 			</div>
-
-			<div class="ds-ui-footerBox">
-				<div data-color='#6498B5' data-direction='horizen'>
-					<p>A 회사 총 수입 개수</p>
-					<p data-standard='A plus' data-calc-detail='count'></p>
-				</div>
+			<div data-color='#E74D3A'>
+				<p>Footer</p>
+				<p>Footer</p>
 			</div>
-			<div class="ds-ui-footerBox">
-				<div data-color='#6498B5' data-direction='vertical'>
-					<p>C 회사 수출 금액</p>
-					<p data-standard='D plus' data-calc-detail='add count'></p>
-				</div>
+		</div>
+		<div class="ds-ui-footerBox">
+			<div data-color='#6498B5' data-direction='horizen'>
+				<p>Footer</p>
+				<p>Footer</p>
+			</div>
+		</div>
+		<div class="ds-ui-footerBox">
+			<div data-color='#6498B5' data-direction='vertical'>
+				<p>Footer</p>
+			</div>
 				<div data-color='#E74D3A'>
-					<p>총 수출 금액</p>
-					<p data-standard='minus' data-calc-detail='mul price count'></p>
-				</div>
-				<div data-color='#ABACB2'>
-					<p>총 수입 금액</p>
-					<p data-standard='plus' data-calc-detail='mul price count'></p>
-				</div>
+				<p>Footer</p>
+			</div>
+			<div data-color='#ABACB2'>
+				<p>Footer</p>
 			</div>
 		</div>
 </div>

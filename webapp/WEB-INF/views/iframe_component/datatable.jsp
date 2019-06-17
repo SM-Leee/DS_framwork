@@ -12,16 +12,7 @@
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 	<div class="App">
-
-         <div 
-         	id="ds-ui-data-table"
-            class="ds-ui-data-table"
-            
-            data-ds-column-header="company"
-            data-ds-customizing="customize_Naming"
-            data-ui-height="60%"
-            data-search="true">
-         </div>
+         <div id="ds-ui-data-table" class="ds-ui-data-table"></div>
 	</div>
 
 	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -77,16 +68,23 @@ const exampleData =
         {no : 39, company : 'D', good : 'pc', count : 13, price : 500000, date : '2018-11-01', category : 'minus', desc : '' }, 
         {no : 40, company : 'D', good : 'pc', count : 9, price : 1500000, date : '2018-11-01', category : 'etc', desc : '' }
     ];
-	ds.ui.datatable('#ds-ui-data-table', {
-		dataSource: exampleData,
-		select: true,
-		height: '50%'
-	});
-	ds.ui.datatable('#ds-ui-data-table', {
-		dataSource: exampleData,
-		select: false,
-		width: '50%'
-	});
+	$(document).ready(function () {
+	    ds.ui.datatable('#ds-ui-data-table', {
+	       dataSource: exampleData,
+	       fixedColumn: 'company',
+	       alias: { 
+	          company : "회사명", 
+	          good : "상품", 
+	          count : "판매수량", 
+	          price : "판매가", 
+	          date : "판매일", 
+	          category : "카테고리명", 
+	          desc : "내역"
+	       },
+	       height: '50%',
+	       search: true,
+	    });
+	 });
 
 	</script>
 

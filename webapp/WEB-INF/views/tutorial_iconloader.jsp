@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>아이콘 로더</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Icon Loader</p>
+						<p>&nbsp;아이콘별로 기능을 가지고 있습니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>버튼</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Button</p>
+						<p>&nbsp;기본 버튼으로 버튼 UI와 카메라 기능에 사용되는 버튼을 사용 할 수 있습니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -50,13 +50,6 @@
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;ds-ui-basicButton fileupload</span>&#9;클래스 명칭</p>
 							</div>
-							<h3>&nbsp;Refresh 버튼</h3>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode xml" id="codemirror2">
-<button id="refresh" class="refresh-button"><i class="fas fa-sync-alt"></i></button></textarea>
-							</div>
-
-							<div class="tutorial-component-description">description</div>
 						</div>
 
 						<!-- 컴포넌트 뷰어 -->	 

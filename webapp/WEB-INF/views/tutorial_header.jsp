@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>Layout</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Header</p>
+						<p>&nbsp;기본 레이아웃 부분의 Header로 메인 타이틀과 토글 버튼으로 구성되어 있습니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -38,11 +38,11 @@
 <div class="header">
 	<div id="ds-ui-menu">
 		<div>Toggle Menu</div>
-		<div>회계관리</div>
-		<div>전표관리</div>
-		<div>금융</div>
+		<div>Menu1</div>
+		<div>Menu2</div>
+		<div>Menu3</div>
 	</div>
-	<div id="ds-ui-title">회계관리</div>
+	<div id="ds-ui-title">Title</div>
 </div>
 <div class="navigator"></div>
 

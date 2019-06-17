@@ -173,20 +173,15 @@
 			</ul>
 		</li>
 		
-		<!-- 
 		<li class="">
-			<div class="tutorial-navi-index">
-				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
-				<div class="tutorial-navi-title">test</div>
-				<div class="tutorial-navi-arrow">
-					<i class="icon fas fa-chevron-right"></i>
+			<a href="tutorial_scenario">
+				<div class="tutorial-navi-index">
+					<div class="tutorial-navi-icon"><i class="icon far fa-edit"></i></div>
+					<div class="tutorial-navi-title">시나리오</div>
+					<div class="tutorial-navi-arrow"></div>
 				</div>
-			</div>
-			<ul class="sub-navis">
-				<a href="test"><li class="sub-navi">basic test</li></a>
-			</ul>
+			</a>
 		</li>
-		 -->
 		 <li class="">
 			<a href="tutorial_exam">
 				<div class="tutorial-navi-index">

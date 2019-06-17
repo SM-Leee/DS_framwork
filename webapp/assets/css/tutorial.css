@@ -29,6 +29,9 @@ textarea {
 iframe {
 	background-color: white;
 }
+.tutorial-content-path p {
+	color: darkgray;
+}
 .editor-result {
 	margin-left:15px;
 	margin-top:8px;
@@ -179,6 +182,7 @@ iframe {
 
 #tutorial-header a {
 	background-color: rgba(0, 0, 0, 0);
+	color:black;
 }
 
 #tutorial-header>h1 {
@@ -243,6 +247,7 @@ iframe {
 	line-height: 50px;
 	background-color: rgba(0, 0, 0, 0);
 	font-size: 14px;
+	color:black;
 }
 
 #tutorial-navi .tutorial-navi-index>.tutorial-navi-arrow {
@@ -274,6 +279,7 @@ iframe {
 .sub-navi a {
 	width: 100%;
 	background-color: #F3F3F3;
+	color:black;
 }
 
 /* tutorial-contents */
@@ -319,8 +325,13 @@ iframe {
 	/* background-color: inherit; */
 }
 
+#tutorial-contents>.long-title {
+	height: 100px;
+	/* background-color: inherit; */
+}
+
 #tutorial-contents>.tutorial-content-title>.tutorial-content-path {
-	display: flex;
+	margin-top:4px;
 }
 
 #tutorial-contents>.tutorial-content-desc {

@@ -15,11 +15,11 @@
 			<div class="header">
 			<div id="ds-ui-menu">
 				<div>Toggle Menu</div>
-				<div>회계관리</div>
-				<div>전표관리</div>
-				<div>금융</div>
+				<div>Menu1</div>
+				<div>Menu2</div>
+				<div>Menu3</div>
 			</div>
-			<div id="ds-ui-title">회계관리</div>
+			<div id="ds-ui-title">Title</div>
 		</div>
 		<div class="navigator">
 		</div>

@@ -14,6 +14,11 @@ const defaultIcon = [{
 	none: "<i class='none fas fa-times'></i>",
 	location : "<i class='location fas fa-door-open'></i>"
 }]
+
+//drag prevent
+document.ondragstart=function(){return false;}
+
+
 const dataObjectExistenceCheck = ($target) => {
 	try {
 		eval($target.data('ds-binding'))
@@ -44,12 +49,96 @@ $(document).ready(function () {
 	lineChartTileClick($('.line-title'));
 	iconLoader();
 	refreshevent();
-	dataTableOper();
+//	dataTableOper();
 	deleteTargetCheck();
 	statuslViewCheck();
 	imgView();
 	locationevent();
 });
+ds = [];
+ds.ui = [];
+
+//datatable
+ds.ui.datatable = function(id, options) {
+ let $target = $(id);
+  // console.log(options);
+  // console.log((options.height))
+  if(options.dataSource == undefined) return console.error('JsonObject is not defined. (JSON is required.)');
+
+  if(options.height != undefined) $target.data('uiHeight', options.height);
+  if(options.dataSource != undefined) $target.data('dsBinding', options.dataSource);
+  if(options.alias != undefined) $target.data('dsCustomizing', options.alias);
+  if(options.fixedColumn != undefined) $target.data('dsColumnHeader', options.fixedColumn);
+  if(options.search != undefined) $target.data('search', options.search);
+
+  dataTable();
+  dataTableOper();
+}
+
+ds.ui.datatableRefresh = function(id, options) {
+  let $target = $(id);
+  if(options.dataSource == undefined) return console.error('JsonObject is not defined. (JSON is required.)');
+  dataTable_Re_Render(options.dataSource);
+}
+
+//datepicker
+ds.ui.datepicker = (id) => {
+  let $target = $(id);
+  if($target.data('transform') == false) datePicker();
+  ds.ui.datepicker.self = $target;
+  return ds.ui.datepicker;
+}
+ds.ui.datepicker.readonly = (statusCheck) => {
+  let $self = ds.ui.datepicker.self;
+  return datepickerStatus($self, 'readonly', statusCheck);
+}
+ds.ui.datepicker.disabled = (statusCheck) => {
+  let $self = ds.ui.datepicker.self;
+//  console.log(statusCheck);
+  return datepickerStatus($self, 'disabled', statusCheck);
+}
+const datepickerStatus = ($self, status, statusCheck) => {
+//    console.log(statusCheck)
+    if($self.length == 0) return;
+    if(statusCheck == true) $self.addClass(status);
+    else if(statusCheck == false) $self.removeClass(status);
+    else {
+        if( $self.hasClass(status) == true ) {
+            // console.log($self.hasClass('readonly'));
+            return true;
+        } else {
+            // console.log($self.hasClass('readonly'));
+            // $self.addClass(status);
+            return false;
+        }
+    }
+}
+ds.ui.datepicker.value = (YYYYMMDD) => {
+  let $self = ds.ui.datepicker.self;
+  if(YYYYMMDD == undefined) {
+      // console.log($self.val());
+      let input_value_Number = parseInt($self.val().replace(/-/gi, ""));
+      ds_msgbox.alert(input_value_Number).done(()=>{}); //tutorial
+      return input_value_Number;
+  }
+  var reg = /([12]\d{3}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01]))/;
+  if(reg.test( YYYYMMDD )) {
+      let yyyy = YYYYMMDD.substr(0, 4),
+          mm = YYYYMMDD.substr(4, 2),
+          dd = YYYYMMDD.substr(6, 2)
+          YYYYMMDD = yyyy + '-' + mm + '-' + dd;
+      $self.val(YYYYMMDD);
+      // console.log($self);
+  }
+}
+ds.ui.datepicker.text = () => {
+  let $self = ds.ui.datepicker.self,
+      input_value_Text = $self.val();
+  // return console.log(input_value_Text);
+  ds_msgbox.alert(input_value_Text).done(()=>{}); //tutorial
+  return input_value_Text;
+}
+
 const lineChartTileClick = (Target) => {
 	let clickparent;
 	$(Target).click(function () {
@@ -366,25 +455,47 @@ const modifyevent = () => {
 	})
 
 }
+// ds.ui.cardlist
+ds.ui.cardlist = function (cardlist_class, options) {
+	let $target = $(cardlist_class);
+	if (options.option.dsDetail == undefined) return;
 
-
+	let cardlist_detail = options.option.dsDetail.split(' ');
+	let cardlist_dsIcon = options.subOption.dsIcon.split(' ');
+	for (var i = 0; i < cardlist_detail.length; i++) {
+		$target.append(
+			"<div data-ds-detail='" + cardlist_detail[i] + "'></div>"
+		)
+	}
+	let cardlist_icons = ''
+	for (var j = 0; j < cardlist_dsIcon.length; j++) {
+		cardlist_icons += cardlist_dsIcon[j];
+		if((j+1) != cardlist_dsIcon.length){
+			cardlist_icons += ' ';
+		}
+	}
+	console.log(options.dsColor)
+	$target.data('ds-mapping', options.dataSource);
+	$target.data('ds-color', options.dsColor);
+	$target.data('ds-category', options.option.dsCategory);
+	$target.data('setting', options.subOption.dsSetting)
+	$target.data('icon', cardlist_icons);
+}
 const cardlistDataBinding = () => {
 	// data mapping, binding
-
-
-	let jsonObjectlsTure = dataObjectExistenceCheck($('.ds-ui-cardlistAllBox'))
-	if(!jsonObjectlsTure) return;
-
 	const cardlistUi = $('.ds-ui-cardlistAllBox');
 	let cardlist_detail = [];
 	let cardlistAfterWork = [];
 	let data_cardlist_detail = [];
-	cardlistData = $(cardlistUi).data('ds-mapping');
+
+	let jsonObjectIsTure = dataObjectExistenceCheck($(cardlistUi));
+	if (!jsonObjectIsTure) return
+
 	let col_num = $(cardlistUi).children('div');
 	for (var i = 0; i < col_num.length; i++) {
 		data_cardlist_detail[i] = $(col_num[i]).data('ds-detail');
 	}
-	cardItem = eval(cardlistData)
+	cardItem = eval($(cardlistUi).data('ds-mapping'));
 	if (col_num.length == 1) {
 		cardlist_detail[0] = data_cardlist_detail[0]
 	} else {
@@ -409,7 +520,7 @@ const cardlistDataBinding = () => {
 		})
 		$.each(cardItem, function (i) {
 			let color_pick = category_obj[i]
-			var newArr = color_option.filter(function (item) {
+			var newArr = $(cardlistUi).data('ds-color').filter(function (item) {
 				return item.category === color_pick;
 			});
 			if (newArr.length === 0) {
@@ -432,7 +543,6 @@ const cardlistDataBinding = () => {
 	})
 	return cardlistAfterWork;
 }
-
 
 //search
 const cardlistSearch = (cardlistAfterData, period_date) => {
@@ -546,7 +656,7 @@ const iconLoad = (icons_result) => {
 
 //statusViewMapping
 const statusViewMapping = (no, data) => {
-	let statusData = eval(data);
+	let statusData = (data == undefined) ? $('.ds-ui-cardlistAllBox').data('ds-mapping') : eval(data);
 	let newArr;
 	$.each(statusData, function (i) {
 		newArr = statusData.filter(function (item) {
@@ -739,13 +849,23 @@ const SubtopicTouchSlider = function(SubtopicList){
 	})
 }
 
+ds.ui.footer = function (footer_class, options) {
+	let $target = $(footer_class);
+	$taget_children = $(footer_class).children('div');
+	for(var i = 0; i < options.value.length; i++){
+		$($taget_children[i]).data('color', options.value[i].dsColor);
+		$($taget_children[i]).data('direction', options.value[i].dsDirection);
+		$($taget_children[i]).append(
+			"<p data-ds-standard='" + options.value[i].dsStandard + "' data-ds-calc-detail='" + options.value[i].dsCalcDetail +"'></p>"
+		)
+	}
+	$target.data('ds-binding', options.dataSource);
+}
 
-//footerBinding
-const footerDataBinding = (footerAlltag, data_set) => {
-	let jsonObjectlsTure = dataObjectExistenceCheck($('.footer'))
-	if(!jsonObjectlsTure) return;
+
+const footerDataBinding = (footerAlltag) => {
 	for (var i = 0; i < footerAlltag.length; i++) {
-		dataItem = eval(data_set);
+		dataItem = $('.ds-ui-footerBox').data('ds-binding');
 		let calc_standard;
 		let calc_detail;
 		// circle-data-binding
@@ -778,8 +898,7 @@ const footerDataBinding = (footerAlltag, data_set) => {
 				}
 			}
 			if (calc_detail[0] === 'mul' || calc_detail[0] === 'add' || calc_detail[0] === 'sub' || calc_detail[0] === 'div') {
-				// data-calc에서 총합 / 평균을 바로 구하는게 아니라 두개 이상의 데이터를 연관지어 계산해서 총합 /
-				// 평균을 구하고 싶을 경우 여기에 들어온다.
+				// data-calc에서 총합 / 평균을 바로 구하는게 아니라 두개 이상의 데이터를 연관지어 계산해서 총합 / 평균을 구하고 싶을 경우 여기에 들어온다.
 				if (calc_detail[0] == 'add') {
 					let totalData = 0;
 
@@ -806,6 +925,7 @@ const footerDataBinding = (footerAlltag, data_set) => {
 		}
 	}
 }
+
 
 //footerTouchSlider
 const footerTouchSlider = (footerBoxList) => {
@@ -840,551 +960,536 @@ const footerTouchSlider = (footerBoxList) => {
 
 //dataTable
 const dataTableOper = () => {
-	if($('.ds-ui-data-table').length == 0) return;
-	dataTable_Customizing();
-	dataTable_Render();
-	dataTable_Search();
+   if($('.ds-ui-data-table').length == 0) return;
+   dataTable_Customizing();
+   dataTable_Render();
+   dataTable_Search();
 }
 
-//표시하길 원하는 컬럼의 명과 그의 별명부여.
+// 표시하길 원하는 컬럼의 명과 그의 별명부여.
 const dataTable_Customizing = () => {
 
-	let $dataTable = $('.ds-ui-data-table'),
-	dsCustomize = eval($dataTable.data('dsCustomizing')),
-	customize_Object = Object.entries(dsCustomize),
-	dataTableObject = eval($dataTable.data('dsBinding')),
-	dataTableObj_Property = Object.keys(dataTableObject[0]),
-	excludeProperty = [];
+   let $dataTable = $('.ds-ui-data-table'),
+   dsCustomize = $dataTable.data('dsCustomizing'),
+   customize_Object = Object.entries(dsCustomize),
+   dataTableObject = $dataTable.data('dsBinding'),
+   dataTableObj_Property = Object.keys(dataTableObject[0]),
+   excludeProperty = [];
 
-	for(var i=0; i<dataTableObj_Property.length; i++) {
-		let columnName = dataTableObj_Property[i];
-		if(dsCustomize.hasOwnProperty(columnName) == false) {
-			excludeProperty.push(columnName);
-		}
-	}
+   for(var i=0; i<dataTableObj_Property.length; i++) {
+      let columnName = dataTableObj_Property[i];
+      if(dsCustomize.hasOwnProperty(columnName) == false) {
+         excludeProperty.push(columnName);
+      }
+   }
 
-	// console.log(customize_Object); // before
-	$.each(dataTableObject, (index, row) => {
-		for(var i=0; i<customize_Object.length; i++) {
-			let new_key = customize_Object[i][1],
-			old_key = customize_Object[i][0];
-			if(index == 0 && old_key == $dataTable.data('dsColumnHeader')) $dataTable.data('dsColumnHeader', new_key); 
-			row[ new_key ] = row[ old_key ];
-			delete row[ old_key ];
-		}
+   // console.log(customize_Object); // before
+   $.each(dataTableObject, (index, row) => {
+      for(var i=0; i<customize_Object.length; i++) {
+         let new_key = customize_Object[i][1],
+         old_key = customize_Object[i][0];
+         if(index == 0 && old_key == $dataTable.data('dsColumnHeader')) $dataTable.data('dsColumnHeader', new_key); 
+         row[ new_key ] = row[ old_key ];
+         delete row[ old_key ];
+      }
 
-		let exclude_Column = '';
-		for(var i=0; i<excludeProperty.length; i++) {
-			exclude_Column = excludeProperty[i];
-			delete row[exclude_Column];
-		}
-	});
-	// $dataTable.data('dsColumnHeader')
+      let exclude_Column = '';
+      for(var i=0; i<excludeProperty.length; i++) {
+         exclude_Column = excludeProperty[i];
+         delete row[exclude_Column];
+      }
+   });
+   // $dataTable.data('dsColumnHeader')
 
-	// console.log(dataTableObject); // after
+   // console.log(dataTableObject);    // after
 
-}
-
-let ds = [];
-ds.ui =[];
-ds.ui.datatable = function(id, options) {
-	let $target = $(id);
-	console.log($target);
-	console.log(options);
 }
 const dataTable_Render = function(dataTableObject) {
-	if(dataTableObject == undefined) dataTableObject = [];
-	
-	dataTableBind(dataTableObject);
-	columnOptionHandler();
-	dataTable_Scroll();
-	fxRendering();
-	fx_Toggle();
-	dataTable_Sort();
-	imgView();
+   if(dataTableObject == undefined) dataTableObject = [];
+   
+   dataTableBind(dataTableObject);
+   columnOptionHandler();
+   dataTable_Scroll();
+   fxRendering();
+   fx_Toggle();
+   dataTable_Sort();
+   imgView();
 }
 
-//dataTable - search... : s
+// dataTable - search... : s
 const dataTable_Search = () => {
-	let $inputSearchBox = $('.ds-ui-data-table-options').find('.search'),
-	$inputSearch = $inputSearchBox.children();
-	if($inputSearch.length != 0) {
-		if( $inputSearchBox.data('dsPlaceholder') != undefined )
-			$inputSearch.attr('placeholder', $inputSearchBox.data('dsPlaceholder'));
-		$inputSearch.on('keyup', (e) => {
-			let input = e.target.value.toLowerCase().trim();
-			if(input == '') {
-				// $('.data-table .grid-row-header .header-column, .data-table
-				// .grid-body .grid-row').removeClass('searched');
-				// console.log('removeClass : searched!');
-				dataTable_Re_Render();
-				return;
-			}
-			onFilter(input); // send value input text
-		});
-	}
+   let $inputSearchBox = $('.ds-ui-data-table-options').find('.search'),
+   $inputSearch = $inputSearchBox.children();
+   if($inputSearch.length != 0) {
+      if( $inputSearchBox.data('dsPlaceholder') != undefined )
+         $inputSearch.attr('placeholder', $inputSearchBox.data('dsPlaceholder'));
+      $inputSearch.on('keyup', (e) => {
+         let input = e.target.value.toLowerCase().trim();
+         if(input == '') {
+            // $('.data-table .grid-row-header .header-column, .data-table .grid-body .grid-row').removeClass('searched');
+            // console.log('removeClass : searched!');
+            dataTable_Re_Render();
+            return;
+         }
+         onFilter(input); // send value input text
+      });
+   }
 };
 
 const onFilter = function(val) { // get value from input
-	let tableData = eval($('.ds-ui-data-table').data('dsBinding')),
-	searchedTableData = [],
-	filter_reg = new RegExp(val);
-	$.each(tableData, function(index, row) {
-		let column_data='';
-		for(let i=0; i<Object.values(row).length; i++) {
-			column_data = Object.values(row)[i].toString().toLowerCase().trim();
-			if(checkExtension(column_data) != "None") break;
-			if(column_data.match(filter_reg) != null) {
-				searchedTableData.push(row);
-				break;
-			}
-		}
-	});
-	// console.log(searchedTableData);
-	dataTable_Re_Render(searchedTableData);
+   let tableData = eval($('.ds-ui-data-table').data('dsBinding')),
+   searchedTableData = [],
+   filter_reg = new RegExp(val);
+   $.each(tableData, function(index, row) {
+      let column_data='';
+      for(let i=0; i<Object.values(row).length; i++) {
+         column_data = Object.values(row)[i].toString().toLowerCase().trim();
+         if(checkExtension(column_data) != "None") break;
+         if(column_data.match(filter_reg) != null) {
+            searchedTableData.push(row);
+            break;
+         }
+      }
+   });
+   // console.log(searchedTableData);
+   dataTable_Re_Render(searchedTableData);
 }
 
 const dataTable_Re_Render = function (searchedTableData) {
-	// dataTable remove
-	$('.data-table-wrap .ds-ui-data-table').children().remove();
-	$('.ds-ui-data-table').unwrap('.data-table-wrap');
-	$('.ds-ui-data-table').parents('.popupBox').remove();
-	// dataTable render
-	dataTable();
-	dataTable_Render(searchedTableData);
+   // dataTable remove
+   $('.data-table-wrap .ds-ui-data-table').children().remove();
+   $('.ds-ui-data-table').unwrap('.data-table-wrap');
+   $('.ds-ui-data-table').parents('.popupBox').remove();
+   // dataTable render
+   dataTable();
+   dataTable_Render(searchedTableData);
 }
-//dataTable - search... : e
+// dataTable - search... : e
 
-//dataTable - DataBinding...
+// dataTable - DataBinding...
 const dataTableBind = (tableData) => {
-	let $dataTable = $('.ds-ui-data-table'),
-	dataObject = eval($dataTable.data('dsBinding'));
-	if(tableData.length != 0)   dataObject = tableData;
-	// console.log(dataObject);
-	if(dataObject.length !=0) {
-		let columnHeaderName = $dataTable.data('dsColumnHeader');
+   let $dataTable = $('.ds-ui-data-table'),
+   dataObject = $dataTable.data('dsBinding');
+   if(tableData.length != 0)   dataObject = tableData;
+   // console.log(dataObject);
+   if(dataObject.length !=0) {
+      let columnHeaderName = $dataTable.data('dsColumnHeader');
 
-		// dsColumnHeader Presence Check
-		if(columnHeaderName != undefined) {
-			// is True -> in dataObject's key check
-			if(!columnHeaderName in dataObject[0]) {
-				console.error('data-ds-column-Header does not exist in DataObject');
-				return ;
-			}
-			// ==>... columnHeader exist!
+      // dsColumnHeader Presence Check
+      if(columnHeaderName != undefined) {
+         //is True -> in dataObject's key check
+         if(!columnHeaderName in dataObject[0]) {
+            console.error('data-ds-column-Header does not exist in DataObject');
+            return ;
+         }
+         // ==>... columnHeader exist!
 
-			// key's length == 1 -> column.length == 1
-			// [ All Expression. / standardColumn&(headerColumn:standardColumn) ]
-			// 2 or more... dataRendering ( headerColumn:standardColumn remove. )
-			let rowHeader = '',
-			columnHeader = '',
-			rowsColumns = '',
-			columnFooter = '',
-			tmp = [],
-			reCount = 0;
-			$.each($(dataObject), (index, rowData) => {
-				// console.log(rowData);
-				if(index == 0) {
-					reCount = 0;
-					for(var i=0; i < Object.keys(rowData).length; i++) {
-						if( Object.keys(rowData).length >= 2 && 
-								Object.keys(rowData)[i] == columnHeaderName) continue;
+         // key's length == 1 -> column.length == 1
+         // [ All Expression. / standardColumn&(headerColumn:standardColumn) ]
+         // 2 or more... dataRendering ( headerColumn:standardColumn remove. )
+         let rowHeader = '',
+         columnHeader = '',
+         rowsColumns = '',
+         columnFooter = '',
+         tmp = [],
+         reCount = 0;
+         $.each($(dataObject), (index, rowData) => {
+            // console.log(rowData);
+            if(index == 0) {
+               reCount = 0;
+               for(var i=0; i < Object.keys(rowData).length; i++) {
+                  if( Object.keys(rowData).length >= 2 && 
+                        Object.keys(rowData)[i] == columnHeaderName) continue;
 
-						columnHeader += '<div class="header-column c' + (reCount + 1) + '">' + Object.entries(rowData)[i][0] + '<span></span></div>';
-						columnFooter += '<div class="header-column c' + (reCount + 1) + '"></div>';
-						tmp.push(Object.entries(rowData)[i][0]);
-						reCount++;
-					}
-				}
+                  columnHeader += '<div class="header-column c' + (reCount + 1) + '">' + Object.entries(rowData)[i][0] + '<span></span></div>';
+                  columnFooter += '<div class="header-column c' + (reCount + 1) + '"></div>';
+                  tmp.push(Object.entries(rowData)[i][0]);
+                  reCount++;
+               }
+            }
 
-				rowsColumns += 
-					'<div class="grid-row r' + (index + 1) + '" style="grid-row: ' + (index + 1) + '">';
-				reCount = 0;
-				for(var i=0; i < Object.keys(rowData).length; i++) {
-					if( Object.keys(rowData).length >= 2 && 
-							Object.keys(rowData)[i] == columnHeaderName) continue;
-					let cell_data = Object.values(rowData)[i];
-					const EXT = checkExtension(cell_data);
-					switch(EXT) {
-					case "Image" : {
-						cell_data = "<img data-imgurl=" + cell_data + " src=" + 'https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/image-32.png' + " class='ds-ui-img' />";
-						break;
-					}
-					case "Document" : {
-						cell_data = "<a href=" + cell_data + "><img src='https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/memo-32.png' alt='documentfile' class='ds-ui-doc' /></a>";
-						break;
-					}
-					}
-					rowsColumns += '<div class="grid-cell c' + (reCount + 1) + '">' + cell_data + '</div>';
-					reCount++;
-				}
-				// console.log(i); // length check
-				rowsColumns += '</div>';
-				rowHeader += '<div class="header-column r' + (index + 1) + '">' + rowData[columnHeaderName] +'</div>';
+            rowsColumns += 
+               '<div class="grid-row r' + (index + 1) + '" style="grid-row: ' + (index + 1) + '">';
+            reCount = 0;
+            for(var i=0; i < Object.keys(rowData).length; i++) {
+               if( Object.keys(rowData).length >= 2 && 
+                     Object.keys(rowData)[i] == columnHeaderName) continue;
+               let cell_data = Object.values(rowData)[i];
+               const EXT = checkExtension(cell_data);
+               switch(EXT) {
+               case "Image" : {
+                  cell_data = "<img data-imgurl=" + cell_data + " src=" + 'https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/image-32.png' + " class='ds-ui-img' />";
+                  break;
+               }
+               case "Document" : {
+                  cell_data = "<a href=" + cell_data + "><img src='https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/memo-32.png' alt='documentfile' class='ds-ui-doc' /></a>";
+                  break;
+               }
+               }
+               rowsColumns += '<div class="grid-cell c' + (reCount + 1) + '">' + cell_data + '</div>';
+               reCount++;
+            }
+            // console.log(i); // length check
+            rowsColumns += '</div>';
+            rowHeader += '<div class="header-column r' + (index + 1) + '">' + rowData[columnHeaderName] +'</div>';
 
-			});
-			$('.ds-ui-data-table .grid-row-header').append(rowHeader);
-			$('.ds-ui-data-table .grid-body').append(rowsColumns);
-			$('.ds-ui-data-table .grid-header').append(columnHeader);
-			$('.ds-ui-data-table .grid-footer').append(columnFooter);
+         });
+         $('.ds-ui-data-table .grid-row-header').append(rowHeader);
+         $('.ds-ui-data-table .grid-body').append(rowsColumns);
+         $('.ds-ui-data-table .grid-header').append(columnHeader);
+         $('.ds-ui-data-table .grid-footer').append(columnFooter);
 
-		}
-	}
+      }
+   }
 }
 
-//data-table Total Function : start
-//1. value type : number check
-//2. Without false => func oper
-//3. data-rendering...
+// data-table Total Function : start
+// 1. value type : number check
+// 2. Without false => func oper
+// 3. data-rendering...
 
-//toggle totals & average
+// toggle totals & average
 const fx_Toggle = () => {
-	let $fx = $('.ds-ui-data-table .grid-footer-header');
-	if($fx.length != 0) {
-		$fx.children().on('click', (e) => {
-			if($fx.children().text() == 'Totals') $fx.children().text('Average');
-			else $fx.children().text('Totals');
-			fxRendering();
-		});
-	}
+   let $fx = $('.ds-ui-data-table .grid-footer-header');
+   if($fx.length != 0) {
+      $fx.children().on('click', (e) => {
+         if($fx.children().text() == 'Totals') $fx.children().text('Average');
+         else $fx.children().text('Totals');
+         fxRendering();
+      });
+   }
 }
 
 const fxRendering = () => {
-	// Totals, Average인지 구분
-	if(!$('.ds-ui-data-table .grid-footer-header')) return console.error('The .grid-footer-header does not exist.');
+   // Totals, Average인지 구분
+   if(!$('.ds-ui-data-table .grid-footer-header')) return console.error('The .grid-footer-header does not exist.');
 
-	let $footerHeader = $('.ds-ui-data-table .grid-footer-header');
-	let columnText = $footerHeader.children().text();
+   let $footerHeader = $('.ds-ui-data-table .grid-footer-header');
+   let columnText = $footerHeader.children().text();
 
-	// Included characters check...
-	let $footerColumns = $('.ds-ui-data-table .grid-footer').children(),
-	fx = {
-		sum:[],
-		average:[]
-	};
+   // Included characters check...
+   let $footerColumns = $('.ds-ui-data-table .grid-footer').children(),
+   fx = {
+      sum:[],
+      average:[]
+   };
 
-	$footerColumns.each((index1, column) => {
-		let cellNumber = null;
-		$('.data-table-wrap .ds-ui-data-table .grid-body .' + column.classList[1]).each((index2, cell) => {
-			if(index2==0) cellNumber = 0;
-			let cellText = cell.innerText;
-			if(cellNumber == 'NaN') return;
-			if( cellText.match(/[^0-9]/) ) {
-				cellNumber = 'NaN';
-				return;
-			}
-			cellNumber += parseFloat(cellText);
-		});
+   $footerColumns.each((index1, column) => {
+      let cellNumber = null;
+      $('.data-table-wrap .ds-ui-data-table .grid-body .' + column.classList[1]).each((index2, cell) => {
+         if(index2==0) cellNumber = 0;
+         let cellText = cell.innerText;
+         if(cellNumber == 'NaN') return;
+         if( cellText.match(/[^0-9]/) ) {
+            cellNumber = 'NaN';
+            return;
+         }
+         cellNumber += parseFloat(cellText);
+      });
 
-		// render
-		if(cellNumber != 'NaN') {
-			fx.sum.push( { 'column': '.' + column.classList[1], 'value':cellNumber } );
+      //render
+      if(cellNumber != 'NaN') {
+         fx.sum.push( { 'column': '.' + column.classList[1], 'value':cellNumber } );
 
-			let avg = cellNumber / $('.data-table-wrap .ds-ui-data-table .grid-body .' + column.classList[1]).length;
-			if(columnText == 'Average') cellNumber = avg;
-			fx.average.push( { 'column': '.' + column.classList[1], 'value':avg } );
+         let avg = cellNumber / $('.data-table-wrap .ds-ui-data-table .grid-body .' + column.classList[1]).length;
+         if(columnText == 'Average') cellNumber = avg;
+         fx.average.push( { 'column': '.' + column.classList[1], 'value':avg } );
 
-			$('.ds-ui-data-table .grid-footer .' + column.classList[1]).text(cellNumber);
+         $('.ds-ui-data-table .grid-footer .' + column.classList[1]).text(cellNumber);
 
-		} else $('.ds-ui-data-table .grid-footer .' + column.classList[1]).text('NaN');
-	});
+      } else $('.ds-ui-data-table .grid-footer .' + column.classList[1]).text('NaN');
+   });
 }
-//data-table Total Function : end
+// data-table Total Function : end
 
-//data-table Sort : s , sort event mapping
+// data-table Sort : s , sort event mapping
 const dataTable_Sort = () => {
-	$('.grid-header .header-column').on('click', (e) => {
-		let self = e.target;
-		if($(self)[0].tagName == 'SPAN') self = self.parentElement;
-		sortTable(self);
-	});
+   $('.grid-header .header-column').on('click', (e) => {
+      let self = e.target;
+      if($(self)[0].tagName == 'SPAN') self = self.parentElement;
+      sortTable(self);
+   });
 };
-//data-table Sort handler
+// data-table Sort handler
 const sortTable = (self) => {
-	let currentTable = '#' + findRootParentId('.ds-ui-data-table', self),
-	$self = $(self),
-	clickedColumnClass = '.' +  $(self)[0].classList[1],
-	$currentTable = $(currentTable),
-	$columnList = $currentTable.find('.grid-body .grid-row ' + clickedColumnClass),
-	columnsLength = $currentTable.find('.grid-body .grid-row ' + clickedColumnClass).length,
-	rows = [];
+   let currentTable = '#' + findRootParentId('.ds-ui-data-table', self),
+   $self = $(self),
+   clickedColumnClass = '.' +  $(self)[0].classList[1],
+   $currentTable = $(currentTable),
+   $columnList = $currentTable.find('.grid-body .grid-row ' + clickedColumnClass),
+   columnsLength = $currentTable.find('.grid-body .grid-row ' + clickedColumnClass).length,
+   rows = [];
 
-	for(var i=0; i<columnsLength; i++) {
-		let row = $columnList[i].parentElement.classList[1],
-		column = $columnList[i].innerText;
-		rows.push( { 'row': row, 'column': column } );
-	}
-	// type check number, character
-	let cellNumber = null;
-	$('.data-table-wrap .ds-ui-data-table .grid-body ' + clickedColumnClass).each((index2, cell) => {
-		if(index2==0) cellNumber = 0;
-		let cellText = cell.innerText;
-		if(cellNumber == 'NaN') return;
-		if( cellText.match(/[^0-9]/) ) {
-			cellNumber = 'NaN';
-			return;
-		}
-		cellNumber += parseFloat(cellText);
-	});
+   for(var i=0; i<columnsLength; i++) {
+      let row = $columnList[i].parentElement.classList[1],
+      column = $columnList[i].innerText;
+      rows.push( { 'row': row, 'column': column } );
+   }
+   // type check number, character
+   let cellNumber = null;
+   $('.data-table-wrap .ds-ui-data-table .grid-body ' + clickedColumnClass).each((index2, cell) => {
+      if(index2==0) cellNumber = 0;
+      let cellText = cell.innerText;
+      if(cellNumber == 'NaN') return;
+      if( cellText.match(/[^0-9]/) ) {
+         cellNumber = 'NaN';
+         return;
+      }
+      cellNumber += parseFloat(cellText);
+   });
 
 
-	// /////////////////////////////
-	if(cellNumber != 'NaN') {
-		rows.sort((next, current) => { return next.column-current.column; });
-	} else {
-		// column standard..
-		rows.sort( (next, current) => {
-			if (next.column > current.column) return 1;
-			if (next.column < current.column) return -1;
-			return 0;
-		} );
-	} 
+   ///////////////////////////////
+   if(cellNumber != 'NaN') {
+      rows.sort((next, current) => { return next.column-current.column; });
+   } else {
+      // column standard..
+      rows.sort( (next, current) => {
+         if (next.column > current.column) return 1;
+         if (next.column < current.column) return -1;
+         return 0;
+      } );
+   } 
 
-	// toggle-Text(▼ ▲) init...
-	$currentTable.find('.grid-header span').text("");
-	// final sort Decision & toggle-Text(▼ ▲)
-	if( !($self.hasClass("asc")) ) {
-		$self.removeClass("desc");
-		$self.addClass("asc");
-		$self.find("span").text("▲");
-	} else if(($self.hasClass("asc"))){
-		rows.reverse();
-		$self.removeClass("asc");
-		$self.addClass("desc");
-		$self.find("span").text("▼");
-	}
-	// row rendering...
-	rowRendering( $currentTable, rows );
+   // toggle-Text(▼ ▲) init...
+   $currentTable.find('.grid-header span').text("");
+   // final sort Decision & toggle-Text(▼ ▲)
+   if( !($self.hasClass("asc")) ) {
+      $self.removeClass("desc");
+      $self.addClass("asc");
+      $self.find("span").text("▲");
+   } else if(($self.hasClass("asc"))){
+      rows.reverse();
+      $self.removeClass("asc");
+      $self.addClass("desc");
+      $self.find("span").text("▼");
+   }
+   // row rendering...
+   rowRendering( $currentTable, rows );
 
 }
 
 const rowRendering = ($currentTable, rows) => {
-	$.each(rows, (index, current) => {
-		let currentRow = '.' + current.row,
-		changeRowNumber = index + 1;
-		$currentTable.find(currentRow).addClass('*r' + changeRowNumber);
-		$currentTable.find(currentRow).removeClass(current.row);
-	});
+   $.each(rows, (index, current) => {
+      let currentRow = '.' + current.row,
+      changeRowNumber = index + 1;
+      $currentTable.find(currentRow).addClass('*r' + changeRowNumber);
+      $currentTable.find(currentRow).removeClass(current.row);
+   });
 
-	$.each($currentTable.find('.grid-row-header .header-column, .grid-body .grid-row'), (index, row) => {
-		let changeClassName = row.className.replace('*', ''),
-		rowNumber = changeClassName.split(' ')[1].replace('r', '');
-		$(row).removeClass().addClass(changeClassName).attr('style', 'grid-row:' + rowNumber);
-	});
+   $.each($currentTable.find('.grid-row-header .header-column, .grid-body .grid-row'), (index, row) => {
+      let changeClassName = row.className.replace('*', ''),
+      rowNumber = changeClassName.split(' ')[1].replace('r', '');
+      $(row).removeClass().addClass(changeClassName).attr('style', 'grid-row:' + rowNumber);
+   });
 
 }
 
-//data-table Sort : e
+// data-table Sort : e
 
 //columnOption : s
 const columnOptionHandler = () => {
-	$('.columnSetting-btn').unbind('click').bind('click', (e1) => {
-		let targetRootId = findRootParentId('.ds-ui-data-table', e1.target);
-		// let $dataTablePB = $('#' + targetRootId + '_pb');
-		let dataTablePBId = '#' + targetRootId + '_pb';
+   $('.columnSetting-btn').unbind('click').bind('click', (e1) => {
+      let targetRootId = findRootParentId('.ds-ui-data-table', e1.target);
+      // let $dataTablePB = $('#' + targetRootId + '_pb');
+      let dataTablePBId = '#' + targetRootId + '_pb';
 
-		if(targetRootId != null && $(dataTablePBId).length == 0) {
-			dataTableOptionModal($('#' + targetRootId)); // popupBox에 id 부여됨
-			$(dataTablePBId).find('.ds-ui-data-table').attr('style','border:unset');
-			$(dataTablePBId).find('.popup-body').attr('style','padding:unset');
-			$(dataTablePBId).find('#' + targetRootId + '-check').on('click', (e2) => $(dataTablePBId).addClass('popup-off'));
-			$(dataTablePBId).find('.grid-cell').on('click', (e2) => columnSwitch(e2.target ,targetRootId));
-		}
-		$(dataTablePBId).removeClass('popup-off');
-	});
+      if(targetRootId != null && $(dataTablePBId).length == 0) {
+         dataTableOptionModal($('#' + targetRootId)); // popupBox에 id 부여됨
+         $(dataTablePBId).find('.ds-ui-data-table').attr('style','border:unset');
+         $(dataTablePBId).find('.popup-body').attr('style','padding:unset');
+         $(dataTablePBId).find('#' + targetRootId + '-check').on('click', (e2) => $(dataTablePBId).addClass('popup-off'));
+         $(dataTablePBId).find('.grid-cell').on('click', (e2) => columnSwitch(e2.target ,targetRootId));
+      }
+      $(dataTablePBId).removeClass('popup-off');
+   });
 }
 
 const columnSwitch = (self, dataTableId) => {
-	dataTableId = '#' + dataTableId;
-	// let dataTablePBId = dataTableId + '_pb';
+   dataTableId = '#' + dataTableId;
+   // let dataTablePBId = dataTableId + '_pb';
 
-	// popupBox's Row
-	let $self = $(self); 
+   //popupBox's Row
+   let $self = $(self); 
 
-	if($self[0].className.indexOf('toggle') != -1 || $self.parent()[0].className.indexOf('toggle') != -1) { // 'toggle
-		// has
-		// true
-		// =>
-		// find
-		// Parent
-		// grid-cell
-		$self = $self.parents('.grid-cell');
-	}
+   if($self[0].className.indexOf('toggle') != -1 || $self.parent()[0].className.indexOf('toggle') != -1) { // 'toggle has true => find Parent grid-cell
+      $self = $self.parents('.grid-cell');
+   }
 
-	// columns selected option
-	let selectedColumnClass = '.' +  $self[0].classList[1],
-	$selectedRow = $self.parent();
+   // columns selected option
+   let selectedColumnClass = '.' +  $self[0].classList[1],
+   $selectedRow = $self.parent();
 
-	// popupBox column switch (on/off)
-	let switchConfig = {
-			'$selectedRow': $selectedRow,
-			'dataTableId': dataTableId,
-			'selectedColumnClass': selectedColumnClass
-	}
+   // popupBox column switch (on/off)
+   let switchConfig = {
+      '$selectedRow': $selectedRow,
+      'dataTableId': dataTableId,
+      'selectedColumnClass': selectedColumnClass
+   }
 
-	$selectedRow.hasClass('column-off') ? 
-			switchOn(switchConfig) : switchOff(switchConfig);
+   $selectedRow.hasClass('column-off') ? 
+         switchOn(switchConfig) : switchOff(switchConfig);
 }
 
-//rendering popupBox & dataTable
+// rendering popupBox & dataTable
 const switchOn = (config) => {
-	config.$selectedRow.removeClass('column-off');
-	config.$selectedRow.find('.toggle').addClass('toggle--active');
-	$(config.dataTableId).find(config.selectedColumnClass).removeClass('off');
+   config.$selectedRow.removeClass('column-off');
+   config.$selectedRow.find('.toggle').addClass('toggle--active');
+   $(config.dataTableId).find(config.selectedColumnClass).removeClass('off');
 }
 const switchOff = (config) => {
-	config.$selectedRow.addClass('column-off');
-	config.$selectedRow.find('.toggle').removeClass('toggle--active');
-	$(config.dataTableId).find(config.selectedColumnClass).addClass('off');
+   config.$selectedRow.addClass('column-off');
+   config.$selectedRow.find('.toggle').removeClass('toggle--active');
+   $(config.dataTableId).find(config.selectedColumnClass).addClass('off');
 }
 
-//decorate
+// decorate
 const dataTableOptionModal = ($dataTable) => {
-	$dataTable.data('dsIsPopup', false);
+   $dataTable.data('dsIsPopup', false);
 
-	basicModal($dataTable);
-	decorateModalDataTable($dataTable);
+   basicModal($dataTable);
+   decorateModalDataTable($dataTable);
 
-	$dataTable.data('dsIsPopup', true);
+   $dataTable.data('dsIsPopup', true);
 }
 
 const decorateModalDataTable = ($dataTable) => {
-	let $targetPB = $('#' + $dataTable[0].id + '_pb');
-	// headerViewRender
-	let standardColumn = $dataTable.data('dsColumnHeader');
-	// console.log(standardColumn);
+   let $targetPB = $('#' + $dataTable[0].id + '_pb');
+   //headerViewRender
+   let standardColumn = $dataTable.data('dsColumnHeader');
+   // console.log(standardColumn);
 
-	let dateHeader = 
-		"<div class='popup-data-header'>" +
-		"<div class='data-title'>" +
-		"<span>" + standardColumn + "</span>" +
-		"<img class='standard-change-btn' src='../assets/images/arrow-down.png'>" +
-		"</div>" +
-		"</div>";
+   let dateHeader = 
+      "<div class='popup-data-header'>" +
+      "<div class='data-title'>" +
+      "<span>" + standardColumn + "</span>" +
+      "<img class='standard-change-btn' src='../assets/images/arrow-down.png'>" +
+      "</div>" +
+      "</div>";
 
-	$targetPB.find('.popup-header')
-	.append(dateHeader);
+   $targetPB.find('.popup-header')
+   .append(dateHeader);
 
-	// bodyViewRender
-	let dateBody = '<div class="ds-ui-data-table"><div class="grid-body popup-columns">';
-	let standardDataBody = 
-		'<div class="popup-change-body off" style="padding:unset;">' +
-		'<div class="ds-ui-data-table" style="border:unset">' +
-		'<div class="grid-body popup-columns">';
-	$dataTable.find('.grid-header').children().each((index, column) => {
-		var columnText = (column.innerText).replace(/▼/gi, '').replace(/▲/gi, '');
-		dateBody += 
-			'<div class="grid-row row-gradation popup-column" style="grid-row: ' + (index + 1) + '">' +
-			'<div class="grid-cell c' + (index + 1) + '">'+ 
-			columnText + 
-			"<div class='toggle toggle--active'>" +
-			"<div class='toggle__rail' data-ds-on='YES' data-ds-off='NO'>" +
-			"<div class='toggle__ball'></div>" +
-			"<span>ON</span>" +
-			"<span class='toggle__off'>OFF</span>" +
-			"</div>" +
-			"</div>" +
-			'</div>' +
-			'</div>';
-		standardDataBody +=
-			'<div class="grid-row popup-column" style="grid-row: '  + (index + 1) +  '">' +
-			'<div class="grid-cell c"'  + (index + 1) +  '>' + columnText + '<a href="#">change</a></div>' +
-			'</div>';
-	});
-	dateBody += '</div></div></div>';
-	standardDataBody += 
-		'</div>' +
-		'</div>' +
-		'</div>';
+   //bodyViewRender
+   let dateBody = '<div class="ds-ui-data-table"><div class="grid-body popup-columns">';
+   let standardDataBody = 
+      '<div class="popup-change-body off" style="padding:unset;">' +
+      '<div class="ds-ui-data-table" style="border:unset">' +
+      '<div class="grid-body popup-columns">';
+   $dataTable.find('.grid-header').children().each((index, column) => {
+      var columnText = (column.innerText).replace(/▼/gi, '').replace(/▲/gi, '');
+      dateBody += 
+         '<div class="grid-row row-gradation popup-column" style="grid-row: ' + (index + 1) + '">' +
+         '<div class="grid-cell c' + (index + 1) + '">'+ 
+         columnText + 
+               "<div class='toggle toggle--active'>" +
+                  "<div class='toggle__rail' data-ds-on='YES' data-ds-off='NO'>" +
+                     "<div class='toggle__ball'></div>" +
+                     "<span>ON</span>" +
+                     "<span class='toggle__off'>OFF</span>" +
+                  "</div>" +
+               "</div>" +
+            '</div>' +
+         '</div>';
+      standardDataBody +=
+         '<div class="grid-row popup-column" style="grid-row: '  + (index + 1) +  '">' +
+         '<div class="grid-cell c"'  + (index + 1) +  '>' + columnText + '<a href="#">change</a></div>' +
+         '</div>';
+   });
+   dateBody += '</div></div></div>';
+   standardDataBody += 
+      '</div>' +
+      '</div>' +
+      '</div>';
 
-	$targetPB.find('.popup-body')
-	.append(dateBody).after(standardDataBody);
+   $targetPB.find('.popup-body')
+   .append(dateBody).after(standardDataBody);
 
-	stdColumnChange_Mode($targetPB);
+   stdColumnChange_Mode($targetPB);
 
-	stdColumnChange_Action($dataTable, $targetPB);
+   stdColumnChange_Action($dataTable, $targetPB);
 
-	row = "<div class='flex-same'><a id=" + $dataTable[0].id + "-check href='#check'>column select</a></div>";
-	$('#'+$dataTable[0].id+'_pb').find('.popup-set-tb').append(row);
+   row = "<div class='flex-same'><a id=" + $dataTable[0].id + "-check href='#check'>column select</a></div>";
+   $('#'+$dataTable[0].id+'_pb').find('.popup-set-tb').append(row);
 }
 
-//standardColumn change Action
+// standardColumn change Action
 const stdColumnChange_Action = ($dataTable, $targetPB) => {
-	$std_changeBody = $targetPB.find('.popup-change-body');
-	$std_changeBody.find('a').on('click', (e) => {
-		let clicked_data = $(e.target)[0].previousSibling.data;
-		$dataTable.data('dsColumnHeader', clicked_data);
-		// data-table Re_Render
-		ds_msgbox.confirm("변경하시겠습니까 ? \n [ " + clicked_data + " ]")
-		.yes(function() {
-			$('.ds-ui-input.search').children().val('');
-			dataTable_Re_Render([]);
-		}).no(function() {
-			return;
-		});
-	});
+   $std_changeBody = $targetPB.find('.popup-change-body');
+   $std_changeBody.find('a').on('click', (e) => {
+      let clicked_data = $(e.target)[0].previousSibling.data;
+      $dataTable.data('dsColumnHeader', clicked_data);
+      // data-table Re_Render
+      ds_msgbox.confirm("Do you really want to change ? [ " + clicked_data + " ]")
+            .yes(function() {
+               $('.ds-ui-input.search').children().val('');
+               dataTable_Re_Render([]);
+            }).no(function() {
+               return;
+            });
+   });
 }
-//standardColumn change Mode...
+// standardColumn change Mode...
 const stdColumnChange_Mode = ($targetPB) => {
-	$targetPB.find('.standard-change-btn').on('click', () => {
-		let $body = $targetPB.find('.popup-body'),
-		$changeBody = $targetPB.find('.popup-change-body');
-		if($body.hasClass('off')){
-			$body.removeClass('off');
-			$changeBody.addClass('off');
-			$targetPB.find('.popup-footer').removeClass('off');
-			$targetPB.find('.standard-change-btn').attr('src', '../assets/images/arrow-down.png');
-		} else {
-			$changeBody.removeClass('off');
-			$body.addClass('off');
-			$targetPB.find('.popup-footer').addClass('off');
-			$targetPB.find('.standard-change-btn').attr('src', '../assets/images/arrow-up.png');
-		}
-	});
+   $targetPB.find('.standard-change-btn').on('click', () => {
+      let $body = $targetPB.find('.popup-body'),
+      $changeBody = $targetPB.find('.popup-change-body');
+      if($body.hasClass('off')){
+         $body.removeClass('off');
+         $changeBody.addClass('off');
+         $targetPB.find('.popup-footer').removeClass('off');
+         $targetPB.find('.standard-change-btn').attr('src', '../assets/images/arrow-down.png');
+      } else {
+         $changeBody.removeClass('off');
+         $body.addClass('off');
+         $targetPB.find('.popup-footer').addClass('off');
+         $targetPB.find('.standard-change-btn').attr('src', '../assets/images/arrow-up.png');
+      }
+   });
 }
 
 //columnOption : e
 
 const dataTable_Scroll = () => {
-	let gridHeader = document.querySelector('.grid-header');
-	let gridBody = document.querySelector('.grid-body');
-	let gridRow = document.querySelector('.grid-row-header');
-	let gridFooter = document.querySelector('.grid-footer');
-	gridBody.addEventListener('scroll', (e) => {
-		gridFooter.scrollLeft = gridHeader.scrollLeft = gridBody.scrollLeft;
-		gridRow.scrollTop = gridBody.scrollTop;
-	});
+   let gridHeader = document.querySelector('.grid-header');
+   let gridBody = document.querySelector('.grid-body');
+   let gridRow = document.querySelector('.grid-row-header');
+   let gridFooter = document.querySelector('.grid-footer');
+   gridBody.addEventListener('scroll', (e) => {
+      gridFooter.scrollLeft = gridHeader.scrollLeft = gridBody.scrollLeft;
+      gridRow.scrollTop = gridBody.scrollTop;
+   });
 }
 
-//util : start
-//event oper.. find current-target's box-root (... class two more)
+// util : start
+// event oper.. find current-target's box-root (... class two more)
 const findRootParentId = (findroot, curent) => {
-	$currentParents = $(curent).parents();
-	for(i=0; i<$currentParents.length; i++) {
-		if($(findroot)[0].className == $currentParents[i].className) return $currentParents[i].id;
-	}
-	console.error("cannot find the root...");
-	return null;
+   $currentParents = $(curent).parents();
+   for(i=0; i<$currentParents.length; i++) {
+      if($(findroot)[0].className == $currentParents[i].className) return $currentParents[i].id;
+   }
+   console.error("cannot find the root...");
+   return null;
 }
-//check extension
+// check extension
 const checkExtension = function(file_url) {
-	let ext_check = '';
-	ext_check = imageExtension(file_url);
-	if(ext_check == true) return "Image";
-	ext_check = docExtension(file_url);
-	if(ext_check == true) return "Document";
-	// return console.log("this is not Image or Document extension.");
-	return "None";
+   let ext_check = '';
+   ext_check = imageExtension(file_url);
+   if(ext_check == true) return "Image";
+   ext_check = docExtension(file_url);
+   if(ext_check == true) return "Document";
+   // return console.log("this is not Image or Document extension.");
+   return "None";
 }
 const imageExtension = function(file_url) {
-	const IMG_FORMAT = "\.(bmp|gif|jpg|jpeg|png)$"; // image reg
-	if((new RegExp(IMG_FORMAT, "i")).test(file_url)) return true;
-	return false;
+   const IMG_FORMAT = "\.(bmp|gif|jpg|jpeg|png)$"; //image reg
+   if((new RegExp(IMG_FORMAT, "i")).test(file_url)) return true;
+   return false;
 }
 const docExtension = function(file_url) {
-	const DOC_FORMAT = "\.(ppt|pptx|doc|docx|xls|pdf|hwp|txt)$"; // document reg
-	if((new RegExp(DOC_FORMAT, "i")).test(file_url)) return true;
-	return false;
+   const DOC_FORMAT = "\.(ppt|pptx|doc|docx|xls|pdf|hwp|txt)$"; // document reg
+   if((new RegExp(DOC_FORMAT, "i")).test(file_url)) return true;
+   return false;
 }
 
 //slideFooter
@@ -1562,13 +1667,21 @@ const barClick = (chartBar, chartBarValue) => {
 }
 ds.ui.chart = function(id, options) {
 	let $target = $(id);
-	console.log($target);
-	console.log(options);
-	console.log(options.dataSource)
-	//$target[0].data.dsdsBinding = options.dataSource;
+	
+	// 데이터전달
 	$target.data('ds-binding',options.dataSource);
 	
-	//$target.data("ds-standard", options.ds-standard);
+	// 필수옵션
+	$target.data('ds-standard', options.option.dsStandard);
+	$target.data('ds-calc-detail', options.option.dsCalcDetail);
+	$target.data('ds-x', options.option.dsX);
+	$target.data('ds-substandard', options.option.dsSubstandard);
+	
+	//suboption
+	$target.data('ds-transfer-naming', options.subOption.dsTransferNaming);
+	$target.data('ds-calc', options.subOption.dsCalc);
+	$target.data('ds-index-position', options.subOption.dsLegendPosition);
+	$target.data('ds-x', options.subOption.dsX);
 }
 let chartData; // data-set 가져오기
 let calc_detail; // data-calc-detail 가져오기

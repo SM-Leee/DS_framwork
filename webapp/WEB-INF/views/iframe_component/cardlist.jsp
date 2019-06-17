@@ -12,14 +12,8 @@
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 	<div class="App">
-		<div class='ds-ui-cardlistAllBox' data-ds-mapping='exampleData'
-			data-ds-category='category' data-setting='true'
-			data-icon='status modify remove'>
-			<div data-ds-detail='date'></div>
-			<div data-ds-detail='company'></div>
-			<div data-ds-detail='price'></div>
+		<div class='ds-ui-cardlistAllBox'>
 		</div>
-
 	</div>
 
 	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -37,18 +31,18 @@
 					price : 300000,
 					date : '2017-12-12',
 					category : 'etc',
-					desc : '안녕하세요? 최기석입니다 반갑습니다 하이하이',
+					desc : 'A 회사 tv 5대 미지급 내역',
 					img : 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/200px-ReceiptSwiss.jpg'
 				},
 				{
 					no : 2,
-					company : 'A',
+					company : 'B',
 					good : 'pc',
 					count : 10,
 					price : 700000,
 					date : '2018-10-19',
 					category : 'plus',
-					desc : '',
+					desc : 'B 회사 pc 10대 수입 내역',
 					img : 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/200px-ReceiptSwiss.jpg'
 				},
 				{
@@ -59,10 +53,10 @@
 					price : 700000,
 					date : '2018-11-01',
 					category : 'minus',
-					desc : '',
+					desc : 'D 회사 pc 13대 수출 내역',
 					img : 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/200px-ReceiptSwiss.jpg'
 				}];
-		const color_option = [ {
+		const colorOption = [ {
 			category : 'etc',
 			color : 'red'
 		}, {
@@ -97,6 +91,18 @@
 			desc : '설명',
 			col : 1
 		} ]
+		ds.ui.cardlist('.ds-ui-cardlistAllBox', {
+	           dataSource: exampleData,
+	           dsColor: colorOption,
+	           option: {
+	               dsCategory: 'category',
+	               dsDetail: 'date company category',
+	           },
+	           subOption: {
+	               dsSetting: true,
+	               dsIcon: 'status modify remove'
+	          }
+	    });
 	</script>
 
 </body>

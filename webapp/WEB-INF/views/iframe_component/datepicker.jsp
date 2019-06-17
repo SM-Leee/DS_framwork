@@ -6,402 +6,139 @@
 <title>Insert title here</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <script type="text/javascript"
-		src="${pageContext.request.contextPath}/assets/js/ds-header-link.js"></script>
+	src="${pageContext.request.contextPath}/assets/js/ds-header-link.js"></script>
 </head>
-	<body class="body">
-	
-		<!-- ########## 컴포넌트 넣는 곳 ########## -->
-		<div class="App">
-			<!-- default datePicker -->
-<input type="text" id="date1" class="ds-ui-datepicker">
-<input type="text" id="date2" class="ds-ui-datepicker" data-ds-label="일  자">			
-<input type="text" id="date3" class="ds-ui-datepicker" data-ds-label="일  자"
-	data-ds-language="en" data-ds-init-date="true">	
-<input type="text" id="date4" class="ds-ui-datepicker" data-ds-label="Date" data-ds-language="en">		
-<input type="text" id="date5" 
-	class="ds-ui-datepicker" data-ds-label="일  자"
-	data-ds-binding="exampleData" data-ds-form="date">
+<body class="body">
+
+	<!-- ########## 컴포넌트 넣는 곳 ########## -->
+	<div class="App">
+		<div class="contents">
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">기본</h3>
+			<div style="height: 7%;">
+				<input type="text" id="date1" class="ds-ui-datepicker"> <input
+					type="text" id="date2" class="ds-ui-datepicker" value="20190630">
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">상태별</h3>
+			<div style="height: 15%;">
+				<input type="text" id="date3" class="ds-ui-datepicker"> <input
+					type="text" id="date4" class="ds-ui-datepicker required"> <input
+					type="text" id="date5" class="ds-ui-datepicker readonly"> <input
+					type="text" id="date6" class="ds-ui-datepicker disabled">
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">읽기 전용여부
+				설정/가져오기</h3>
+			<div style="height: 8%;">
+				<input type="text" id="date7" class="ds-ui-datepicker">
+			</div>
+			<div style="padding-left: 6px; text-align: left; height: 8%;">
+				<button id="btnSetReadonly" class="ds-ui-button">읽기전용 설정</button>
+				<button id="btnRemoveReadonly" class="ds-ui-button">읽기전용 해제</button>
+				<button id="btnReadonlyState" class="ds-ui-button">읽기전용 상태</button>
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">비활성화여부
+				설정/가져오기</h3>
+			<div style="height: 7%;">
+				<input type="text" id="date8" class="ds-ui-datepicker"
+					value="20190617">
+			</div>
+			<div style="padding-left: 6px; text-align: left; height: 8%;">
+				<button id="btnDisable" class="ds-ui-button">활성화</button>
+				<button id="btnEnable" class="ds-ui-button">비화성화</button>
+				<button id="btnEnableState" class="ds-ui-button">활성화 상태</button>
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">값/텍스트 가져오기</h3>
+			<div style="height: 8%;">
+				<input type="text" id="date9" class="ds-ui-datepicker"
+					value="20190520">
+			</div>
+			<div style="padding-left: 6px; text-align: left; height: 8%;">
+				<button id="btnValue" class="ds-ui-button">값 가져오기(value)</button>
+				<button id="btnText" class="ds-ui-button">텍스트 가져오기(text)</button>
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">값 설정하기</h3>
+			<div style="height: 8%;">
+				<input type="text" id="date10" class="ds-ui-datepicker">
+			</div>
+			<div style="height: 8%; text-align: left; padding-left: 6px">
+				<button id="btnSetValue" class="ds-ui-button">값 설정</button>
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">최소, 최대값 설정하기</h3>
+			<div style="height: 8%;">
+				<input type="text" id="date11" class="ds-ui-datepicker"
+					data-ds-min="20190501" data-ds-max="20190728">
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">오늘날짜 세팅</h3>
+			<div style="height: 8%;">
+				<input type="text" id="date12" class="ds-ui-datepicker"
+					data-ds-init-date="true">
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">레이블추가</h3>
+			<div style="height: 8%;">
+				<input type="text" id="date14" class="ds-ui-datepicker"
+					data-ds-label="날짜">
+			</div>
+			<hr>
+			<h3 style="text-align: left; padding: 2px 0 0 7px;">다국어 지원(en)</h3>
+			<div style="height: 8%;">
+				<input type="text" id="date13" class="ds-ui-datepicker"
+					data-ds-language="en">
+			</div>
 		</div>
-		
-	
-		<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath}/assets/js/ds.js"></script>
-		<script type="text/javascript"
-			src="${pageContext.request.contextPath}/assets/js/app.js"></script>
-		<script>
-		const exampleData = [ {
-			no : 1,
-			company : 'A',
-			good : 'tv',
-			count : 5,
-			price : 300000,
-			date : '2017-12-12',
-			category : 'plus',
-			desc : '안녕하세요? 최기석입니다 반갑습니다 하이하이'
-		}, {
-			no : 2,
-			company : 'A',
-			good : 'pc',
-			count : 10,
-			price : 700000,
-			date : '2018-10-19',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 3,
-			company : 'D',
-			good : 'pc',
-			count : 13,
-			price : 700000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 4,
-			company : 'B',
-			good : 'smartphone',
-			count : 3,
-			price : 500000,
-			date : '2018-11-02',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 5,
-			company : 'D',
-			good : 'pc',
-			count : 13,
-			price : 400000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 6,
-			company : 'C',
-			good : 'tv',
-			count : 10,
-			price : 1800000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 7,
-			company : 'C',
-			good : 'radio',
-			count : 12,
-			price : 800000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 8,
-			company : 'D',
-			good : 'pc',
-			count : 21,
-			price : 50000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 9,
-			company : 'C',
-			good : 'pc',
-			count : 4,
-			price : 1500000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 10,
-			company : 'A',
-			good : 'pc',
-			count : 3,
-			price : 2500000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 11,
-			company : 'A',
-			good : 'pc',
-			count : 10,
-			price : 500000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 12,
-			company : 'A',
-			good : 'pc',
-			count : 14,
-			price : 400000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 13,
-			company : 'A',
-			good : 'pc',
-			count : 12,
-			price : 800000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 14,
-			company : 'B',
-			good : 'pc',
-			count : 18,
-			price : 400000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 15,
-			company : 'B',
-			good : 'pc',
-			count : 11,
-			price : 900000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 16,
-			company : 'B',
-			good : 'pc',
-			count : 19,
-			price : 200000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 17,
-			company : 'B',
-			good : 'pc',
-			count : 8,
-			price : 1100000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 18,
-			company : 'B',
-			good : 'pc',
-			count : 5,
-			price : 1300000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 19,
-			company : 'C',
-			good : 'pc',
-			count : 7,
-			price : 1500000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 20,
-			company : 'C',
-			good : 'pc',
-			count : 14,
-			price : 700000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 21,
-			company : 'C',
-			good : 'pc',
-			count : 13,
-			price : 500000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 22,
-			company : 'C',
-			good : 'pc',
-			count : 18,
-			price : 400000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 23,
-			company : 'C',
-			good : 'pc',
-			count : 3,
-			price : 1900000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 24,
-			company : 'D',
-			good : 'pc',
-			count : 17,
-			price : 200000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 25,
-			company : 'D',
-			good : 'pc',
-			count : 8,
-			price : 1000000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 26,
-			company : 'D',
-			good : 'pc',
-			count : 12,
-			price : 500000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 27,
-			company : 'D',
-			good : 'pc',
-			count : 13,
-			price : 500000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 28,
-			company : 'D',
-			good : 'pc',
-			count : 15,
-			price : 700000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 29,
-			company : 'A',
-			good : 'pc',
-			count : 9,
-			price : 1000000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 30,
-			company : 'A',
-			good : 'pc',
-			count : 12,
-			price : 100000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 31,
-			company : 'A',
-			good : 'pc',
-			count : 10,
-			price : 600000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 32,
-			company : 'B',
-			good : 'pc',
-			count : 14,
-			price : 400000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 33,
-			company : 'B',
-			good : 'pc',
-			count : 15,
-			price : 900000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 34,
-			company : 'B',
-			good : 'pc',
-			count : 15,
-			price : 900000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 35,
-			company : 'C',
-			good : 'pc',
-			count : 12,
-			price : 700000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 36,
-			company : 'C',
-			good : 'pc',
-			count : 13,
-			price : 300000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 37,
-			company : 'C',
-			good : 'pc',
-			count : 6,
-			price : 1700000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		}, {
-			no : 38,
-			company : 'D',
-			good : 'pc',
-			count : 20,
-			price : 300000,
-			date : '2018-11-01',
-			category : 'plus',
-			desc : ''
-		}, {
-			no : 39,
-			company : 'D',
-			good : 'pc',
-			count : 13,
-			price : 500000,
-			date : '2018-11-01',
-			category : 'minus',
-			desc : ''
-		}, {
-			no : 40,
-			company : 'D',
-			good : 'pc',
-			count : 9,
-			price : 1500000,
-			date : '2018-11-01',
-			category : 'etc',
-			desc : ''
-		} ];
-		const option2 = [ {
-			category : 'etc',
-			transname : '미지급'
-		}, {
-			category : 'plus',
-			transname : '수입'
-		}, {
-			category : 'minus',
-			transname : '지출'
-		} ];
+	</div>
+
+
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/assets/js/ds.js"></script>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/assets/js/app.js"></script>
+
+	<script>
+	$(document).ready(function () {   
+        // 읽기 전용여부 설정/가져오기
+        $("#btnSetReadonly").click(function () {
+           ds.ui.datepicker('#date7').readonly(true);
+        });
+        $("#btnRemoveReadonly").click(function () {
+           ds.ui.datepicker('#date7').readonly(false);
+        });
+        $("#btnReadonlyState").click(function () {
+           ds_msgbox.alert(ds.ui.datepicker('#date7').readonly()).done(()=>{}); // tutorial
+        });
+
+           // 비활성화여부 설정/가져오기
+        $("#btnDisable").click(function () {
+           ds.ui.datepicker('#date8').disabled(true);
+        });
+        $("#btnEnable").click(function () {
+           ds.ui.datepicker('#date8').disabled(false);
+        });
+        $("#btnEnableState").click(function () {
+           ds_msgbox.alert(ds.ui.datepicker('#date8').disabled()).done(()=>{}); // tutorial
+        });
+
+        // 값/텍스트 가져오기
+        $("#btnValue").click(function () {
+           ds.ui.datepicker("#date9").value();
+        });
+        $("#btnText").click(function () {
+           ds.ui.datepicker("#date9").text();
+        });
+
+        // 값 설정하기
+        $("#btnSetValue").click(function () {
+             ds.ui.datepicker("#date10").value("20151212");
+         });
+     });	
 	</script>
 
-	</body>
+</body>
 </html>

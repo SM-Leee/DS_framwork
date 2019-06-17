@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>라디오 버튼</h1>
 					<div class="tutorial-content-path">
-						<p>Component > RadioButton</p>
+						<p>&nbsp;라디오 버튼으로 버튼 선택 지정, 버튼 위치 지정, 활성화 유무, 레이블 유무를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

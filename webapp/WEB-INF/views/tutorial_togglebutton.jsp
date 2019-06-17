@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>스위치 버튼</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Toggle Button</p>
+						<p>&nbsp;스위치 버튼으로 두 가지 상태를 가지고 있습니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

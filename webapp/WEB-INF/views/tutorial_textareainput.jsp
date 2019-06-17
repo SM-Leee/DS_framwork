@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>멀티라인</h1>
 					<div class="tutorial-content-path">
-						<p>Component > TextArea Input</p>
+						<p>&nbsp;멀리라인으로 가로, 세로 크기 지정 및 레이블 유무를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

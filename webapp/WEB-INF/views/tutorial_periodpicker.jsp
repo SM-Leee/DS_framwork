@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>기간피커</h1>
 					<div class="tutorial-content-path">
-						<p>Component >Period Picker</p>
+						<p>&nbsp;날짜 범위를 선택 할 수 있는 기간 피커로 한글과 영어 언어 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

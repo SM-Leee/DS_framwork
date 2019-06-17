@@ -14,16 +14,11 @@
 	<div class="App">
 		<div class="contents">
 			<div class='ds-ui-chart radar' id='radar1'
-				data-ds-binding='exampleData' data-ds-standard='category'
-				data-ds-calc-detail='mul price count' data-ds-x='company'></div>
+				></div>
 			<div class='ds-ui-chart radar' id='radar2'
-				data-ds-binding='exampleData' data-ds-standard='category'
-				data-ds-calc-detail='mul price count' data-ds-x='company'
-				data-ds-transfer-naming='chartOption2'></div>
-			<div class='ds-ui-chart radar' id='radar3' data-ds-binding='exampleData'
-				data-ds-standard='category' data-ds-calc-detail='mul price count'
-				data-ds-x='company' data-ds-transfer-naming='chartOption2'
-				data-ds-index-position="top"></div>
+				></div>
+			<div class='ds-ui-chart radar' id='radar3'
+				></div>
 		</div>
 	</div>
 
@@ -425,6 +420,51 @@
 		}, {
 			desc : '설명'
 		} ];
+		ds.ui.chart('#radar1', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'category',
+				dsX : 'company',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+				
+			}
+		})
+		ds.ui.chart('#radar1', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'category',
+				dsX : 'company',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+				
+			}
+		})
+		ds.ui.chart('#radar2', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'category',
+				dsX : 'company',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+				dsTransferNaming : chartOption2
+			}
+		})
+		ds.ui.chart('#radar3', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'category',
+				dsX : 'company',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+				dsTransferNaming : chartOption2,
+				dsLegendPosition : 'top'
+			}
+		})
 	</script>
 
 </body>

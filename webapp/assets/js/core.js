@@ -1,4 +1,5 @@
 /*document.open();*/
+
 document.write("<script type='text/javascript' src='"+window.location.pathname+"/../../assets/js/component/falsepiechart.js' ><" + "/script>");
 
 document.write("<script type='text/javascript' src='"+window.location.pathname+"/../../assets/js/component/input.js' ><" + "/script>");
@@ -37,7 +38,7 @@ function component(){
 	headerTitle()
 	headerToggleMenu();
 	navigatorSubmenu();
-	dataTable();
+//	dataTable();
 	inputFormat();
 	dropdownPicker();
 	datePicker();
@@ -98,3 +99,4 @@ const resizible = function () {
 	});
 
 }
+

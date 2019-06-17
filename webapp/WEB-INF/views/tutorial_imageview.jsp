@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>이미지 뷰</h1>
 					<div class="tutorial-content-path">
-						<p>Component > ImageView</p>
+						<p>&nbsp;이미지 뷰로 클릭 시 이미지가 확대되어 보여줍니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

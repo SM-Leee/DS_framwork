@@ -14,13 +14,9 @@
 	<div class="App">
 		<div class="contents">
 			<div class='ds-ui-chart line' id='line1'
-				data-ds-binding='exampleData' data-ds-standard='company'
-				data-ds-substandard='category' data-ds-x='date'
-				data-ds-calc-detail='mul price count'></div>
+				></div>
 			<div class='ds-ui-chart line' id='line2'
-				data-ds-binding='exampleData' data-ds-standard='company'
-				data-ds-substandard='category' data-ds-x='date'
-				data-ds-calc-detail='count' data-ds-transfer-naming='chartOption2'></div>
+				></div>
 		</div>
 	</div>
 	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -421,6 +417,31 @@
 		}, {
 			desc : '설명'
 		} ];
+		ds.ui.chart('#line1', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'company',
+				dsSubstandard : 'category',
+				dsCalcDetail : 'mul price count',
+				dsX : 'date'
+			},
+			subOption : {
+			}
+		})
+		ds.ui.chart('#line2', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'company',
+				dsSubstandard : 'category',
+				dsCalcDetail : 'count',
+				dsX : 'date'
+			},
+			subOption : {
+				dsTransferNaming : chartOption2
+			}
+		})
+		
+		
 	</script>
 
 </body>

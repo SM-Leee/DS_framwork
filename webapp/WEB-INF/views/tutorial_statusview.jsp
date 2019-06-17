@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>상세 뷰</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Status View</p>
+						<p>&nbsp;상세정보 뷰로 클릭 시 데이터 소스에서 입력된 No의 데이터를 보여줍니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

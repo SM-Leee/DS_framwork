@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>텍스트박스</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Input</p>
+						<p>&nbsp;문자열만 입력이 가능한 텍스트박스로 가로 길이 및 레이블 유무를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

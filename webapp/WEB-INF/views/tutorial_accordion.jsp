@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>아코디언 메뉴</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Accordion</p>
+						<p>&nbsp;아코디언 메뉴로 제목을 클릭하면 내용이 펼쳐지고 다시 클릭하면 축소되며 선택 지정, 활성화 유무, 말줄임표 라인 수를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

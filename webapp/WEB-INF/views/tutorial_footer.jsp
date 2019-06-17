@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>Layout</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Footer</p>
+						<p>&nbsp;기본 레이아웃 부분의 Footer로  1~3개의 내부 요소로 구성될 수 있으며 텍스트의 가로, 세로 정렬 지정이 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -36,7 +36,6 @@
 						<h3>&nbsp;기본</h3>
 <div class="tutorial-component-source">
     <textarea class="tutorial-sourcecode xml" id="codemirror0">
-        <!-- #1 -->
         <div class="footer">
                 <div class="ds-ui-footerBox">
                  <div data-color='#00AAF0' data-direction='horizen'>
@@ -76,65 +75,77 @@
         <p><span class="ds-tag-value">&nbsp;Footer 내부 요소 개수</span>&#9;Footer 내부 요소의 개수는 1~3개를 권장한다.</p>
     </div>
 
-    <!-- ----------------------------------------------- -->
     <h3>&nbsp;disabled Footer</h3>
     <div class="tutorial-component-source">
         <textarea class="tutorial-sourcecode xml" id="codemirror1">
-            <!-- #2 -->
             <div class="footer" data-disabled='true'>
                     <div class="ds-ui-footerBox">
                      <div>
-                         <p>disabled Footer</p>
+                         <p>비활성화 Footer</p>
                      </div>
                  </div>
             </div></textarea>
         </div>
         <div class="tutorial-component-description">
-            <p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;Footer disabled 선택</p>
+            <p><span class="ds-tag-value">&nbsp;data-disabled</span>&#9;Footer 활성화 유무 선택</p>
         </div>
 
         <!-- ----------------------------------------------- -->
 
         <h3>&nbsp;Footer 데이터 바인딩</h3>
         <div class="tutorial-component-source">
-            <textarea class="tutorial-sourcecode xml" id="codemirror2">
-        <!-- #2 -->
-        <div class="footer" data-ds-binding='exampleData'>
-                <div class="ds-ui-footerBox">
-                    <div data-color='#00AAF0' data-direction='horizen'>
-                        <p>A 회사 총 수입 금액</p>
-                        <p data-ds-standard='A plus' data-ds-calc-detail='mul price count'></p>
-                    </div>
-                </div>
-    
-                <div class="ds-ui-footerBox">
-                    <div data-color='#E74D3A'>
-                        <p>총 미지급 횟수</p>
-                        <p data-ds-standard='etc' data-ds-calc-detail='count'></p>
-                    </div>
-                    <div data-color='#00AAF0'>
-                        <p>A 회사 pc 수입 횟수</p>
-                        <p data-ds-standard='A pc plus' data-ds-calc-detail='count'></p>
-                    </div>
-                </div>
-                <div class="ds-ui-footerBox">
-                    <div>
-                        <p>B 회사 pc 수입 개수</p>
-                        <p data-ds-standard='B pc plus' data-ds-calc-detail='add'></p>
-                    </div>
-                </div>
-            </div>
-        </div></textarea>
+								<textarea class="tutorial-sourcecode xml" id="codemirror2">
+ <div class="footer">
+     <div class="ds-ui-footerBox">
+ 	     <div>
+    	     <p>A 회사 총 수입 금액</p>
+         </div>
+     </div>
+	 <div class="ds-ui-footerBox">
+          <div>
+             <p>A 회사 pc 수입 횟수</p>
+          </div>
+    	  <div>
+    	     <p>B 회사 pc 수입 개수</p>
+          </div>
+      </div>
+</div></textarea>
+</div>
+        <div class="tutorial-component-source">
+            <textarea class="tutorial-sourcecode javascript" id="javascript0">
+       ds.ui.footer('.ds-ui-footerBox', {
+	            dataSource: exampleData,
+	            value: [{
+	                    dsColor: '#00AAF0',
+	                    dsDirection: 'horizen',
+	                    dsStandard: 'A plus',
+	                    dsCalcDetail: 'mul price count'
+	                },
+	                {
+	                    dsColor: '#FFA500',
+	                    dsDirection: 'vertical',
+	                    dsStandard: 'A pc plus',
+	                    dsCalcDetail: 'count'
+	                },
+	                {
+	                    dsColor: '#E74D3A',
+	                    dsDirection: 'horizen',
+	                    dsStandard: 'B pc plus',
+	                    dsCalcDetail: 'add'
+	                }
+	            ],
+	        })</textarea>
     </div>
             <div class="tutorial-component-description">
-                <p><span class="ds-tag-value">&nbsp;data-ds-binding</span>&#9;데이터 바인딩 될 json 매핑</p>
-                <p><span class="ds-tag-value">&nbsp;data-ds-standard</span>&#9;Column별 value 선택 가능 (제약조건 : 동일한 column
-                    Value를 지정 불가능)</p>
-                <p><span class="ds-tag-value">&nbsp;data-ds-calc-detail</span>&#9;data-ds-standard Column 선택 후 횟수(Count),
-                    곱(Mul : 'mul column column'), 합(Add) 형식의 데이터 바인딩</p>
+                <p><span class="ds-tag-value">&nbsp;dataSource</span>&#9;데이터 바인딩 될 json 매핑</p>
+                <p><span class="ds-tag-value">&nbsp;dsStandard</span>&#9;Column별 value 선택 가능 (제약조건 : 동일한 항목
+                    	의 값은 지정 불가능합니다.)</p>
+                <p><span class="ds-tag-value">&nbsp;dsCalcDetail</span>&#9;dsStandard 선택 후 횟수(Count),
+                    곱(Mul : 'mul column column'), 합(Add) 형식의 데이터 바인딩 선택</p>
+                    
+                <p>&#8251; 데이터소스에서 항목을 직접 선택하여 데이터를 산출하고 산출될 데이터의 내용을 직접 지정할 수 있다. Value 객체는 ds-ui-footerBox 클래스의 자식 class의  개수만큼 지정할 수 있다.</p>
             </div>
 						</div>
-
 						<!-- 컴포넌트 뷰어 -->
 						<div class="phone2">
 							<div>

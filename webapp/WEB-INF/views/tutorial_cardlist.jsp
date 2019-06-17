@@ -24,10 +24,11 @@
 
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
-				<div class="tutorial-content-title">
+				<div class="tutorial-content-title long-title">
 					<h1>카드리스트</h1>
 					<div class="tutorial-content-path">
-						<p>Component > CardList</p>
+						<p>&nbsp;최대 3개의 요소를 가질 수 있는 카드형 디자인의 카드리스트로</p>
+						<p>&nbsp;데이터 소스 사용시 상세보기, 데이터 수정, 삭제 세가지의 설정 기능을 추가 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -36,117 +37,46 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
-<div class='ds-ui-cardlistAllBox' data-ds-mapping='exampleData'
-	data-ds-category='company'>
-	<div data-ds-detail='date'></div>
-	<div data-ds-detail='company'></div>
-	<div data-ds-detail='price'></div>
-</div></textarea>
+  <div class='ds-ui-cardlistAllBox'></div></textarea>
 							</div>
+					<div class="tutorial-component-source">
+								<textarea class="tutorial-sourcecode javascript" id="javascript0">
+		ds.ui.cardlist('.ds-ui-cardlistAllBox', {
+	   	        dataSource: exampleData,
+	   	        dsColor: colorOption,
+	   	        option: {
+	   	            dsCategory: 'category',
+	   	            dsDetail: 'date company category',
+	   	        },
+	   	        subOption: {
+	   	            dsSetting: true,
+	   	            dsIcon: 'status modify remove'
+	   	       }
+	  	  });</textarea>
+							</div>
+							
 							<div class="tutorial-component-description">
 								<p>
 									<span class="ds-tag-value">&nbsp;ds-ui-cardlistAllBox</span>&#9;클래스
 									명칭
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-ds-mapping</span>&#9;데이터 매핑 될
+									<span class="ds-tag-value">&nbsp;dataSource</span>&#9;데이터 매핑 될
 									JSON 객체명
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-ds-category</span>&#9;색 지정
-									비교 Column 선택
+									<span class="ds-tag-value">&nbsp;dsColor</span>&#9;dsCategory 기준 요소별 사용자 색상 지정
 								</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-ds-detail</span>&#9;매핑 될 Column 명 지정
+									<span class="ds-tag-value">&nbsp;dsDetail</span>&#9;매핑 될 Column 지정
 								</p>
-								<p>&#8251; 설정 개수는 1~3개 가능합니다.</p>
-							</div>
-
-							<!-- ----------------------------------------------- -->
-							<h3>&nbsp;카드리스트 설정 기능</h3>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode xml" id="codemirror1">
-        <!-- #2 -->
-<div class='ds-ui-cardlistAllBox' data-ds-mapping='exampleData'
-	data-ds-category='company' data-setting='true'
-	data-icon='status modify remove'>
-        <div data-ds-detail='date'></div>
-        <div data-ds-detail='company'></div>
-        <div data-ds-detail='price'></div>
-</div></textarea>
-							</div>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode javascript" id="javascript0">
-const exampleData = [{
-                no: 1,
-                company: 'A',
-                good: 'tv',
-                count: 5,
-                price: 100000,
-                date: '2019-03-12',
-                category: 'plus',
-                desc: 'A회사 수입',
-            },
-            {
-                no: 2,
-                company: 'B',
-                good: 'pc',
-                count: 10,
-                price: 700000,
-                date: '2016-04-19',
-                category: 'etc',
-                desc: 'B 회사 미지급',
-            },
-            {
-                no: 3,
-                company: 'C',
-                good: 'pc',
-                count: 13,
-                price: 20000,
-                date: '2017-05-12',
-                category: 'plus',
-                desc: 'C 회사 수입'
-            },
-            {
-                no: 4,
-                company: 'D',
-                good: 'smartphonhone',
-                count: 3,
-                price: 500000,
-                date: '2018-12-02',
-                category: 'etc',
-                desc: 'D 회사 지출'
-            }
-        ]
-
-
-             const color_option = [{
-                category: 'A',
-                color: 'orange'
-            },
-            {
-                category: 'B',
-                color: 'skyblue'
-            },
-            {
-                category: 'C',
-                color: 'green'
-            },
-            {
-                category: 'D',
-                color: 'green'
-            }
-        ];								
-								</textarea>
-							</div>
-							<div class="tutorial-component-description">
+								<p>&#8251; dsDetail의 개수는 최대 3개 항목까지 설정 가능합니다.</p>
 								<p>
-									<span class="ds-tag-value">&nbsp;data-setting</span>&#9;카드리스트
-									상세보기, 수정, 삭제 기능 추가
+									<span class="ds-tag-value">&nbsp;dsSetting</span>&#9;카드리스트
+									상세보기, 수정, 삭제 기능 유무 선택
 								</p>
+								<p>&#8251; 기본 dsSetting의 기능 아이콘은 status, modify, remove이며 세 개의 기능 아이콘중 사용자가 dsIcon의 항목을 변경하여 변경 가능합니다.</p>
 							</div>
-
 						</div>
 
 						<!-- 컴포넌트 뷰어 -->

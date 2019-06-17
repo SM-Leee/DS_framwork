@@ -17,7 +17,6 @@ const statusViewSetting = (btn) => {
         let no = $(this).parent().data('no')
         let data = $(this).parent().data('ds-mapping')
         let statusViewData = statusViewMapping(no, data);
-
         let statusCols = [];
         statusCols = statusViewData[1];
         let statusResult = {};

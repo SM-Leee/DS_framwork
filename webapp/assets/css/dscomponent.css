@@ -409,6 +409,22 @@
    float: left;
    font-size: 4vmin;
    margin: 1.5%;
+   align-items: center;
+}
+.ds-ui-datepicker-box .required {
+   background: url(../images/calendar_required_fas.png) no-repeat 95% 48%;
+   background-size: contain;
+   background-color: #fffeda!important;
+}
+.ds-ui-datepicker-box .disabled {
+   color: transparent;
+}
+.ds-ui-datepicker-box .disabled, 
+.ds-ui-datepicker-box .readonly {
+   background: url(../images/calendar_readonly_fas.png) no-repeat 95% 48%;
+   background-size: contain;
+   background-color: #ebebeb;
+   pointer-events: none;
 }
 .ds-ui-datepicker-box>.datepicker-label-box {
    text-align:left;
@@ -583,6 +599,9 @@
 .date-tb th, .date-tb td {
    padding: 2.9vmin;
    height: 4.3vmin;
+}
+.date-tb td.weekends, .date-tb td.holidays {
+   color:red;
 }
 
 .date-tb td.except {
@@ -1052,6 +1071,7 @@
    grid-column: 2;
    grid-row: 2;
 }
+
 .grid-row {
    display: grid;
    grid-auto-flow: column;

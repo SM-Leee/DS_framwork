@@ -5,39 +5,66 @@ const datePicker = () => {
    // datepicker render
    if($('.ds-ui-datepicker').length != 0) {
       $.each($('.ds-ui-datepicker'), (index, component) => {
+         if( $(component).data('transform') == true ) return true;
          htmlInputDate($(component));
          // datepicker click event on
-         datepickerListener($(component));
          initDate($(component));
-         if($(component).data('dsBinding') == undefined || $(component).data('dsForm') == undefined) return true;
-         dateBind($(component));
+         setDate($(component));
+         datepickerListener($(component));
+         // if($(component).data('dsBinding') == undefined || $(component).data('dsForm') == undefined) return true;
+         $(component).data('transform', true);
+         // dateBind($(component));
       });
    }
 }
-
-const dateBind = ($target) => {
-   let dataObject = '',
-       targetColumn = '',
-       init_value = '',
-       unique_value = '';
-   let jsonObjectIsTure = dataObjectExistenceCheck($target);
-   if(!jsonObjectIsTure) return;
-   if($(eval($target.data('dsBinding'))) == undefined) return;
-   else dataObject = eval($target.data('dsBinding'));
-   if($target.data('dsForm') == undefined) return ;
-   else targetColumn = $target.data('dsForm');
-   if(getParameterByName('no') != undefined) unique_value = getParameterByName('no');
-   if($(dataObject)[0].no == undefined) return console.warn("JsonObject's unique_column[no] does not exist.");
-   if(unique_value == '') unique_value = $(dataObject)[0].no;
-   if(unique_value == '') return;
-   $.each(dataObject, (index, row)=>{
-      if(row.no==unique_value) {
-         init_value = row[targetColumn];
-         $target.val(init_value);
-         return ;
+const setDate = ($target) => {
+   // if( $target.data('dsInitDate') != undefined ) return;
+   // console.log($target.val());
+   if($target.val() != '') {
+      let reg = /([12]\d{3}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01]))/,
+          YYYYMMDD = $target.val();
+      if(reg.test( YYYYMMDD )) {
+         let yyyy = YYYYMMDD.substr(0, 4),
+               mm = YYYYMMDD.substr(4, 2),
+               dd = YYYYMMDD.substr(6, 2)
+               YYYYMMDD = yyyy + '-' + mm + '-' + dd;
+         $target.val(YYYYMMDD);
+         // console.log($self);
       }
-   });
+   }
 }
+
+// const dateBind = ($target) => {
+//    let dataObject = '',
+//        targetColumn = '',
+//        init_value = '',
+//        unique_value = '';
+
+//    let jsonObjectIsTure = dataObjectExistenceCheck($target);
+//    if(!jsonObjectIsTure) return;
+
+//    if($(eval($target.data('dsBinding'))) == undefined) return;
+//    else dataObject = eval($target.data('dsBinding'));
+
+//    if($target.data('dsForm') == undefined) return ;
+//    else targetColumn = $target.data('dsForm');
+   
+//    if(getParameterByName('no') != undefined) unique_value = getParameterByName('no');
+   
+//    if($(dataObject)[0].no == undefined) return console.warn("JsonObject's unique_column[no] does not exist.");
+
+//    if(unique_value == '') unique_value = $(dataObject)[0].no;
+
+//    if(unique_value == '') return;
+   
+//    $.each(dataObject, (index, row)=>{
+//       if(row.no==unique_value) {
+//          init_value = row[targetColumn];
+//          $target.val(init_value);
+//          return ;
+//       }
+//    });
+// }
 
 const htmlInputDate = ($target) => {
    $target.wrap('<div class="ds-ui-datepicker-box"></div>')
@@ -58,6 +85,7 @@ const datepickerListener = ($target) => {
 }
 
 const initDate = ($target) => {
+   // if( $target.val() != undefined ) return;
    if( $target.data('dsInitDate') == true && 
       $('.ds-ui-datepicker-box').length != 0 ) {
       transDate = today.getFullYear() + '-' 
@@ -71,11 +99,13 @@ const initDate = ($target) => {
 
 let today = new Date(); // 오늘 날짜
 function prevCalendar($targetPB) {
-   today = new Date(today.getFullYear(), today.getMonth() -1, today.getDate());
+   // today = new Date(today.getFullYear(), today.getMonth() -1, today.getDate());
+   today = new Date(today.getFullYear(), today.getMonth(), 0);
    buildCalendar($targetPB);
 }
 function nextCalendar($targetPB) {
-   today = new Date(today.getFullYear(), today.getMonth() +1, today.getDate());
+   // today = new Date(today.getFullYear(), today.getMonth() +1, today.getDate());
+   today = new Date(today.getFullYear(), today.getMonth() +1, 1);
    buildCalendar($targetPB);
 }
 
@@ -93,7 +123,8 @@ function buildCalendar($targetPB) {
       today = $targetPB.hasDate;
       $targetPB.hasDate = undefined;
    }
-   
+   $targetPB.today = today;
+
    let nMonth = new Date(today.getFullYear(), today.getMonth(), 1); // 이번 달의 첫째 날
    let lastDate = new Date(today.getFullYear(), today.getMonth() + 1, 0); // 이번 달의 마지막 날
    let $tbCalendar = $targetPB.find('.date-tb'); // 테이블 달력을 만들 테이블 선택
@@ -172,11 +203,62 @@ function buildCalendar($targetPB) {
       cnt = cnt + 1;
    }
    currentTd = cnt + currentDate;
+   // console.log(currentMonth)
+   let transMonth = (currentMonth < 10 ? '0' : '') + currentMonth,
+       hollydays = [];
+   // // ajax -> get hollydays...
+   $.ajax({
+      url: "http://localhost:8080/framework/api/hollydays/" + currentYear + "/" + transMonth + "",
+      // url: "http://localhost/dsproject/api/hollydays/" + 2019 + "/" + '09' + "", //test:추석
+      type: "GET",
+      dataType: "html",
+      success: function (response) {
+         // div.innerText = response;
+         let apiData = decodeURIComponent( response ),
+             hollydayList = apiData.split('/');
+         $.each(hollydayList, (index, hollyday) => {
+            // console.log(hollyday)
+            if(hollyday == '') return true;
+            hollyday = hollyday.split(',');
+            let holly_year = hollyday[1].substr(0, 4),
+                holly_month = hollyday[1].substr(4, 2),
+                holly_date = hollyday[1].substr(6, 2);
+            
+            hollydays.push({
+               dateName : hollyday[0],
+               fullDate : hollyday[1],
+               hollyYear : holly_year,
+               hollyMonth : holly_month,
+               hollyDate : holly_date
+            });
+         });
+         //hollyday color : red;
+         $.each($targetPB.find('.date-tb td'), (index, cell)=>{
+            for(idx=0; idx<hollydays.length; idx++) {
+               if(cell.innerText == '') return true;
+               if( cell.innerText == parseInt(hollydays[idx].hollyDate) ) {
+                  $(cell).addClass('holidays');
+               }
+            }
+         });
+      },
+      error: function (xhr, status) {
+         alert('Error: ' + status);
+      }
+   });
    
    for (i=1; i<=lastDate.getDate(); i++) {
       cell = row.insertCell();
       cell.innerHTML = i;
       cnt = cnt + 1;
+      // console.log(cnt);
+
+      
+
+      //weekends color : red;
+      if(cnt%7 == 0 || cnt%7 == 1)
+         $(cell).addClass('weekends');
+      
       if (cnt%7 == 0)   // 1주일이 7일 이므로
          row = $tbCalendar[0].insertRow();   // 줄 추가
    }
@@ -191,7 +273,7 @@ function buildCalendar($targetPB) {
    $targetPB.find('.date-tb td').unbind('touchstart mousedown').bind('touchstart mousedown', (e) => {
       // e.preventDefault();
       isMove = false;
-//      console.log(e.target.innerHTML)
+      // console.log(e.target.innerHTML)
       if(!$(e.target).is('td') || ($(e.target).is('td') && e.target.innerHTML == '') ) {
          $prevTarget = $currentTarget = null;
          return ;
@@ -291,13 +373,17 @@ const dateModal = ($target) => {
           yyyy = ymd[0],
           mm = ymd[1],
           dd = ymd[2];
-      init_today = new Date(yyyy, mm - 1, dd);
+          
+      today = new Date(yyyy, parseInt(mm)-1, dd);
+      init_today = today;
    }
    
    basicModal($target);
    $targetPB = $('#' + $target[0].id + '_pb');
+   $targetPB.today = today;
    htmlPopupBox($target, $targetPB);
 
+   datepickerScope_UX($target, $targetPB);
    periodPickerScope_UX($targetPB);
    $('#' + $target[0].id + '-close').unbind('click').bind('click', () => {
       $targetPB.hasDate = init_today;
@@ -342,6 +428,48 @@ const dateModal = ($target) => {
    
 
    $target[0].dataset.dsIsPopup =  true;
+}
+
+const datepickerScope_UX = ($target, $targetPB) => {
+
+   if($target.data('dsMin') == undefined || $target.data('dsMax') == undefined) return;
+
+   let std_today = $targetPB.today,
+       std_year = std_today.getFullYear(),
+       std_month = ((std_today.getMonth() + 1) < 10 ? '0' : '') + (std_today.getMonth() + 1),
+       std_date = ((std_today.getDate()) < 10 ? '0' : '') + (std_today.getDate()),
+       std_fullDate = parseInt(std_year + std_month + std_date),
+       min_fullDate = '', min_year = '', min_month = '', min_date = '',
+       max_fullDate = '', max_year = '', max_month = '', max_date = '';
+   
+   if($target.data('dsMin') != undefined) {
+      if(std_fullDate < $target.data('dsMin')) return console.error("data-ds-min's value is bigger.");
+      // let min_date = $target.data('dsMin');
+      // dateMinMax($target, $targetPB, min_date, 'min');
+      min_fullDate = $target.data('dsMin'),
+      min_year = min_fullDate.toString().substr(0,4),
+      min_month = min_fullDate.toString().substr(4,2),
+      min_date = min_fullDate.toString().substr(6,2);
+   }
+   if($target.data('dsMax') != undefined) {
+      if(std_fullDate > $target.data('dsMax')) return console.error("data-ds-max's value is smaller.");
+      // let max_date = $target.data('dsMax');
+      // dateMinMax($target, $targetPB, max_date, 'max');
+      max_fullDate = $target.data('dsMax'),
+      max_year = max_fullDate.toString().substr(0,4),
+      max_month = max_fullDate.toString().substr(4,2),
+      max_date = max_fullDate.toString().substr(6,2);
+   }
+   // console.log(std_month)
+   // console.log(min_month)
+   $targetPB.find('.ic-express-np div').removeClass('off');
+   if(min_fullDate != '' && parseInt(std_year + std_month) <= parseInt(min_year + min_month)) $targetPB.find('.ic-express-np .fa-angle-left').parent().addClass('off');
+   if(max_fullDate != '' && parseInt(std_year + std_month) >= parseInt(max_year + max_month)) $targetPB.find('.ic-express-np .fa-angle-right').parent().addClass('off');
+   $.each($targetPB.find('.date-tb td'), (index, cell) => {
+      if(min_fullDate != '' && cell.innerText != '' && parseInt(std_year + std_month + (parseInt(cell.innerText) < 10 ? '0' : '') + cell.innerText) < parseInt(min_fullDate)) cell.innerText = '';
+      if(max_fullDate != '' && cell.innerText != '' && parseInt(std_year + std_month + (parseInt(cell.innerText) < 10 ? '0' : '') + cell.innerText) > parseInt(max_fullDate)) cell.innerText = '';
+   });
+
 }
 
 const periodPickerScope_UX = ($targetPB) => {
@@ -442,7 +570,7 @@ const popupYear_Mode = ($targetPB) => {
    });
 }
 
-const popupYear_Action = () => {
+const popupYear_Action = ($targetPB) => {
    // cancel || back datePicker
    $targetPB.find('.year-header span').unbind('click').bind('click', (e)=> {
       if($targetPB.find('.month-body').length != 0) {
@@ -455,6 +583,8 @@ const popupYear_Action = () => {
       $targetPB.find('.year-header').remove();
       $targetPB.find('.year-body').remove();
       $targetPB.find('.date-component-spinner, .popup-footer, .date-header').removeClass('off');
+      // $target = $('#' + $targetPB[0].id.split('_')[0]);
+      // datepickerScope_UX($target, $targetPB)
    });
    // left year && right year
    let $left_btn = $($targetPB.find('.year-header i')[0]);
@@ -484,7 +614,9 @@ const popupYearScope_UX = ($targetPB) => {
       if(wiget_periodpicker.fromDate != undefined) {
          yearScope($targetPB, 'to');
       }
-   } else return;
+   } else {
+      yearScope($targetPB, 'date');
+   };
 }
 const yearScope = ($targetPB, which) => {
    let which_today = '',
@@ -523,6 +655,40 @@ const yearScope = ($targetPB, which) => {
       if(yearAction_check == true) {
          $($targetPB.find('.year-header i')[0]).attr('style', 'display:none');
          $($targetPB.find('.year-header div')[0]).append('<div style="padding: 18.4px 18.32px;"></div>');
+      }
+   }
+   if(which == "date") {
+      $($targetPB.find('.year-header i')).removeAttr('style');
+      let pbid = $targetPB[0].id,
+          target_id = '#' + pbid.split('_')[0],
+          $target = $(target_id),
+          min_fullDate = '',
+          max_fullDate = ''.
+          yearAction_check = false;
+      // console.log(min_fullDate)
+      // console.log(max_fullDate)
+      if($target.data('dsMin') != undefined && $target.data('dsMax') != undefined) {
+         min_fullDate = $target.data('dsMin'),
+         max_fullDate = $target.data('dsMax');
+      } else if($target.data('dsMin') != undefined) {
+         min_fullDate = $target.data('dsMin');
+      } else if($target.data('dsMin') != undefined) {
+         max_fullDate = $target.data('dsMax');
+      }
+
+      let left_check = '',
+          right_check = '';
+      $.each($targetPB.find('.year-body td'), (index, cell) => {
+         if($target.data('dsMin') != undefined && parseInt(cell.innerText) <= parseInt($target.data('dsMin').toString().substr(0, 4)) ) left_check = true;
+         if($target.data('dsMax') != undefined && parseInt(cell.innerText) >= parseInt($target.data('dsMax').toString().substr(0, 4)) ) right_check = true;
+         if($target.data('dsMin') != undefined && parseInt(cell.innerText) < parseInt($target.data('dsMin').toString().substr(0,4)) ) $(cell).addClass('off');
+         if($target.data('dsMax') != undefined && parseInt(cell.innerText) > parseInt($target.data('dsMax').toString().substr(0,4)) ) $(cell).addClass('off');
+      });
+      if(left_check == true) {
+         $($targetPB.find('.year-header i')[0]).attr('style', 'opacity: 0; pointer-events: none;');
+      }
+      if(right_check == true) {
+         $($targetPB.find('.year-header i')[1]).attr('style', 'opacity: 0; pointer-events: none;');
       }
    }
 }
@@ -591,6 +757,8 @@ const popupMonth_Action = ($targetPB) => {
       $targetPB.date = result;
       buildCalendar($targetPB);
       periodPickerScope_UX($targetPB);
+      let $target = $('#' + $targetPB[0].id.split('_')[0]);
+      datepickerScope_UX($target, $targetPB);
    });
 }
 
@@ -623,7 +791,9 @@ const popupMonthScope_UX = ($targetPB) => {
       if(wiget_periodpicker.fromDate != undefined) {
          monthScope($targetPB, 'to');
       }
-   } else return;
+   } else {
+      monthScope($targetPB, 'date');
+   };
 }
 const monthScope = ($targetPB, which) => {
    let which_today = '',
@@ -639,19 +809,59 @@ const monthScope = ($targetPB, which) => {
       yyyy = which_today.getFullYear();
       if(current_yyyy > yyyy) return;
    }
-   
-   let mm = which_today.getMonth() + 1,
-       $td_list = $targetPB.find('.month-body td');
-   $.each($td_list, (index, td) => {
-      let cell_mm = parseInt($(td)[0].innerText);
-      if((cell_mm > mm) && which == "from") {
-         $(td)[0].innerText = '';
-      } else if((cell_mm < mm) && which == "to") {
-         $(td)[0].innerText = '';
-      }
-   });
-   
 
+   if(which == "from" || which == "to") {
+      let mm = which_today.getMonth() + 1,
+      $td_list = $targetPB.find('.month-body td');
+      $.each($td_list, (index, td) => {
+         let cell_mm = parseInt($(td)[0].innerText);
+         if((cell_mm > mm) && which == "from") {
+            $(td)[0].innerText = '';
+         } else if((cell_mm < mm) && which == "to") {
+            $(td)[0].innerText = '';
+         }
+      });
+   }
+
+   if(which == "date") {
+      // $($targetPB.find('.year-header i')).removeAttr('style');
+      let pbid = $targetPB[0].id,
+          target_id = '#' + pbid.split('_')[0],
+          $target = $(target_id),
+          min_fullDate = '', min_year = '', min_month = '',
+          max_fullDate = '', max_year = '', max_month = '',
+          pb_year = $targetPB.find('.year-header span')[0].innerText;
+      // console.log(min_fullDate)
+      // console.log(max_fullDate)
+      if($target.data('dsMin') != undefined && $target.data('dsMax') != undefined) {
+         min_fullDate = $target.data('dsMin'),
+         min_year = min_fullDate.toString().substr(0,4),
+         min_month = min_fullDate.toString().substr(4,2),
+         max_fullDate = $target.data('dsMax'),
+         max_year = max_fullDate.toString().substr(0,4),
+         max_month = max_fullDate.toString().substr(4,2);
+      } else if($target.data('dsMin') != undefined) {
+         min_fullDate = $target.data('dsMin'),
+         min_year = min_fullDate.toString().substr(0,4),
+         min_month = min_fullDate.toString().substr(4,2);
+      } else if($target.data('dsMin') != undefined) {
+         max_fullDate = $target.data('dsMax'),
+         max_year = max_fullDate.toString().substr(0,4),
+         max_month = max_fullDate.toString().substr(4,2);
+      }
+      
+      // let left_check = '',
+      //     right_check = '';
+      let cell_month = '';
+      $.each($targetPB.find('.month-body td'), (index, cell) => {
+         cell_month = (parseInt(cell.innerText) < 10 ? '0' : '') + cell.innerText;
+         // console.log(pb_year + cell_month);
+         // console.log(min_year + min_month)
+         // console.log(max_year + max_month)
+         if(min_fullDate != undefined && parseInt(pb_year + cell_month ) < parseInt(min_year + min_month) ) cell.innerText = '';
+         if(max_fullDate != undefined && parseInt(pb_year + cell_month ) > parseInt(max_year + max_month) ) cell.innerText = '';
+      });
+   }
 }
 const popupMonth_Template = () => {
    let html = [],
@@ -780,11 +990,13 @@ const htmlPopupBox = ($target, $targetPB) => {
          reDate($targetPB);
          prevCalendar($targetPB);
          periodPickerScope_UX($targetPB);
+         datepickerScope_UX($target, $targetPB);
       });
       $targetPB.find('.fa-angle-right').unbind('click').bind('click', (event) => {
          reDate($targetPB);
          nextCalendar($targetPB);
          periodPickerScope_UX($targetPB);
+         datepickerScope_UX($target, $targetPB);
       });
       
       let tx_cancel = '취소',
@@ -808,9 +1020,9 @@ const reDate = ($targetPB) => {
        current_month = $current_YM[1].innerText.replace(/월/g,"").replace(/\./g,"");
    if($targetPB.is('.en')) {
       let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-      console.log(current_month);
+      // console.log(current_month);
       current_month = month.indexOf(current_month) + 1;
-      console.log(current_month);
+      // console.log(current_month);
    }
    
    let has_year = today.getFullYear() + '',

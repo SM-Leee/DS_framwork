@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>스태틱 버튼</h1>
 					<div class="tutorial-content-path">
-						<p>Component > Static Button</p>
+						<p>&nbsp;모바일 전용 버튼으로 기본 기능으로 Refresh, 종료 버튼을 가지고 있고 고정 유무, 활성화 유무, 링크 버튼을 유무를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

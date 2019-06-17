@@ -1,4 +1,3 @@
-
 const dataTable = () => {
    if($('.ds-ui-data-table').length == 0) return ;
     let $dataTable = $('.ds-ui-data-table'),
@@ -30,10 +29,13 @@ const dataTable = () => {
         let dt_search = $dataTable.data('search');
         if(dt_search != true) return;
         let $tblOptions = $('.ds-ui-data-table-options');
-        if($tblOptions.length == 0) 
+        if($tblOptions.length == 0)
             $(".data-table-wrap").before("<div class='ds-ui-data-table-options'></div>");
         $tblOptions = $('.ds-ui-data-table-options');
+        // console.log($tblOptions);
         $tblOptions.append("<div class='ds-ui-input search' data-ds-placeholder='search...'></div>");
-    }
+        
+        inputFormat();
 
+    }
 }

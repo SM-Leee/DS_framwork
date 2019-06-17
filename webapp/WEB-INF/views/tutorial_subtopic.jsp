@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>Layout</h1>
 					<div class="tutorial-content-path">
-						<p>Component > navigator</p>
+						<p>&nbsp;기본 레이아웃 부분의 navigator로 서브 메뉴명과 링크를 지정 할 수 있습니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -38,10 +38,10 @@
 <div class="header"></div>
 <div class="navigator">
 	<div id="ds-ui-subtopic">
-		<div data-href='currentassets'>현재 자산</div>
-		<div data-href='byperiod'>기간별</div>
-		<div data-href='documententry'>전표입력</div>
-		<div data-href='index' class="selected">예시</div>
+		<div data-href=''>SubMenu1</div>
+		<div data-href=''>SubMenu2</div>
+		<div data-href=''>SubMenu3</div>
+		<div data-href='' class="selected">SubMenu4</div>
 	</div>
 </div>
 

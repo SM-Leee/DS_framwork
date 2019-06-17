@@ -13,17 +13,10 @@
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 	<div class="App">
 		<div class="contents">
-			<div class="ds-ui-chart bar" id="bar1" data-ds-binding='exampleData'
-				data-ds-standard='category' data-ds-calc-detail='mul price count'></div>
-			<div class="ds-ui-chart bar" id="bar2" data-ds-binding='exampleData'
-				data-ds-x='company' data-ds-standard='category'
-				data-ds-calc-detail='mul price count'></div>
-			<div class="ds-ui-chart bar" id="bar3" data-ds-binding='exampleData'
-		data-ds-x='company' data-ds-standard='category'
-		data-ds-calc-detail='mul price count' data-ds-transfer-naming='chartOption2'></div>
-		<div class="ds-ui-chart bar" id="bar4" data-ds-binding='exampleData'
-	data-ds-x='category' data-ds-standard='company' data-ds-transfer-naming='chartOption2'
-	data-ds-calc-detail='mul price count' data-ds-index-position="top"></div>
+			<div class="ds-ui-chart bar" id="bar1" ></div>
+			<div class="ds-ui-chart bar" id="bar2" ></div>
+			<div class="ds-ui-chart bar" id="bar3" ></div>
+		<div class="ds-ui-chart bar" id="bar4" ></div>
 			
 		</div>
 	</div>
@@ -425,6 +418,50 @@
 		}, {
 			desc : '설명'
 		} ];
+		
+		ds.ui.chart('#bar1', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'category',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+			}
+		})
+		ds.ui.chart('#bar2', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'category',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+				dsX : 'company'
+			}
+		})
+		ds.ui.chart('#bar3', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'category',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+				dsTransferNaming : chartOption2,
+				dsX : 'company'
+			}
+		})
+		ds.ui.chart('#bar4', {
+			dataSource: exampleData,
+			option : {
+				dsStandard : 'company',
+				dsCalcDetail : 'mul price count'
+			},
+			subOption : {
+				dsTransferNaming : chartOption2,
+				dsX : 'category',
+				dsLegendPosition : 'top'
+			}
+		})
+		
 	</script>
 
 </body>
