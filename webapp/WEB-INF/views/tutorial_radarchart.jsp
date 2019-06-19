@@ -36,8 +36,10 @@
 						<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<div class='ds-ui-chart radar' id='radar1'></div></textarea>
+<div class='ds-ui-chart radar'
+		id='radar1'></div></textarea>
 							</div>
+							
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode javascript" id="javascript0">
 ds.ui.chart('#radar1', {

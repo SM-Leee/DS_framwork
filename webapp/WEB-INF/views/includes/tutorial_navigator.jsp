@@ -60,7 +60,7 @@
 				</div>
 			</div>
 			<ul class="sub-navis">
-				<li class="sub-navi"><a href="button">기본 버튼</a></li>
+				<li class="sub-navi"><a href="button">버튼</a></li>
 				<li class="sub-navi"><a href="radiobutton">라디오 버튼</a></li>
 				<li class="sub-navi"><a href="togglebutton">스위치 버튼</a></li>
 				<li class="sub-navi"><a href="staticbutton">스태틱 버튼</a></li>
@@ -157,9 +157,10 @@
 			</div>
 			<ul class="sub-navis">
 				<li class="sub-navi"><a href="imageview">이미지 뷰</a></li>
-				<li class="sub-navi"><a href="statusview">스태틱 뷰</a></li>
+				<li class="sub-navi"><a href="statusview">상세 뷰</a></li>
 			</ul>
 		</li>
+		<!-- 
 		<li class="">
 			<div class="tutorial-navi-index">
 				<div class="tutorial-navi-icon"><i class="icon fas fa-code"></i></div>
@@ -172,7 +173,7 @@
 				<li class="sub-navi"><a href="iconloader">아이콘로더</a></li>
 			</ul>
 		</li>
-		
+		 -->
 		<li class="">
 			<a href="tutorial_scenario">
 				<div class="tutorial-navi-index">

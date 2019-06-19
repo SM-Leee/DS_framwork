@@ -26,8 +26,8 @@
 				<div class="tutorial-content-title long-title">
 					<h1>데이터 테이블</h1>
 					<div class="tutorial-content-path">
-						<p>&nbsp;데이터 소스에서 항목들을 테이블 형식으로 나타내는 데이터 테이블로서</p>
-						<p>&nbsp;검색 및 필터 기능, 세로 길이 지정, 고정 항목 지정, 항목 개수를 동적으로 제어 가능합니다.</p>
+						<p>&nbsp;데이터 소스에서 항목들과 항목들의 요소를 테이블 형식으로 나타내는 데이터 테이블로서</p>
+						<p>&nbsp;항목들의 요소 검색 기능, 테이블 높이 지정, 고정 항목 지정 및 필터 기능으로 항목 개수를 동적으로 제어 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

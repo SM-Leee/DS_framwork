@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>버튼</h1>
 					<div class="tutorial-content-path">
-						<p>&nbsp;기본 버튼으로 버튼 UI와 카메라 기능에 사용되는 버튼을 사용 할 수 있습니다.</p>
+						<p>&nbsp;기본 버튼 UI와 각 아이콘별로 다른 기능을 가진 버튼을 사용 할 수 있습니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -50,8 +50,57 @@
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;ds-ui-basicButton fileupload</span>&#9;클래스 명칭</p>
 							</div>
+							<h3>&nbsp;이미지 기본</h3>
+							<div class="tutorial-component-source">
+								<textarea class="tutorial-sourcecode xml" id="codemirror2">
+<div class="ds-ui-icon"></div></textarea>
+							</div>
+							<div class="tutorial-component-description">
+								<p>
+									<span class="ds-tag-value">&nbsp;ds-ui-icon</span>&#9;클래스 명칭
+								</p>
+								<p>
+									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;아이콘 선택
+								</p>
+								<p>&#8251; 미지정시 기본 아이콘 </p>
+							</div>
+							<h3>&nbsp;새로고침 아이콘</h3>
+							<div class="tutorial-component-source">
+								<textarea class="tutorial-sourcecode xml" id="codemirror3">
+<div class="ds-ui-icon" data-icon='refresh'></div></textarea>
+							</div>
+							<div class="tutorial-component-description">
+								<p>
+									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;새로고침 아이콘
+									(기본 시간 : 0.5초)
+								</p>
+							</div>
+							<h3>&nbsp;링크 아이콘</h3>
+							<div class="tutorial-component-source">
+								<textarea class="tutorial-sourcecode xml" id="codemirror4">
+<div class="ds-ui-icon" data-icon='location'
+										data-location='http://m.douzone.com/'></div></textarea>
+							</div>
+							<div class="tutorial-component-description">
+								<p>
+									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;링크 아이콘
+								</p>
+								<p>
+									<span class="ds-tag-value">&nbsp;data-location</span>&#9;링크 주소
+									지정 (미지정시 새로고침)
+								</p>
+							</div>
+							<h3>&nbsp;삭제 아이콘</h3>
+							<div class="tutorial-component-source">
+								<textarea class="tutorial-sourcecode xml" id="codemirror5">
+<div class="ds-ui-icon" data-icon='remove'></div></textarea>
+							</div>
+							<div class="tutorial-component-description">
+								<p>
+									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;삭제 아이콘
+								</p>
+							</div>
 						</div>
-
 						<!-- 컴포넌트 뷰어 -->	 
 						<div class="phone2">
 							<div>

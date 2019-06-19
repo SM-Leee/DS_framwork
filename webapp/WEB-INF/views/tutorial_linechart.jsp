@@ -23,11 +23,10 @@
 
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
-				<div class="tutorial-content-title long-title">
+				<div class="tutorial-content-title">
 					<h1>영역형 차트</h1>
 					<div class="tutorial-content-path">
-						<p>&nbsp;데이터 소스에서 항목들을 월별, 분기별, 년도별의 시간 변화에 따른 수치데이터를 꺽은선 차트의 선 아래 영역이 색상으로 </p>
-						<p>&nbsp;채워진 형태의 영역형 그래프로 항목 내용 변경 기능을 지정 가능합니다.</p>
+						<p>&nbsp;데이터 소스에서 선택된 항목의 요소들의 수치데이터를 나타낸 막대 그래프로 범례 위치를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

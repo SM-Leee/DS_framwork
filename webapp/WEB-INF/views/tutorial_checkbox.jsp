@@ -37,7 +37,6 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 							    <textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
 <div class="ds-ui-checkbox" data-checked='true'></div>
 
 <div class="ds-ui-checkbox" data-location='right'></div>
@@ -57,7 +56,6 @@
 							<h3>&nbsp;레이블 없는 체크 박스</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<!-- #2 -->
 <div class="checkbox-wrapper">
 	<div class="ds-ui-checkbox" data-label='false'></div>
 	<div class="ds-ui-checkbox" data-shape='circle'

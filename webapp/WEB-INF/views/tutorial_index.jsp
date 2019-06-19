@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <html>
 <head>
@@ -15,21 +16,47 @@
 </head>
 <body>
 	<div id="wrapper">
-		<jsp:include page="/WEB-INF/views/includes/tutorial_header.jsp"/>
-
+		<jsp:include page="/WEB-INF/views/includes/tutorial_header.jsp" />
 		<div id="tutorial-content-box">
+			<div id="tutorial-contents-wrapper">
+				<!-- 
 			<div class="tutorial-contents-main">
-				<p>튜토리얼 설명</p>
+				<h2>Duzon Standard Mobile Web Front-End Framework </h2>
+				<p>모바일 웹 프론트엔드 프레임워크입니다.</p>
 			</div>
 			<div class="tutorial-contents-main tutorial-main-code">
 			<p>script code</p>
 			</div>
 			<div class="tutorial-contents-main tutorial-main-pres">
 			<p>고민중</p>
+			 -->
+				<div class="conArea main">
+					﻿
+					<ul class="mainList">
+						<li>
+							<h2>Duzon Standard Mobile Web Front-End Framework</h2>
+							<p>모바일 웹 프론트엔드 프레임워크입니다.</p>
+						</li>
+						<li>
+							<h2>Source Code</h2>
+							<p>
+								DS Source Code <a href="http://106.10.41.222:8080/ds_code/">DS Source</a>
+							</p>
+						</li>
+						<li>
+							<h2>고민중</h2>
+							<p>고민중</p>
+						</li>
+					</ul>
+				</div>
+
+
+
 			</div>
-			<jsp:include page="/WEB-INF/views/includes/tutorial_navigator.jsp"/>
-			
 		</div>
+		<jsp:include page="/WEB-INF/views/includes/tutorial_navigator.jsp" />
+
+	</div>
 
 
 

@@ -29,69 +29,73 @@ textarea {
 iframe {
 	background-color: white;
 }
+
 .tutorial-content-path p {
-	color: darkgray;
+	color: #8b8d8f;
+	font-weight: 100;
 }
+
 .editor-result {
-	margin-left:15px;
-	margin-top:8px;
+	margin-left: 15px;
+	margin-top: 8px;
 	background: url(../images/play.svg) no-repeat 92% 50%;
 	background-size: 20px;
 	height: 30px;
 	width: 70px;
-	padding:5px;
+	padding: 5px;
 	border: 1px solid #ccc;
-    background-color:rgba(0,0,0,0);
-    font-size: 20px;
-    border-radius: 4px;
-    color: #686868;
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 20px;
+	border-radius: 4px;
+	color: #686868;
 }
 
 #tutorial-contents.editor .editor-button {
 	font-size: 0;
 }
-#tutorial-contents.editor .editor-html{
+
+#tutorial-contents.editor .editor-html {
 	background: url(../images/html.svg) no-repeat;
 	width: 60px;
-    background-size: contain;
-    height: 58px;
-    background-color:rgba(0,0,0,0) !important;
+	background-size: contain;
+	height: 58px;
+	background-color: rgba(0, 0, 0, 0) !important;
 }
-#tutorial-contents.editor .editor-css{
+
+#tutorial-contents.editor .editor-css {
 	background: url(../images/gray-css.svg) no-repeat;
 	width: 60px;
-    background-size: contain;
-    height: 58px;
-    background-color:rgba(0,0,0,0) !important;
+	background-size: contain;
+	height: 58px;
+	background-color: rgba(0, 0, 0, 0) !important;
 }
-#tutorial-contents.editor .editor-js{
+
+#tutorial-contents.editor .editor-js {
 	background: url(../images/gray-js.svg) no-repeat;
 	width: 60px;
-    background-size: contain;
-    height: 58px;
-    background-color:rgba(0,0,0,0) !important;
+	background-size: contain;
+	height: 58px;
+	background-color: rgba(0, 0, 0, 0) !important;
 }
 
-#tutorial-contents.editor .editor-source-css+div
-	{
+#tutorial-contents.editor .editor-source-css+div {
 	display: none;
 }
 
-#tutorial-contents.editor .editor-source-js+div
-	{
+#tutorial-contents.editor .editor-source-js+div {
 	display: none;
 }
+
 #tutorial-contents.editor .button-box .editor-html {
 	background-color: #CBCBCB;
 }
 
-
 .CodeMirror-code {
-	max-height:180px;	
+	max-height: 180px;
 }
 
 .CodeMirror-vscrollbar {
-	overflow-y:hidden !important;
+	overflow-y: hidden !important;
 }
 
 .CodeMirror-gutter {
@@ -105,9 +109,10 @@ iframe {
 	padding-right: 0px !important;
 	padding-bottom: 0px !important;
 }
-.CodeMirror-linenumber .CodeMirror-gutter-elt{
-	width:22px !important;
-	left:0px !important;
+
+.CodeMirror-linenumber .CodeMirror-gutter-elt {
+	width: 22px !important;
+	left: 0px !important;
 }
 
 .CodeMirror {
@@ -182,7 +187,11 @@ iframe {
 
 #tutorial-header a {
 	background-color: rgba(0, 0, 0, 0);
-	color:black;
+	color: black;
+}
+
+#tutorial-header p a {
+	color: #8b8d8f;
 }
 
 #tutorial-header>h1 {
@@ -247,7 +256,9 @@ iframe {
 	line-height: 50px;
 	background-color: rgba(0, 0, 0, 0);
 	font-size: 14px;
-	color:black;
+	color: black;
+	font-weight: 600;
+	color: #636363;
 }
 
 #tutorial-navi .tutorial-navi-index>.tutorial-navi-arrow {
@@ -256,15 +267,18 @@ iframe {
 	line-height: 50px;
 	transition: 0.3s;
 	background-color: rgba(0, 0, 0, 0);
+	font-size: 14px;
+	color: #797979;
 }
 
 #tutorial-navi .sub-navis {
 	display: none;
 	background-color: #F1F1F1;
-	font-size:13px;
+	font-size: 13px;
 }
 
 #tutorial-navi .sub-navi {
+	font-family: 'dotum';
 	height: 40px;
 	line-height: 40px;
 	padding: 0 16px;
@@ -274,18 +288,68 @@ iframe {
 	box-sizing: border-box;
 	cursor: pointer;
 	background-color: #F3F3F3;
+	height: 40px;
 }
 
 .sub-navi a {
+	height: 35px;
+	display: block;
 	width: 100%;
 	background-color: #F3F3F3;
-	color:black;
+	color: #5B5B5B;
+	display: block;
 }
 
 /* tutorial-contents */
 #tutorial-content-box {
 	padding: 70px 0;
 	z-index: 2;
+}
+
+/* */
+.conArea {
+	padding-left: 250px;
+}
+
+.mainList li:first-child {
+	padding: 35px 33px;
+	border: 15px solid #ccc;
+	background: #fff;
+}
+
+.mainList li {
+	border: 1px solid #cccdcd;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 3px -1px rgba(133, 133, 133, 0.46);
+	-moz-box-shadow: 0 1px 3px -1px rgba(133, 133, 133, 0.46);
+	box-shadow: 0 1px 3px -1px rgba(133, 133, 133, 0.46);
+	/* height: 162px; */
+	overflow: hidden;
+	margin-bottom: 20px;
+	padding: 35px 33px;
+}
+
+.mainList li>h2 {
+	background-color : #fff;
+	font-family: "Myriad Pro Bold", "Arial", "Helvetica Neue Light",
+		"HelveticaNeue-Light", "Helvetica Neue";
+	font-size: 29px;
+	font-weight: bold;
+	color: #504e4e;
+	margin-bottom: 5px;
+}
+
+.mainList li>p {
+	background-color : #fff;
+	font-size: 18px;
+	font-family: 'Nanum Gothic';
+	line-height: 25px;
+	color: #929292;
+}
+em {
+}
+#contents p {
+	margin-bottom: 10px;
 }
 
 #tutorial-contents {
@@ -300,8 +364,9 @@ iframe {
 	left: 200px;
 	background-color: white;
 }
+
 .tutorial-contents-main {
-	height:200px;
+	height: 200px;
 	position: absolute;
 	/* flex-direction: column; */
 	width: calc(100% - 232px);
@@ -313,15 +378,27 @@ iframe {
 	left: 200px;
 	background-color: white;
 }
-.tutorial-main-code{
-	top:302px;
+
+/* 추가 */
+.tutorial-contents-main>h2 {
+	background-color: white;
 }
-.tutorial-main-pres{
+
+.tutorial-contents-main>p {
+	background-color: white;
+}
+
+.tutorial-main-code {
+	top: 302px;
+}
+
+.tutorial-main-pres {
 	top: 534px;
 }
 
 #tutorial-contents>.tutorial-content-title {
 	height: 80px;
+	color: #4E5050;
 	/* background-color: inherit; */
 }
 
@@ -331,7 +408,7 @@ iframe {
 }
 
 #tutorial-contents>.tutorial-content-title>.tutorial-content-path {
-	margin-top:4px;
+	margin-top: 4px;
 }
 
 #tutorial-contents>.tutorial-content-desc {
@@ -366,7 +443,8 @@ iframe {
 	display: flex;
 	flex-direction: column;
 }
-#tutorial-contents .tutorial-component-source{
+
+#tutorial-contents .tutorial-component-source {
 	position: relative;
 	display: flex;
 	top: 0;
@@ -441,6 +519,7 @@ iframe {
 	display: flex;
 	flex-direction: column;
 }
+
 .editor h2 {
 	margin-top: 15px;
 	color: #686868;
@@ -449,19 +528,21 @@ iframe {
 	margin-bottom: 20px;
 }
 
-.editor-button-title-box{
-	background-color:rgba(0,0,0,0);	
+.editor-button-title-box {
+	background-color: rgba(0, 0, 0, 0);
 }
+
 .editor-h3 {
 	/* text-align:center; */
 	width: 100px;
-    background: rgba(0,0,0,0);
-    float: left;   
+	background: rgba(0, 0, 0, 0);
+	float: left;
 }
+
 #tutorial-contents div .button-box {
 	display: flex;
-	background-color: rgba(0,0,0,0);
-	padding-left:15px;
+	background-color: rgba(0, 0, 0, 0);
+	padding-left: 15px;
 }
 
 #tutorial-contents.editor>.editor-component-source {
@@ -499,14 +580,14 @@ iframe {
 	bottom: 50px;
 	right: 50px;
 	width: calc(9 * 50px);
-    height: calc(16 * 50px);
-    /* border:1px solid black; */
-    background-color:rgba(0,0,0,0);
-	
+	height: calc(16 * 50px);
+	/* border:1px solid black; */
+	background-color: rgba(0, 0, 0, 0);
 }
+
 #frame-popup .editor-phone {
 	/* background: white url(../images/iphone1.png) no-repeat; */
-	background: rgba(0,0,0,0) url(../images/iphone1.png) no-repeat;
+	background: rgba(0, 0, 0, 0) url(../images/iphone1.png) no-repeat;
 	width: 100%;
 	height: 100%;
 	background-size: contain;
@@ -542,19 +623,19 @@ iframe {
 	text-align: center;
 	cursor: pointer;
 	z-index: 5000;
-    position: absolute;
-    border-radius: 50%;
-    top: 704px;
-    left: 202px;
+	position: absolute;
+	border-radius: 50%;
+	top: 704px;
+	left: 202px;
 }
 
 #frame-popup #popupframe {
 	width: 344px;
-    height: 586px;
-    position: absolute;
-    top: calc(50% - 295px);
-    left: calc(50% - 172px);
-    border: 1px solid #A2A2A2;
+	height: 586px;
+	position: absolute;
+	top: calc(50% - 295px);
+	left: calc(50% - 172px);
+	border: 1px solid #A2A2A2;
 }
 
 /* 성민이 폰 디자인 */
@@ -596,7 +677,6 @@ iframe {
 	position: relative;
 }
 
-
 .window2 {
 	/* top:95px; */
 	/* left:22px; */
@@ -610,8 +690,7 @@ iframe {
 	border: 1px solid #A2A2A2;
 }
 
-#tutorial-contents.editor > .button-box {
-	baground-color:rgba(0,0,0,0);
-	margin-bottom:20px;
-	
+#tutorial-contents.editor>.button-box {
+	baground-color: rgba(0, 0, 0, 0);
+	margin-bottom: 20px;
 }

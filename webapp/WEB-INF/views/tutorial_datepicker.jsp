@@ -27,7 +27,7 @@
             <div class="tutorial-content-title">
                <h1>날짜피커</h1>
                <div class="tutorial-content-path">
-                  <p>&nbsp;날짜를 선택 할 수 있는 날짜 피커로 today 지정 및 한글과 영어 언어 지정, 레이블 유무를 지정 가능합니다.</p>
+                  <p>&nbsp;날짜를 선택 할 수 있는 날짜피커로 오늘 날짜 지정 및 한글과 영어 언어 지정, 레이블 유무를 지정 가능합니다.</p>
                </div>
             </div>
             <div class="tutorial-content-desc">

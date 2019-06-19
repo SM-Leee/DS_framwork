@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>드롭다운피커</h1>
 					<div class="tutorial-content-path">
-						<p>&nbsp;정의된 목록에서 하나의 값을 선택 가능한 드롭다운으로 가로 길이 및 레이블 유무를 지정 가능합니다.</p>
+						<p>&nbsp;정의된 목록에서 하나의 값을 선택 가능한 드롭다운 피커로 가로 길이, 레이블 유무를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

@@ -36,7 +36,6 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
 <div class="ds-ui-radiobutton" data-checked='true'
 	data-name='radio1'></div>
 
@@ -67,7 +66,6 @@
 							<h3>&nbsp;레이블 없는 라디오 버튼</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<!-- #2 -->
 <div class="radiobutton-wrapper">
 	<div class="ds-ui-radiobutton" data-name='radio2'
 		data-label='false' data-checked="true"></div>

@@ -36,9 +36,7 @@
 							<h3>&nbsp;이미지 기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
 <div class="ds-ui-icon"></div></textarea>
-
 							</div>
 
 							<div class="tutorial-component-description">

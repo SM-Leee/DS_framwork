@@ -26,7 +26,7 @@
 				<div class="tutorial-content-title">
 					<h1>숫자텍스트박스</h1>
 					<div class="tutorial-content-path">
-						<p>&nbsp;숫자만 입력이 가능한 숫자텍스트박스로 레이블 유무가 가능합니다.</p>
+						<p>&nbsp;숫자만 입력이 가능한 숫자텍스트박스로 레이블 유무를 지정 가능합니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">

@@ -35,7 +35,6 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
     							<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
 <div id='ds-ui-staticBtn' data-float='true'></div></textarea>
     						</div>
     						<div class="tutorial-component-description">
@@ -45,7 +44,6 @@
     						<h3>&nbsp;스태틱 버튼 위치</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<!-- #2 -->
 <div id='ds-ui-staticBtn' data-float='true' data-right='20' data-bottom='50'></div></textarea>
 							</div>
         					<div class="tutorial-component-description">
@@ -55,7 +53,6 @@
     						<h3>&nbsp;스태틱 버튼 비활성화</h3>
     						<div class="tutorial-component-source">
         						<textarea class="tutorial-sourcecode xml" id="codemirror2">
-<!-- #3 -->
 <div id='ds-ui-staticBtn' data-disabled='true'></div></textarea>
     						</div>
         					<div class="tutorial-component-description">

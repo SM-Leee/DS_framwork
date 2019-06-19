@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/assets/js/ds-header-link.js"></script>
+	src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
 <body class="body">
 
@@ -22,11 +22,8 @@
 		</div>
 	</div>
 
-	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/assets/js/ds.js"></script>
-	<script type="text/javascript"
-		src="${pageContext.request.contextPath}/assets/js/app.js"></script>
+		src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>
 
 	<script type="text/javascript">
 		/* category : plus, minus, etc */

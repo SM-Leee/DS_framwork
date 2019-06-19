@@ -27,7 +27,7 @@
 				<div class="tutorial-content-title">
 					<h1>상세 뷰</h1>
 					<div class="tutorial-content-path">
-						<p>&nbsp;상세정보 뷰로 클릭 시 데이터 소스에서 입력된 No의 데이터를 보여줍니다.</p>
+						<p>&nbsp;상세 뷰로 클릭 시 데이터 소스에서 설정된 No에 해당하는 데이터를 보여줍니다.</p>
 					</div>
 				</div>
 				<div class="tutorial-content-desc">
@@ -113,6 +113,7 @@ const exampleData = [{
 									<span class="ds-tag-value">&nbsp;data-no</span>&#9;JSON 객체 고유
 									넘버 선택
 								</p>
+								<p>&#8251; statusViewOption 객체는 상세 정보 창에 표시될 항목들과 <img>태그 사용시 col:'header'를 사용하고 col:1, col:2 지정으로 가로 길이를 지정할 수 있습니다.</p>
 							</div>
 						</div>
 						<!-- 컴포넌트 뷰어 -->

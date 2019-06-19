@@ -25,7 +25,7 @@
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
 					<h1>이미지 뷰</h1>
-					<div class="tutorial-content-path">
+					<div class="tutorial-content-path">					
 						<p>&nbsp;이미지 뷰로 클릭 시 이미지가 확대되어 보여줍니다.</p>
 					</div>
 				</div>
@@ -35,14 +35,13 @@
 						<h3>&nbsp;기본</h3>
 						<div class="tutorial-component-source">
     						<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<!-- #1 -->
 <div class='ds-ui-imgView'>
 	<img src='https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/image-512.png' data-imgurl='http://newsimg.hankookilbo.com/2018/11/27/201811271096020817_28.jpg'></img> 
 </div></textarea>
     					</div>
 					    <div class="tutorial-component-description">
 					        <p><span class="ds-tag-value">&nbsp;ds-ui-imgView</span>&#9;클래스 명칭</p>
-					        <p><span class="ds-tag-value">&nbsp;</span>&#9;화면 이미지 지정</p>
+					        <p><span class="ds-tag-value">&nbsp;img src</span>&#9;화면 이미지 지정</p>
 							<p><span class="ds-tag-value">&nbsp;data-imgurl</span>&#9;이미지 주소 지정</p>
 							<p>&#8251; 클릭 시 설정된 이미지가 화면에 나타납니다.</p>
 					    </div>
