@@ -114,7 +114,7 @@
 				lineNumbers : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "xml",
-				scrollbarStyle: "simple"
+				scrollbarStyle: "simple",
 				readOnly : "false"
 			});
 		}
