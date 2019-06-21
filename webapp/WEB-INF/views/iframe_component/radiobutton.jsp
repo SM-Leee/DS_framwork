@@ -8,10 +8,9 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
-<body class="body">
+<body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-	<div class="App">
 		<div class="ds-ui-radiobutton" data-checked='true' data-name='radio1'>
 		</div>
 		<div class="ds-ui-radiobutton" data-location='right'
@@ -30,7 +29,6 @@
 			<div class="ds-ui-radiobutton" data-name='radio2' data-label='false'
 				data-disabled="true"></div>
 		</div>
-	</div>
 
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>

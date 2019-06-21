@@ -11,26 +11,29 @@
 }
 body {
 	font: 0.75em "맑은 고딕", 돋움, 굴림;
+	display:none;
 	text-align: center;
 	height: 100vh;
 	overscroll-behavior-y: none;
 	overflow-y: hidden;
+	user-select: none;
+	flex-direction: column;
 }
-
-
 ul, ol {
 	list-style-type: none
 }
 
-.body {
+/* .body {
 	display: none;
 	user-select: none;
-}
-.App {
+	display: flex;
+	flex-direction: column;
+} */
+/* .App {
 	display: flex;
 	flex-direction: column;
 	user-select: none;
-}
+} */
 
 .header {
 	background: #00AAF0;

@@ -8,10 +8,9 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
-<body class="body">
+<body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-	<div class="App">
 		    <button class="ds-ui-accordion">아코디언 #1</button>
             <div class="accordion-text">
                <p>
@@ -36,11 +35,10 @@
                   labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
-	</div>
 
 
 <script type="text/javascript"
-	src="${pageContext.request.contextPath}/assets/js/ds-all.js"></script>
+	src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>
 
 </body>
 </html>

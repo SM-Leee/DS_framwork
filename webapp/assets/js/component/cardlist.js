@@ -211,7 +211,7 @@ const cardlistSetting = () => {
 }
 
 const setting = function (target, icon_target, data) {
-    $('.App').append(
+    $('body').append(
         "<div id='ds-ui-setting'>" +
         "</div>"
     )
@@ -239,7 +239,7 @@ const setting = function (target, icon_target, data) {
         selectTarget($(this).data('no'))
     })
     const selectTarget = (no) => $(target).bind('touchend mouseup', function (e) {
-        let size = $('.App').width();
+        let size = $('body').width();
         dataNo = ($(this).attr('data-no'));
         fX = (e.type === 'mouseup') ? e.pageX : e.changedTouches[0].screenX;
         let settingWidth = (icons_items.length * 45);

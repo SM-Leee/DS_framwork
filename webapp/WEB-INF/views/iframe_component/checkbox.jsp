@@ -8,10 +8,9 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
-<body class="body">
+<body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-	<div class="App">
 		
 		<div class="ds-ui-checkbox" data-checked='true'></div>
 		<div class="ds-ui-checkbox" data-location='right'></div>
@@ -26,7 +25,6 @@
 			<div class="ds-ui-checkbox" data-label='false' data-disabled='true'>
 			</div>
 		</div>
-	</div>
 
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>

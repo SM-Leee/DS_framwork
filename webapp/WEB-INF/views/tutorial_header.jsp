@@ -4,6 +4,8 @@
 <head>
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/tutorial.css">
 <link rel="stylesheet"
@@ -24,7 +26,7 @@
 		<div id="tutorial-content-box">
 			<div id="tutorial-contents">
 				<div class="tutorial-content-title">
-					<h1>Layout</h1>
+					<h1>Header</h1>
 					<div class="tutorial-content-path">
 						<p>&nbsp;기본 레이아웃 부분의 Header로 메인 타이틀과 토글 버튼으로 구성되어 있습니다.</p>
 					</div>
@@ -82,6 +84,8 @@
 		src="${pageContext.request.contextPath}/assets/js/xml.js"></script>
 	<script
 	src="${pageContext.request.contextPath}/assets/js/javascript.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/simplescrollbars.js"></script>
 	<script type="text/javascript">
 	var textarea;
 	for(let i=0;i<$(".xml").length;i++){
@@ -90,6 +94,7 @@
 			lineNumbers : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "xml",
+			scrollbarStyle:"simple",
 			readOnly: "false"   
 		});
 	}
@@ -99,6 +104,7 @@
 			lineNumbers : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "javascript",
+			scrollbarStyle:"simple",
 			readOnly: "false"   
 		});
 	}

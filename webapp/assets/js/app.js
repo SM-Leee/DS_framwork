@@ -158,7 +158,7 @@ const lineChartTileClick = (Target) => {
 			"</div>" +
 			"</div>"
 
-			$('.App')
+			$('body')
 			.append(chartFilterHtml)
 
 
@@ -280,7 +280,7 @@ const lineChartTileClick = (Target) => {
 				filter_value = $(this).text();
 				$(filter_topic[2]).children('.filter-topic-item').text(filter_value)
 
-				$('.App').append(dateFilterHtml)
+				$('body').append(dateFilterHtml)
 
 				if (date_no == 2) {
 					$('.date-content').css({
@@ -418,25 +418,25 @@ const filterMapping = (target) => {
 }
 const legendPick = () => {
 	const legendItems = $('.radarlegend')
-	const radarShowData = $('.radar-showdata')
-	const radarBackGround = $('.radar-background')
 	$(legendItems).click(function () {
+		console.log($(this).parent().parent()[0].id);
+		let myId = $(this).parent().parent()[0].id;
 		let no = $(this).data('no');
 		if ($(this).css('backgroundColor') === 'rgb(195, 195, 195)') {
-			$(radarShowData[no]).css({
+			$('#'+myId+' .radar-showdata'+no).css({
 				'display': ''
 			})
-			$(radarBackGround[no]).css({
+			$('#'+myId+' .radar-background'+no).css({
 				'display': ''
 			})
 			$(this).css({
 				'background': 'white'
 			})
 		} else {
-			$(radarShowData[no]).css({
+			$('#'+myId+' .radar-showdata'+no).css({
 				'display': 'none'
 			})
-			$(radarBackGround[no]).css({
+			$('#'+myId+' .radar-background'+no).css({
 				'display': 'none'
 			})
 			$(this).css({
@@ -824,7 +824,7 @@ const SubtopicTouchSlider = function(SubtopicList){
 	locate = $('.subtopic-selected').parent('div').data('ds-page');
 	$('#ds-ui-subtopic').bind('touchstart mousedown', function (e) {
 
-		if($('.App').width() > 600){
+		if($('body').width() > 600){
 			e.preventDefault();
 		}
 		lX = (e.type === 'mousedown') ? e.pageX : e.touches[0].screenX;
@@ -929,7 +929,7 @@ const footerDataBinding = (footerAlltag) => {
 
 //footerTouchSlider
 const footerTouchSlider = (footerBoxList) => {
-	let size = $('.App').width();
+	let size = $('body').width();
 	let sX = 0,
 	fX = 0,
 	locate = 0;
@@ -1504,7 +1504,7 @@ const slideFooter = (footerBoxList, locate, setLocate) => {
 
 //staticMove
 const staticBtnTouchMove = (target, staticShowBtn) => {
-	let size = $('.App').width();
+	let size = $('body').width();
 
 	$(target).bind('touchmove', function (e) {
 		e.preventDefault();
@@ -2312,7 +2312,7 @@ const refreshevent = (target, time) => {
 		time = 500;
 	}
 	$(target).click(function () {
-		$('.App').append(
+		$('body').append(
 				"<div class='overlay'>" +
 				"<div class='loader'>" +
 				"</div>" +

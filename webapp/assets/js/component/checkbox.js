@@ -68,7 +68,6 @@ const checkbox = () => {
 
         // disabled
         if (disabled == ' disabled') {
-            console.log('##')
             $(checkbox[i]).children('.checkbox-label').children('span').css({
                 'background': '#EBEBEB'
             })

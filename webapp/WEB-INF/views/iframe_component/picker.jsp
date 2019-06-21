@@ -8,10 +8,9 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
-<body class="body">
+<body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-	<div class="App">
 		<select class="ds-ui-dropdown-picker">
 			<option value="volvo">Volvo</option>
 			<option value="assb">Saab</option>
@@ -36,7 +35,6 @@
 		</select> <select class="ds-ui-dropdown-picker" data-ds-label="목 차"
 		data-ds-item-binding="option2"
 		data-ds-value-field="category" data-ds-text-field="transname"></select>
-	</div>
 
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>

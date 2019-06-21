@@ -5,6 +5,8 @@
 <head>
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/tutorial.css">
 <link rel="stylesheet"

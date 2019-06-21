@@ -29,6 +29,28 @@ textarea {
 iframe {
 	background-color: white;
 }
+.CodeMirror-simplescroll-vertical {
+	display:none !important;
+}
+.mainList .tutorial-source {
+	height:78px;
+	background-color:#E3E3E3;
+	padding : 14px;
+	margin-bottom : 10px;
+	border-radius : 5px;
+}
+.mainList .tutorial-source h3 {
+	color : #504e4e;
+	font-weight:bold;	
+	font-size : 20px;
+	padding-left:10px;
+	padding-bottom:10px;
+	background-color:rgba(0,0,0,0);
+}
+.mainList .tutorial-source .CodeMirror {
+	height: 40px !important;
+	bottom:0px;
+}
 
 .tutorial-content-path p {
 	color: #8b8d8f;
@@ -311,6 +333,10 @@ iframe {
 	padding-left: 250px;
 }
 
+.mainList {
+	margin-right:45px;
+}
+
 .mainList li:first-child {
 	padding: 35px 33px;
 	border: 15px solid #ccc;
@@ -325,7 +351,7 @@ iframe {
 	box-shadow: 0 1px 3px -1px rgba(133, 133, 133, 0.46);
 	/* height: 162px; */
 	overflow: hidden;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	padding: 35px 33px;
 }
 
@@ -338,19 +364,29 @@ iframe {
 	color: #504e4e;
 	margin-bottom: 5px;
 }
-
-.mainList li>p {
+.mainList li>h2>i {
+	background-color : #fff;
+	}
+.mainList li> p {
 	background-color : #fff;
 	font-size: 18px;
 	font-family: 'Nanum Gothic';
 	line-height: 25px;
 	color: #929292;
 }
-em {
+
+.mainList li> p > a {
+	background-color : #fff;
+	font-size: 12px;
+	font-family: 'Nanum Gothic';
+	line-height: 25px;
+	color: #040404;
+	border : 1px solid #D3D3D3;
+	padding : 0 .5rem;
+	font-weight : 800;
 }
-#contents p {
-	margin-bottom: 10px;
-}
+
+
 
 #tutorial-contents {
 	position: absolute;

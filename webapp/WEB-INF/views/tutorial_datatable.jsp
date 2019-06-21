@@ -4,6 +4,8 @@
 <head>
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/tutorial.css">
 <link rel="stylesheet"
@@ -129,6 +131,8 @@ $(document).ready(function () {
 		src="${pageContext.request.contextPath}/assets/js/xml.js"></script>
 	<script
 	src="${pageContext.request.contextPath}/assets/js/javascript.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/simplescrollbars.js"></script>
 	<script type="text/javascript">
 	var textarea;
 	for(let i=0;i<$(".xml").length;i++){
@@ -137,6 +141,7 @@ $(document).ready(function () {
 			lineNumbers : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "xml",
+			scrollbarStyle:"simple",
 			readOnly: "false"   
 		});
 	}
@@ -146,6 +151,7 @@ $(document).ready(function () {
 			lineNumbers : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "javascript",
+			scrollbarStyle:"simple",
 			readOnly: "false"   
 		});
 	}

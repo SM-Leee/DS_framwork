@@ -87,10 +87,11 @@ function component(){
 	radiobutton();
 	rangeSlider();
 	accordion();
+	$('body').css({'display':'flex'});
 }
 const resizible = function () {
-	const restartHeight = function() { $('.App').css('height', $(window).height() + 'px'); }
-	const minHeight = function(){ $('.App').css('minHeight', $(window).height() + 'px'); }
+	const restartHeight = function() { $('body').css('height', $(window).height() + 'px'); }
+	const minHeight = function(){ $('body').css('minHeight', $(window).height() + 'px'); }
 	minHeight();
 	restartHeight();
 	$(window).resize(function () {

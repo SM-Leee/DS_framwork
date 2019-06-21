@@ -8,10 +8,9 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
-<body class="body">
+<body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-	<div class="App">
 		<div class="contents">
 		<div class="ds-ui-rangeslider" data-label='범위 슬라이더 #1' data-min=0 data-value=100 data-max=500>
 		</div>
@@ -24,7 +23,6 @@
          <div class="ds-ui-rangeslider" data-min=0 data-value=50 data-max=500 data-disabled='true'>
          </div>
          </div>
-	</div>
 
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>

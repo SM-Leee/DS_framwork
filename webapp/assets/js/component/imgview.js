@@ -14,7 +14,7 @@ var viewImgHTML =
     "</div>";
 
 const showImg = (html, imgUrl) => {
-    $('.App').append(html);
+    $('body').append(html);
     $('.imgView').append(
         "<img src='" + imgUrl + "'>"
     )

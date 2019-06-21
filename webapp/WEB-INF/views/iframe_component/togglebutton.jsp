@@ -8,10 +8,9 @@
 <script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
-<body class="body">
+<body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-	<div class="App">
 		<!-- default : off -->
 		<div class='toggle'></div>
 		<!-- Status : On -->
@@ -19,7 +18,6 @@
 		<!-- modify contents -->
 		<div class='toggle' data-ds-on='YES' data-ds-off='NO'></div>
 
-	</div>
 
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>

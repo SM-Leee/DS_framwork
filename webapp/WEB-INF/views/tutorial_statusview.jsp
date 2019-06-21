@@ -5,6 +5,8 @@
 <head>
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/tutorial.css">
 <link rel="stylesheet"
@@ -54,7 +56,7 @@
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <div class="ds-ui-statusView" data-icon='status'
-	data-mapping='exampleData' data-no='1'></div></textarea>
+	data-ds-mapping='exampleData' data-no='1'></div></textarea>
 							</div>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode javascript" id="javascript0">
@@ -66,7 +68,7 @@ const exampleData = [{
          price: 250000,
          date: '2019-03-12',
          category: 'plus',
-         desc: 'A회사 TV 개당 250000원 5대 수입',
+       	 desc: 'A회사 TV 5대 수입 영수증',
          img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/200px-ReceiptSwiss.jpg'
       }]
 
@@ -113,7 +115,8 @@ const exampleData = [{
 									<span class="ds-tag-value">&nbsp;data-no</span>&#9;JSON 객체 고유
 									넘버 선택
 								</p>
-								<p>&#8251; statusViewOption 객체는 상세 정보 창에 표시될 항목들과 <img>태그 사용시 col:'header'를 사용하고 col:1, col:2 지정으로 가로 길이를 지정할 수 있습니다.</p>
+								<p>&#8251; statusViewOption 객체는 상세 정보 창에 표시될 항목들과 옵션을 표시합니다.
+								      이미지 태그 사용시 col:'header'를 사용하고 col:1, col:2 지정으로 가로 길이를 지정할 수 있습니다.</p>
 							</div>
 						</div>
 						<!-- 컴포넌트 뷰어 -->
@@ -139,6 +142,8 @@ const exampleData = [{
 	<script src="${pageContext.request.contextPath}/assets/js/xml.js"></script>
 	<script
 		src="${pageContext.request.contextPath}/assets/js/javascript.js"></script>
+		<script
+		src="${pageContext.request.contextPath}/assets/js/simplescrollbars.js"></script>
 	<script type="text/javascript">
 		var textarea;
 		for (let i = 0; i < $(".xml").length; i++) {
@@ -147,6 +152,7 @@ const exampleData = [{
 				lineNumbers : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "xml",
+				scrollbarStyle:"simple",
 				readOnly : "false"
 			});
 		}
@@ -156,6 +162,7 @@ const exampleData = [{
 				lineNumbers : true,
 				value : "function myScript(){return 100;}\n",
 				mode : "javascript",
+				scrollbarStyle:"simple",
 				readOnly : "false"
 			});
 		}

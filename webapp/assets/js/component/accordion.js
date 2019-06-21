@@ -28,8 +28,8 @@ const accordion = () => {
             } else {
                 $(text).css({
                     // 'maDxHeight' : $(panel).prop('scrollHeight') + 'px'
-                    'height': $('.App').outerHeight() + 'px',
-                    'maxHeight': $('.App').outerHeight() + 'px'
+                    'height': $('body').outerHeight() + 'px',
+                    'maxHeight': $('body').outerHeight() + 'px'
                 })
             }
         });

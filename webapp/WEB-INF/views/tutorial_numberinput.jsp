@@ -4,6 +4,8 @@
 <head>
 <title></title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
+<link rel="icon" href="${pageContext.request.contextPath}/assets/images/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/assets/css/tutorial.css">
 <link rel="stylesheet"
@@ -40,15 +42,6 @@
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;ds-ui-input onlynumber</span>&#9;클래스 명칭</p>
 							</div>
-						
-						<h3>&nbsp;레이블 추가</h3>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<div class="ds-ui-input onlynumber" data-ds-label="수량"></div></textarea>
-							</div>
-							<div class="tutorial-component-description">
-								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;숫자텍스트 박스 레이블 유무 선택</p>
-							</div>
 						<h3>&nbsp;달러표시</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror2">
@@ -57,6 +50,16 @@
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;ds-ui-input kwdnumber</span>&#9;달러표시 적용 및 세자리마다 콤마(,) 옵션</p>
 							</div>
+						<h3>&nbsp;레이블 추가</h3>
+							<div class="tutorial-component-source">
+								<textarea class="tutorial-sourcecode xml" id="codemirror1">
+<div class="ds-ui-input onlynumber" data-ds-label="수량"></div>
+<div class="ds-ui-input kwdnumber" data-ds-label="금액"></div></textarea>
+							</div>
+							<div class="tutorial-component-description">
+								<p><span class="ds-tag-value">&nbsp;data-ds-label</span>&#9;숫자텍스트 박스 레이블 유무 선택</p>
+							</div>
+						
 						
 						</div>
 
@@ -84,6 +87,8 @@
 		src="${pageContext.request.contextPath}/assets/js/xml.js"></script>
 	<script
 	src="${pageContext.request.contextPath}/assets/js/javascript.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/simplescrollbars.js"></script>
 	<script type="text/javascript">
 	var textarea;
 	for(let i=0;i<$(".xml").length;i++){
@@ -92,9 +97,9 @@
 			lineNumbers : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "xml",
+			scrollbarStyle:"simple",
 			readOnly: "false"   
 		});
-		//$(textarea).remove();
 	}
 	for(let i=0;i<$(".javascript").length;i++){
 		textarea = document.getElementById('javascript'+i);
@@ -102,9 +107,9 @@
 			lineNumbers : true,
 			value : "function myScript(){return 100;}\n",
 			mode : "javascript",
+			scrollbarStyle:"simple",
 			readOnly: "false"   
 		});
-		//$(textarea).remove();
 	}
 	</script>
 	<script type="text/javascript"

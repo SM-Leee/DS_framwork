@@ -62,7 +62,7 @@ const statusViewSetting = (btn) => {
 
 
         if ($('#ds-ui-statusView').length == 0) {
-            $('.App').append(
+            $('body').append(
                 "<div id='ds-ui-statusView'>" +
                 "</div>"
             )
@@ -89,7 +89,7 @@ const statusViewSetting = (btn) => {
     })
 }
 const closeStatusView = (touchLocate) => {
-    let size = $('.App').width()
+    let size = $('body').width()
     $(touchLocate).bind('touchstart mousedown', function (e) {
         sX = (e.type === 'mousedown') ? e.pageX : e.touches[0].screenX;
 

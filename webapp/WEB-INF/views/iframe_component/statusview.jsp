@@ -8,11 +8,11 @@
 <script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
-	<body class="body">
+	<body>
 	
 		<!-- ########## 컴포넌트 넣는 곳 ########## -->
 		<div class="App">
-			<div class="ds-ui-icon" data-icon='status' data-mapping='exampleData' data-no='1'></div>
+			<div class="ds-ui-icon" data-icon='status' data-ds-mapping='exampleData' data-no='1'></div>
 			
 		</div>
 	
@@ -27,7 +27,7 @@
 	         price: 250000,
 	         date: '2019-03-12',
 	         category: 'plus',
-	         desc: 'A회사 TV 개당 250000원 5대 수입',
+	         desc: 'A회사 TV 5대 수입 영수증',
 	         img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/200px-ReceiptSwiss.jpg'
 	      }]
 
