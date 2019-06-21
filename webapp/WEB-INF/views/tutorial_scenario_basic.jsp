@@ -506,7 +506,7 @@
       // resultView btn event
       $('#guideline-trans-btn').on('click', function(){
          /* replace 방식*/
-         window.location.replace("scenarioScript");
+         window.location.replace("script_guideline");
       });
       $('#script-copy-btn').on('click', function(){
          var scriptContent = $('#scenario-popup').find('textarea').text();

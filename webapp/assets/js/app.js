@@ -1363,7 +1363,7 @@ const decorateModalDataTable = ($dataTable) => {
       "<div class='popup-data-header'>" +
       "<div class='data-title'>" +
       "<span>" + standardColumn + "</span>" +
-      "<img class='standard-change-btn' src='../assets/images/arrow-down.png'>" +
+      "<img class='standard-change-btn' src='http://106.10.41.222:8080/ds_code/image/arrow-down.png'>" +
       "</div>" +
       "</div>";
 
@@ -1438,12 +1438,12 @@ const stdColumnChange_Mode = ($targetPB) => {
          $body.removeClass('off');
          $changeBody.addClass('off');
          $targetPB.find('.popup-footer').removeClass('off');
-         $targetPB.find('.standard-change-btn').attr('src', '../assets/images/arrow-down.png');
+         $targetPB.find('.standard-change-btn').attr('src', 'http://106.10.41.222:8080/ds_code/image/arrow-down.png');
       } else {
          $changeBody.removeClass('off');
          $body.addClass('off');
          $targetPB.find('.popup-footer').addClass('off');
-         $targetPB.find('.standard-change-btn').attr('src', '../assets/images/arrow-up.png');
+         $targetPB.find('.standard-change-btn').attr('src', 'http://106.10.41.222:8080/ds_code/image/arrow-up.png');
       }
    });
 }
