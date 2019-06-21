@@ -2,7 +2,7 @@ document.write("<script type='text/javascript' src='"+window.location.pathname+"
 
 $(document).ready(function(){
 	//$('body').removeClass('body');
-	//$('body').css({'display':'flex'});
+	$('body').css({'display':'flex'});
 	component();
 
 })

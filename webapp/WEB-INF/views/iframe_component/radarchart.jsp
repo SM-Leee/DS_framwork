@@ -12,12 +12,9 @@
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
 		<div class="contents">
-			<div class='ds-ui-chart radar' id='radar1'
-				></div>
-			<div class='ds-ui-chart radar' id='radar2'
-				></div>
-			<div class='ds-ui-chart radar' id='radar3'
-				></div>
+			<div class='ds-ui-chart radar' id='radar1'></div>
+			<div class='ds-ui-chart radar' id='radar2'></div>
+			<div class='ds-ui-chart radar' id='radar3'></div>
 		</div>
 
 	<script type="text/javascript"

@@ -14,9 +14,8 @@ let pieChart = (dataSet, select) => {
 	);
 
 	index_position(select,dataSet);
-
+	
 	let stand_size = layout(select+'.pie-wrapper');
-
 	$(select+'.circle-shape').css({
 		'width':'calc('+stand_size+'px - 1rem)',
 		'height':'calc('+stand_size+'px - 1rem)',

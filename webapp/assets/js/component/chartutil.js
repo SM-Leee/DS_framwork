@@ -1,5 +1,9 @@
 //chart
 let layout = (className) => {
+	console.log(className)
+	console.log($(className))
+	console.log($(className).height())
+	console.log($(className).width())
 	return ($(className).height() < $(className).width() ? $(className).height() : $(className).width());
 }
 let index_position = (select_tag, dataSet) => {
@@ -103,6 +107,7 @@ let index_position = (select_tag, dataSet) => {
 			$(select+'#'+chartname+'legend'+i+' div').css({'height':'3vmin'});
 		}
 	}
+	console.log($(select_tag+' .chart-wrapper').height())
 
 }
 

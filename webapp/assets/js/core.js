@@ -87,7 +87,6 @@ function component(){
 	radiobutton();
 	rangeSlider();
 	accordion();
-	$('body').css({'display':'flex'});
 }
 const resizible = function () {
 	const restartHeight = function() { $('body').css('height', $(window).height() + 'px'); }

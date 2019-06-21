@@ -11,7 +11,6 @@
 <body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-		<div class="App">
 			<div class="ds-ui-input onlynumber"></div>
 			<div class="ds-ui-input kwdnumber"></div>
 			<div class="ds-ui-input onlynumber" data-ds-label="수량"></div>

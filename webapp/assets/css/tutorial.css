@@ -630,28 +630,6 @@ iframe {
 	background-position: center;
 	position: relative;
 }
-
-/* #frame-popup .popup-titlebar {
-	display: flex;
-	justify-content: space-between;
-	width: 360px;
-	height: 21px;
-	border-bottom: 1px solid black;
-	box-sizing: border-box;
-} */
-
-/* #frame-popup .popup-titlebar p {
-	padding: 0 5px;
-} */
-
-/* #frame-popup .popup-titlebar .popup-close {
-	right: 0;
-	width: 20px;
-	height: 20px;
-	background-color: pink;
-	text-align: center;
-	cursor: pointer;
-} */
 .popup-close {
 	width: 50px;
 	height: 50px;
@@ -701,7 +679,6 @@ iframe {
 	width: calc(9 * 50px);
 	height: calc(16 * 50px);
 	float: right;
-	/* border:1px solid black; */
 }
 
 .phone2 div {
@@ -714,13 +691,10 @@ iframe {
 }
 
 .window2 {
-	/* top:95px; */
-	/* left:22px; */
 	top: calc(50% - 293px);
 	left: calc(50% - 172px);
 	background-color: white;
 	position: absolute;
-	/* width: 330px; */
 	width: 344px;
 	height: 586px;
 	border: 1px solid #A2A2A2;
@@ -729,4 +703,196 @@ iframe {
 #tutorial-contents.editor>.button-box {
 	baground-color: rgba(0, 0, 0, 0);
 	margin-bottom: 20px;
+}
+
+#tutorial-contents .scenario-list {
+   /* background-color: white; */
+}
+#tutorial-contents .scenario-list>.scenario-card {
+    border: 1px solid lightgray;
+    border-radius: 2%;
+    margin-bottom: 10px;
+}
+#tutorial-contents .scenario-list>.scenario-card>.card-content {
+    color: darkgrey;
+    padding: 13.5px;
+    background-color: white;
+    font-size: 1.3rem;
+}
+#tutorial-contents>.tutorial-content-desc>.sub-title span {
+   height: 60px;
+   line-height: 60px;
+   background-color: white;
+   /* border-bottom: 1px solid gray; */
+}
+#tutorial-contents>.tutorial-content-desc>.sub-title-description {
+   background-color: inherit;
+}
+#tutorial-contents>.tutorial-content-desc>.sub-title-description>h3 {
+    color: darkblue;
+    background-color: white;
+    height: 22px;
+    line-height: 25px;
+    text-indent: 2px;
+}
+#tutorial-contents>.tutorial-content-desc>.sub-title-description span {
+   color: darkblue;
+    background-color: white;
+    height: 35px;
+    line-height: 25px;
+    text-indent: 20px;
+}
+.window3 {
+    width: 360px;
+    height: 642px;
+    left: 8px;
+    top: 43px;
+    background-color: white;
+    position: absolute;
+    border: 1px solid #A2A2A2;
+    border-radius: 2%;
+}
+.scenarioOFF {
+   display: none;
+   opacity: 0;
+      pointer-events: unset;
+}
+.scenario-play-text {
+      color: blue;
+    position: fixed;
+    left: 50.1%;
+    top: 59%;
+    background: unset;
+}
+.scenario-play-btn {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    border: none;
+    /* background-color: aliceblue; */
+    width: 64px;
+    height: 64px;
+    background: url(https://cdn4.iconfinder.com/data/icons/48x48-free-time-icons/48/Play.png) no-repeat 50% 50%;
+    background-size: 64px;
+}
+
+<!-- scenario-resultView-popup -->
+.scenario-resultView-Box {
+   width: 100%;
+}
+.scenario-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 2em;
+    z-index: 10;
+}
+.scenario-resultView {
+   position: absolute;
+    width: 400px;
+    height: 600px;
+    top: 49%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+.scenario-resultView2 {
+    background-color: unset;
+    position: absolute;
+    width: 380px;
+    height: 720px;
+    top: 49%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    box-shadow: unset;
+    z-index: 10;
+}
+.scenario-resultView3 {
+    background-color: unset;
+    position: absolute;
+    width: 380px;
+    height: fit-content;
+    top: 49%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    box-shadow: unset;
+    z-index: 10;
+    color: white;
+}
+.scenario-resultView3 span{
+   font-size: 1.5rem;
+}
+.scenario-resultView3 *{
+   background-color: unset;
+}
+.scenario-resultView-Box .phone3 {
+    background: rgba(0,0,0,0) url(../images/galaxy.png) no-repeat;
+    background-size: 393px 735px;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    position: relative;   
+}
+.scenario-resultView4 {
+    background-color: unset;
+    position: absolute;
+    width: 1145px;
+    height: 720px;
+    top: 49%;
+    left: 63%;
+    transform: translate(-50%, -50%);
+    box-shadow: unset;
+    z-index: 10;
+    color: white;
+}
+.scenario-resultView-Box .macbook {
+    background: rgba(0,0,0,0) url(../images/macbook.png) no-repeat;
+    background-size: 1150px;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    position: relative;
+}
+.scenario-resultView .resultView-col-2 {
+      display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.scenario-resultView .resultView-col-2 .resultView-row-2 {
+      width: 100%;
+}
+.scenario-resultView .resultView-col-2 .resultView-row-2>.soucecode-titel {
+    color: black;
+    background-color: #ebebeb;
+    height: fit-content;
+}
+.scenario-resultView .resultView-col-2 > .resultView-row-2 > .soucecode-titel > span {
+    background-color: #ebebeb;
+    font-size: 1.5rem;
+    padding: 1px;
+    display: inline-block;
+}
+#frame-popup.editor-phone {
+   width: 100%;
+    height: 100%;
+    background-size: 360px 640px;
+    background-position: center;
+    position: relative;
+    background: rgba(0,0,0,0) url(../images/galaxy.png) no-repeat;
+}
+
+.ds-ui-basicButton {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #00AAF0;
+    border: 1px solid #00AAF0;
+    border-radius: 1vmin;
+    padding: 1vmin;
+    color: white;
+    font-size: large;
 }

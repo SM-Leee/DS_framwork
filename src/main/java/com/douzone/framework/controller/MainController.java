@@ -42,7 +42,14 @@ public class MainController {
 	public String tutorial_scenario() {
 		return "tutorial_scenario";
 	}
-	
+	@RequestMapping("/basic_guideline")
+    public String tutorial_guideBasic() {
+		return "tutorial_scenario_basic";
+    }
+    @RequestMapping("/script_guideline")
+    public String tutorial_guideScript() {
+    	return "tutorial_scenario_script";
+    }
 	@RequestMapping("/input")
 	public String input() {
 		return "tutorial_input";
