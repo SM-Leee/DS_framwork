@@ -16,7 +16,6 @@
 				></div>
 			<div class='ds-ui-chart circle' id='circle2'></div>
 			<div class='ds-ui-chart circle' id='circle3'></div>
-
 			<div class='ds-ui-chart circle' id='circle4'></div>
 		</div>
 

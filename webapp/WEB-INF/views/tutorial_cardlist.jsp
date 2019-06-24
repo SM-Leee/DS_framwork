@@ -54,7 +54,20 @@
 	   	            dsSetting: true,
 	   	            dsIcon: 'status modify remove'
 	   	       }
-	  	  });</textarea>
+	  	  });
+	  	  const colorOption = [{
+               category: 'etc',
+               color: 'red'
+           },
+           {
+               category: 'plus',
+               color: 'blue'
+           },
+           {
+               category: 'minus',
+               color: 'green'
+           }
+       ];</textarea>
 							</div>
 							
 							<div class="tutorial-component-description">

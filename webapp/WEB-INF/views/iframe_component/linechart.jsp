@@ -418,7 +418,8 @@
 				dsStandard : 'company',
 				dsSubstandard : 'category',
 				dsCalcDetail : 'mul price count',
-				dsX : 'date'
+				dsX : 'date',
+				dsTableOption : tableOption
 			},
 			subOption : {
 			}
@@ -429,7 +430,8 @@
 				dsStandard : 'company',
 				dsSubstandard : 'category',
 				dsCalcDetail : 'count',
-				dsX : 'date'
+				dsX : 'date',
+				dsTableOption : tableOption
 			},
 			subOption : {
 				dsTransferNaming : chartOption2

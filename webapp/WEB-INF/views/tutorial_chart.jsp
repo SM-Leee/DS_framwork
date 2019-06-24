@@ -118,8 +118,7 @@ ds.ui.chart('#circle3', {
 								dsCalc : 'avg',
 								dsTransferNaming : option
 							}
-						})
-			   ]</textarea>
+						})</textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;dsTransferNaming</span>&#9;Column(Value) 값 변경 할 JSON 객체 선택</p>

@@ -38,11 +38,12 @@
 						<div class="tutorial-component-source">
     						<textarea class="tutorial-sourcecode xml" id="codemirror0">
 <div class='ds-ui-imgView'>
-	<img src='https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/image-512.png' data-imgurl='http://newsimg.hankookilbo.com/2018/11/27/201811271096020817_28.jpg'></img> 
+	<img class='ds-ui-img' src='https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/image-512.png' data-imgurl='http://newsimg.hankookilbo.com/2018/11/27/201811271096020817_28.jpg'></img> 
 </div></textarea>
     					</div>
 					    <div class="tutorial-component-description">
 					        <p><span class="ds-tag-value">&nbsp;ds-ui-imgView</span>&#9;클래스 명칭</p>
+					        <p><span class="ds-tag-value">&nbsp;ds-ui-img</span>&#9;단일 이미지 클래스 명칭</p>
 					        <p><span class="ds-tag-value">&nbsp;img src</span>&#9;화면 이미지 지정</p>
 							<p><span class="ds-tag-value">&nbsp;data-imgurl</span>&#9;이미지 주소 지정</p>
 							<p>&#8251; 클릭 시 설정된 이미지가 화면에 나타납니다.</p>

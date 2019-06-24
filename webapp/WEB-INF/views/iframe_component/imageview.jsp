@@ -12,7 +12,7 @@
 	
 		<!-- ########## 컴포넌트 넣는 곳 ########## -->
 			<div class='ds-ui-imgView'>
-				<img class='ds-ui-img' data-imgurl='http://newsimg.hankookilbo.com/2018/11/27/201811271096020817_28.jpg' src='https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/image-512.png'></img> 
+				<img class='ds-ui-img' data-imgurl='http://newsimg.hankookilbo.com/2018/11/27/201811271096020817_28.jpg' src='https://cdn3.iconfinder.com/data/icons/galaxy-open-line-gradient-i/200/image-64.png'></img> 
          </div>
 			
 	

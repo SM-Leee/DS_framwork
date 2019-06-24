@@ -47,11 +47,29 @@ ds.ui.chart('#line1', {
 							dsStandard : 'company',
 							dsSubstandard : 'category',
 							dsCalcDetail : 'mul price count',
-							dsX : 'date'
+							dsX : 'date',
+							dsTableOption : tableOption
 						},
 						subOption : {
 						}
-					})</textarea>
+					})
+const tableOption = [ {
+			img : '이미지'
+		}, {
+			good : '상품'
+		}, {
+			company : '회사'
+		}, {
+			count : '개수'
+		}, {
+			price : '가격'
+		}, {
+			date : '일자'
+		}, {
+			category : '분류'
+		}, {
+			desc : '설명'
+		} ];</textarea>
 							</div>
 							
 							<div class="tutorial-component-description">
@@ -88,13 +106,31 @@ const option = [
 					transname : '지출'
 				}
 			   ]
+const tableOption = [ {
+			img : '이미지'
+		}, {
+			good : '상품'
+		}, {
+			company : '회사'
+		}, {
+			count : '개수'
+		}, {
+			price : '가격'
+		}, {
+			date : '일자'
+		}, {
+			category : '분류'
+		}, {
+			desc : '설명'
+		} ];
 ds.ui.chart('#line2', {
 						dataSource: exampleData,
 						option : {
 							dsStandard : 'company',
 							dsSubstandard : 'category',
 							dsCalcDetail : 'count',
-							dsX : 'date'
+							dsX : 'date',
+							dsTableOption : tableOption
 						},
 						subOption : {
 							dsTransferNaming : chartOption2

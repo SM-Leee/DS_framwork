@@ -28,27 +28,59 @@
 	<script type="text/javascript"
 		src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>
 	<script>
-	const exampleData = [ {
-		no : 1,
-		company : '더존비즈온',
-		good : 'tv',
-		count : 5,
-		price : 300000,
-		date : '2017-12-12',
-		category : 'plus',
-		desc : '안녕하세요? 최기석입니다 반갑습니다 하이하이'
-	}
-	];
-	const option2 = [ {
-		category : 'etc',
-		transname : '미지급'
-	}, {
-		category : 'plus',
-		transname : '수입'
-	}, {
-		category : 'minus',
-		transname : '지출'
-	} ];
+	$(document).ready(function () {
+		//alert
+	    $('#btn-basic').on('click', (e)=>{
+	        ds_msgbox.alert('메세지입니다.\n샘플메세지입니다.').done(function() {
+	            alert('done');
+	        });
+	    });
+	    $('#btn-basic2').on('click', (e)=>{
+	        ds_msgbox.alert('메세지입니다.\n샘플메세지입니다.','none').done(function() {
+	            alert('done');
+	        });
+	    });
+	    $('#btn-basic3').on('click', (e)=>{
+	        ds_msgbox.alert('메세지입니다.\n샘플메세지입니다.','ico2').done(function() {
+	            alert('done');
+	        });
+	    });
+	
+	    //confirm
+	    $('#btn-basic4').on('click', (e)=>{
+	        ds_msgbox.confirm('변경된 사항이 있습니다.\n저장하시겠습니까?')
+	        .yes(function() {
+	            alert('yes');
+	        }).no(function() {
+	            alert('no');
+	        });
+	    });
+	    $('#btn-basic5').on('click', (e)=>{
+	        ds_msgbox.confirm('변경된 사항이 있습니다.\n저장하시겠습니까?','ico2')
+	        .yes(function() {
+	            alert('yes');
+	        }).no(function() {
+	            alert('no');
+	        });
+	    });
+	
+	    //error
+	    $('#btn-basic6').on('click', (e)=>{
+	        ds_msgbox.error('거래처는 필수입력 사항입니다.')
+	        .done(function() {
+	            alert('done');
+	        });
+	    });
+	    $('#btn-basic7').on('click', (e)=>{
+	        ds_msgbox.error({
+	            'message' : 'Error가 발생되었습니다.',
+	            'error' : 'systme.invaildCaseException : [A]ds common.forms.help.'
+	        })
+	        .done(function() {
+	            alert('done');
+	        });
+	    });
+	});
 	</script>
 </body>
 </html>

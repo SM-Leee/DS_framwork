@@ -38,8 +38,7 @@
 						<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<div class='ds-ui-chart radar'
-		id='radar1'></div></textarea>
+<div class='ds-ui-chart radar' id='radar1'></div></textarea>
 							</div>
 							
 							<div class="tutorial-component-source">
@@ -89,16 +88,16 @@ const option = [
 				}
 			   ]
 ds.ui.chart('#radar2', {
-							dataSource: exampleData,
-							option : {
-								dsStandard : 'category',
-								dsX : 'company',
-								dsCalcDetail : 'mul price count'
-							},
-							subOption : {
-								dsTransferNaming : option
-							}
-						})</textarea>
+				dataSource: exampleData,
+				option : {
+					dsStandard : 'category',
+					dsX : 'company',
+					dsCalcDetail : 'mul price count'
+				},
+				subOption : {
+					dsTransferNaming : option
+				}
+			})</textarea>
 							</div>
 							<div class="tutorial-component-description">
 								<p><span class="ds-tag-value">&nbsp;dsTransferNaming</span>&#9;Column(Value) 값 변경 할 JSON 객체 선택</p>
