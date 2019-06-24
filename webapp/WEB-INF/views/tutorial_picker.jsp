@@ -38,10 +38,10 @@
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
 <select class="ds-ui-dropdown-picker">
-	<option value="volvo">Volvo</option>
-	<option value="assb">Saab</option>
-	<option value="opel">Opel</option>
-	<option value="audi">Audi</option>
+	<option value="Select1">Select1</option>
+	<option value="Select2">Select2</option>
+	<option value="Select3">Select3</option>
+	<option value="Select4">Select4</option>
 </select></textarea>
 							</div>
 
@@ -52,10 +52,10 @@
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror1">
 <select class="ds-ui-dropdown-picker" data-ds-label="목 차">
-	<option value="volvo">Volvo</option>
-	<option value="assb">Saab</option>
-	<option value="opel">Opel</option>
-	<option value="audi">Audi</option>
+	<option value="Select1">Select1</option>
+	<option value="Select2">Select2</option>
+	<option value="Select3">Select3</option>
+	<option value="Select4">Select4</option>
 </select></textarea>
 							</div>
 
@@ -66,17 +66,17 @@
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror2">
 <select class="ds-ui-dropdown-picker" data-ds-rows="2">
-	<option value="volvo">Volvo</option>
-	<option value="assb">Saab</option>
-	<option value="opel">Opel</option>
-	<option value="audi">Audi</option>
+	<option value="Select1">Select1</option>
+	<option value="Select2">Select2</option>
+	<option value="Select3">Select3</option>
+	<option value="Select4">Select4</option>
 </select>
 
 <select class="ds-ui-dropdown-picker" data-ds-label="목 차" data-ds-rows="2">
-	<option value="volvo">Volvo</option>
-	<option value="assb">Saab</option>
-	<option value="opel">Opel</option>
-	<option value="audi">Audi</option>
+	<option value="Select1">Select1</option>
+	<option value="Select2">Select2</option>
+	<option value="Select3">Select3</option>
+	<option value="Select4">Select4</option>
 </select></textarea>
 							</div>
 

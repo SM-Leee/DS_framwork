@@ -6,21 +6,22 @@
 <title>Insert title here</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <script type="text/javascript"
-		src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
+	src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
 </head>
 <body>
 
 	<!-- ########## 컴포넌트 넣는 곳 ########## -->
-			<!-- <h2 style="text-align:left">기본</h2> -->
-			<div class="ds-ui-input"></div>
-			<!-- <h2 style="text-align:left">가로 크기별</h2> -->
-			<div class="ds-ui-input" data-ds-rows="2"></div>
-			<!-- <h2 style="text-align:left">레이블 추가</h2> -->
-			<div class="ds-ui-input" data-ds-label="거래처"></div>
-			<!-- <h2 style="text-align:left">가로 크기별 레이블 추가</h2> -->
-			<div class="ds-ui-input" data-ds-rows="2" data-ds-label="거래처"></div>
-			
-			<!--
+	<div class="contents">
+		<!-- <h2 style="text-align:left">기본</h2> -->
+		<div class="ds-ui-input"></div>
+		<!-- <h2 style="text-align:left">가로 크기별</h2> -->
+		<div class="ds-ui-input" data-ds-rows="2"></div>
+		<!-- <h2 style="text-align:left">레이블 추가</h2> -->
+		<div class="ds-ui-input" data-ds-label="거래처"></div>
+		<!-- <h2 style="text-align:left">가로 크기별 레이블 추가</h2> -->
+		<div class="ds-ui-input" data-ds-rows="2" data-ds-label="거래처"></div>
+	</div>
+	<!--
 			<div class="ds-ui-input onlynumber" data-ds-label="수량"
 				data-ds-binding='exampleData' data-ds-form="count"></div>
 				

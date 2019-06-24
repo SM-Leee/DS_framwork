@@ -30,10 +30,10 @@ ds_msgbox.alert = (msg, ico) => {
             msg_img = '';
             break;
         case 'ico2':
-            msg_img = '../assets/images/icon-warning.png';
+            msg_img = 'http://106.10.41.222:8080/ds_code/image/icon-warning.png';
             break;
         default :
-            msg_img = '../assets/images/icon-check.png';
+            msg_img = 'http://106.10.41.222:8080/ds_code/image/icon-check.png';
             break;
     }
     
@@ -66,10 +66,10 @@ ds_msgbox.confirm = (msg, ico) => {
     
     switch(ico) {
         case 'ico2':
-            msg_img = '../assets/images/icon-warning.png';
+            msg_img = 'http://106.10.41.222:8080/ds_code/image/icon-warning.png';
             break;
         default :
-            msg_img = '../assets/images/icon-check.png';
+            msg_img = 'http://106.10.41.222:8080/ds_code/image/icon-check.png';
             break;
     }
     
@@ -107,7 +107,7 @@ ds_msgbox.no = (fn) => {
 ds_msgbox.error = (msg) => {
     $(ds_msgbox.html).appendTo('body');
 
-    let msg_img = '../assets/images/icon-error.png';
+    let msg_img = 'http://106.10.41.222:8080/ds_code/image/icon-error.png';
     
     $('.messageBox .message-img').attr('src', msg_img);
 

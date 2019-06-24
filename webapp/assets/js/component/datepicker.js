@@ -208,7 +208,7 @@ function buildCalendar($targetPB) {
        hollydays = [];
    // // ajax -> get hollydays...
    $.ajax({
-      url: "http://218.39.221.70:8080/dsframework/api/hollydays/" + currentYear + "/" + transMonth + "",
+      url: "http://106.10.41.222:8080/dsframework/api/hollydays/" + currentYear + "/" + transMonth + "",
       // url: "http://localhost/dsproject/api/hollydays/" + 2019 + "/" + '09' + "", //test:추석
       type: "GET",
       dataType: "html",

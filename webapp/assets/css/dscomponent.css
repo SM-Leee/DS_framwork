@@ -238,9 +238,12 @@
    font-size: 4vmin;
 }
 /* dorpdown-picker */
+.contents .ds-ui-dropdown-picker-box {
+	height: 7%;
+}
 .ds-ui-dropdown-picker-box {
 	width: 47%;
-	height: 7%;
+	/* height: 7%; */
 	font-size: 4vmin;
 	margin: 1.5%;
 	display: flex;
@@ -291,9 +294,12 @@
 }
 
 /* inputbox */
+.contents .ds-ui-input {
+	height: 7%;
+}
 .ds-ui-input {
 	width: 47%;
-	height: 7%;
+	/* height: 7%; */
 	font-size: 4vmin;
 	margin: 1.5%;
 	/* display: flex;

@@ -128,8 +128,8 @@
 			<div class='ds-ui-chart radar' id='radar3'></div>
 		</div>
 			
-		<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/ds-css.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/ds-js.js"></script>
+		<script type="text/javascript" src="http://106.10.41.222:8080/ds_code/js/ds-css.js"></script>
+        <script type="text/javascript" src="http://106.10.41.222:8080/ds_code/js/ds-js.js"></script>
 	
 		<script type="text/javascript">
 			/* category : plus, minus, etc */
