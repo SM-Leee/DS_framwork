@@ -246,10 +246,10 @@
    
            // 값/텍스트 가져오기
            $("#btnValue").click(function () {
-              ds.ui.datepicker("#date5").value();
+              ds.ui.datepicker("#date9").value();
            });
            $("#btnText").click(function () {
-              ds.ui.datepicker("#date5").text();
+              ds.ui.datepicker("#date9").text();
            });
    
            // 값 설정하기

@@ -38,24 +38,7 @@
 							<h3>&nbsp;기본</h3>
 							<div class="tutorial-component-source">
 								<textarea class="tutorial-sourcecode xml" id="codemirror0">
-<div class="ds-ui-statusView" data-icon='status'></div></textarea>
-
-							</div>
-
-							<div class="tutorial-component-description">
-								<p>
-									<span class="ds-tag-value">&nbsp;ds-ui-statusView</span>&#9;클래스
-									명칭
-								</p>
-								<p>
-									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;상세 뷰
-									아이콘
-								</p>
-							</div>
-							<h3>&nbsp;데이터 매핑</h3>
-							<div class="tutorial-component-source">
-								<textarea class="tutorial-sourcecode xml" id="codemirror1">
-<div class="ds-ui-statusView" data-icon='status'
+<div class="ds-ui-icon" data-icon='status'
 	data-ds-mapping='exampleData' data-no='1'></div></textarea>
 							</div>
 							<div class="tutorial-component-source">
@@ -108,6 +91,14 @@ const exampleData = [{
 								</textarea>
 							</div>
 							<div class="tutorial-component-description">
+								<p>
+									<span class="ds-tag-value">&nbsp;ds-ui-icon</span>&#9;클래스
+									명칭
+								</p>
+								<p>
+									<span class="ds-tag-value">&nbsp;data-icon</span>&#9;상세 뷰
+									아이콘
+								</p>
 								<p>
 									<span class="ds-tag-value">&nbsp;data-mapping</span>&#9;데이터 매핑 될 JSON 객체명
 								</p>
